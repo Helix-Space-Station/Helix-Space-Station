@@ -37,7 +37,7 @@ namespace Content.Server.DetailExaminable
                         markup.PushColor(Color.Yellow);
                     else
                         markup.PushColor(Color.Red);
-                    markup.AddMarkup("\n" + component.GetERPStatusName());
+                    markup.AddMarkupOrThrow("\n" + component.GetERPStatusName());
                     // SD-ERPStatus-End
                     _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
                 },
