@@ -105,14 +105,14 @@
   - type: Sprite
     state: poster_adtsilence_contraband #Спрайт от Иллюми
 
-- type: entity
-  parent: ADTPosterBase
-  id: ADTPosterContrabandLustUma
-  name: Lusty Uma
-  description: "A poster with vulpcanine women of attractive appearance and in a provocative suit."
-  components:
-  - type: Sprite
-    state: poster_adtlustuma_contraband #Спрайт от Празата
+# - type: entity
+#   parent: ADTPosterBase
+#   id: ADTPosterContrabandLustUma
+#   name: Lusty Uma
+#   description: "A poster with vulpcanine women of attractive appearance and in a provocative suit."
+#   components:
+#   - type: Sprite
+#     state: poster_adtlustuma_contraband #Спрайт от Празата
 
 - type: entity
   parent: ADTPosterBase
