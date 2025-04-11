@@ -41,7 +41,7 @@
     - id: PlushieMoth
     - id: PlushieArachind
     - id: PlushiePenguin
-    - id: ADTPlushieDionaIneedPizza486 #ADT_Tweak
+    # - id: ADTPlushieDionaIneedPizza486 #ADT_Tweak
 
 - type: entity
   id: CrateFunPlushie

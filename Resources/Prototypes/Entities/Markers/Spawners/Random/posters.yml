@@ -192,8 +192,8 @@
       - ADTPosterPlasmaMan
       - ADTPosterError
       - ADTPosterNoBad
-      - ADTPosterWhatDVLegit #Перенёс по причинее того, что Legit постеры находятся в этой категории
-      - ADTPosterUnclePrazLegit
+      # - ADTPosterWhatDVLegit #Перенёс по причинее того, что Legit постеры находятся в этой категории
+      # - ADTPosterUnclePrazLegit
       - ADTPosterLegitGoobSlowDownClown
       - ADTPosterLegitGoobNTRAdvert
       - ADTPosterLegitGoobLouieVote
