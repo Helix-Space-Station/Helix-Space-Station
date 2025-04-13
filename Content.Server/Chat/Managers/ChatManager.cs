@@ -21,6 +21,7 @@ using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Shared.ADT.CCVar;
 using Content.Server.Discord;
+using Content.Shared.Ghost;
 
 namespace Content.Server.Chat.Managers;
 
@@ -96,6 +97,23 @@ internal sealed partial class ChatManager : IChatManager
         var msg = new MsgDeleteChatMessagesBy { Key = user.Key, Entities = user.Entities };
         _netManager.ServerSendToAll(msg);
     }
+
+        public void SendERPMessage(EntityUid source, string message, float range)
+        {
+            var sourceTransform = _entityManager.GetComponent<TransformComponent>(source);
+            var filter = Filter.Entities()
+                .AddWhere(session =>
+                {
+                    var entityUid = session.AttachedEntity ?? EntityUid.Invalid;
+                    if (entityUid == EntityUid.Invalid)
+                        return false;
+                    var transform = _entityManager.GetComponent<TransformComponent>(entityUid);
+                    var distance = (transform.Coordinates.Position - sourceTransform.Coordinates.Position).Length();
+                    return distance <= range && !_entityManager.HasComponent<GhostComponent>(entityUid);
+                });
+            ChatMessageToManyFiltered(filter, ChatChannel.AntiGhost, message, message, source, false, true);
+        }
+    // SD-Tweak
 
     [return: NotNullIfNotNull(nameof(author))]
     public ChatUser? EnsurePlayer(NetUserId? author)

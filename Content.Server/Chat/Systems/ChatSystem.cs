@@ -255,6 +255,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             SendEntityEmote(source, emoteStr, range, nameOverride, ignoreActionBlocker);
         }
 
+        if (player != null && emoteStr != message && emoteStr != null)
+        {
+            SendEntityAntiGhost(source, emoteStr, range, nameOverride, ignoreActionBlocker);
+        }
+
         // This can happen if the entire string is sanitized out.
         if (string.IsNullOrEmpty(message))
             return;
@@ -280,6 +285,9 @@ public sealed partial class ChatSystem : SharedChatSystem
                 break;
             case InGameICChatType.Emote:
                 SendEntityEmote(source, sanitizedMessage, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);     // ADT Languages
+                break;
+            case InGameICChatType.AntiGhost:
+                SendEntityAntiGhost(source, sanitizedMessage, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);     // ADT Languages
                 break;
         }
     }
@@ -647,6 +655,40 @@ public sealed partial class ChatSystem : SharedChatSystem
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Emote from {ToPrettyString(source):user} as {name}: {action}");
             else
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Emote from {ToPrettyString(source):user}: {action}");
+    }
+
+    private void SendEntityAntiGhost(
+        EntityUid source,
+        string action,
+        ChatTransmitRange range,
+        string? nameOverride,
+        bool hideLog = false,
+        bool checkEmote = true,
+        bool ignoreActionBlocker = false,
+        NetUserId? author = null
+        )
+    {
+        if (!_actionBlocker.CanEmote(source) && !ignoreActionBlocker)
+            return;
+
+        // get the entity's apparent name (if no override provided).
+        var ent = Identity.Entity(source, EntityManager);
+        string name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
+
+        // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
+        var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
+            ("entityName", name),
+            ("entity", ent),
+            ("message", FormattedMessage.RemoveMarkupOrThrow(action)));
+
+        if (checkEmote)
+            TryEmoteChatInput(source, action);
+        SendInVoiceRange(ChatChannel.AntiGhost, action, wrappedMessage, wrappedMessage, source, range, author, ignoreLanguage: true);  // ADT Languages
+        if (!hideLog)
+            if (name != Name(source))
+                _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Erotic Emote from {ToPrettyString(source):user} as {name}: {action}");
+            else
+                _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Erotic Emote from {ToPrettyString(source):user}: {action}");
     }
 
     // ReSharper disable once InconsistentNaming
@@ -1080,6 +1122,7 @@ public enum InGameICChatType : byte
 {
     Speak,
     Emote,
+    AntiGhost,
     Whisper
 }
 

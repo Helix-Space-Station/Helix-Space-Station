@@ -41,6 +41,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Maths;
+using Content.Shared.Chat;
 
 namespace Content.Client.UserInterface.Systems.Chat;
 
@@ -83,6 +85,7 @@ public sealed class ChatUIController : UIController
         {SharedChatSystem.OOCPrefix, ChatSelectChannel.OOC},
         {SharedChatSystem.EmotesPrefix, ChatSelectChannel.Emotes},
         {SharedChatSystem.EmotesAltPrefix, ChatSelectChannel.Emotes},
+        {SharedChatSystem.AntiGhost, ChatSelectChannel.AntiGhost},
         {SharedChatSystem.AdminPrefix, ChatSelectChannel.Admin},
         {SharedChatSystem.RadioCommonPrefix, ChatSelectChannel.Radio},
         {SharedChatSystem.DeadPrefix, ChatSelectChannel.Dead}
@@ -96,6 +99,7 @@ public sealed class ChatUIController : UIController
         {ChatSelectChannel.LOOC, SharedChatSystem.LOOCPrefix},
         {ChatSelectChannel.OOC, SharedChatSystem.OOCPrefix},
         {ChatSelectChannel.Emotes, SharedChatSystem.EmotesPrefix},
+        {ChatSelectChannel.AntiGhost, SharedChatSystem.EmotesPrefix},
         {ChatSelectChannel.Admin, SharedChatSystem.AdminPrefix},
         {ChatSelectChannel.Radio, SharedChatSystem.RadioCommonPrefix},
         {ChatSelectChannel.Dead, SharedChatSystem.DeadPrefix}
@@ -531,6 +535,7 @@ public sealed class ChatUIController : UIController
             FilterableChannels |= ChatChannel.Whisper;
             FilterableChannels |= ChatChannel.Radio;
             FilterableChannels |= ChatChannel.Emotes;
+            FilterableChannels |= ChatChannel.AntiGhost; //SD-Tweak Я хочу кушать пожалуйста дайте мне хотя-бы батон хлеба я так заебался уафуауаааааааааааа
             FilterableChannels |= ChatChannel.Notifications;
 
             // Can only send local / radio / emote when attached to a non-ghost entity.
@@ -572,6 +577,8 @@ public sealed class ChatUIController : UIController
         CanSendChannelsChanged?.Invoke(CanSendChannels);
         FilterableChannelsChanged?.Invoke(FilterableChannels);
         SelectableChannelsChanged?.Invoke(SelectableChannels);
+
+
     }
 
     public void ClearUnfilteredUnreads(ChatChannel channels)
@@ -824,6 +831,12 @@ public sealed class ChatUIController : UIController
             var grammar = _ent.GetComponentOrNull<GrammarComponent>(_ent.GetEntity(msg.SenderEntity));
             if (grammar != null && grammar.ProperNoun == true)
                 msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
+        }
+
+        if (msg.Channel == ChatChannel.AntiGhost)
+        {
+            // https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5yqQDvUFSN2KGf25IDTfsS6n0-1BbpnQadg&s
+            msg.WrappedMessage = $"[color=#aa00ff][ERP][/color] {SharedChatSystem.GetStringInsideTag(msg, "Name")}: {msg.WrappedMessage}";
         }
 
         // Color any codewords for minds that have roles that use them
