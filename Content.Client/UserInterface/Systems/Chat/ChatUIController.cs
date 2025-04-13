@@ -36,13 +36,12 @@ using Robust.Shared.Configuration;
 using Robust.Shared.GameObjects.Components.Localization;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
+using Robust.Shared.Maths;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Robust.Shared.Maths;
-using Content.Shared.Chat;
 
 namespace Content.Client.UserInterface.Systems.Chat;
 
@@ -85,7 +84,7 @@ public sealed class ChatUIController : UIController
         {SharedChatSystem.OOCPrefix, ChatSelectChannel.OOC},
         {SharedChatSystem.EmotesPrefix, ChatSelectChannel.Emotes},
         {SharedChatSystem.EmotesAltPrefix, ChatSelectChannel.Emotes},
-        {SharedChatSystem.AntiGhost, ChatSelectChannel.AntiGhost},
+        {SharedChatSystem.AntiGhostPrefix, ChatSelectChannel.AntiGhost},
         {SharedChatSystem.AdminPrefix, ChatSelectChannel.Admin},
         {SharedChatSystem.RadioCommonPrefix, ChatSelectChannel.Radio},
         {SharedChatSystem.DeadPrefix, ChatSelectChannel.Dead}
@@ -99,7 +98,7 @@ public sealed class ChatUIController : UIController
         {ChatSelectChannel.LOOC, SharedChatSystem.LOOCPrefix},
         {ChatSelectChannel.OOC, SharedChatSystem.OOCPrefix},
         {ChatSelectChannel.Emotes, SharedChatSystem.EmotesPrefix},
-        {ChatSelectChannel.AntiGhost, SharedChatSystem.EmotesPrefix},
+        {ChatSelectChannel.AntiGhost, SharedChatSystem.AntiGhostPrefix},
         {ChatSelectChannel.Admin, SharedChatSystem.AdminPrefix},
         {ChatSelectChannel.Radio, SharedChatSystem.RadioCommonPrefix},
         {ChatSelectChannel.Dead, SharedChatSystem.DeadPrefix}
@@ -204,6 +203,9 @@ public sealed class ChatUIController : UIController
 
         _input.SetInputCommand(ContentKeyFunctions.FocusEmote,
             InputCmdHandler.FromDelegate(_ => FocusChannel(ChatSelectChannel.Emotes)));
+
+        _input.SetInputCommand(ContentKeyFunctions.FocusAntiGhost,
+            InputCmdHandler.FromDelegate(_ => FocusChannel(ChatSelectChannel.AntiGhost)));
 
         _input.SetInputCommand(ContentKeyFunctions.FocusWhisperChat,
             InputCmdHandler.FromDelegate(_ => FocusChannel(ChatSelectChannel.Whisper)));
@@ -546,6 +548,7 @@ public sealed class ChatUIController : UIController
                 CanSendChannels |= ChatSelectChannel.Whisper;
                 CanSendChannels |= ChatSelectChannel.Radio;
                 CanSendChannels |= ChatSelectChannel.Emotes;
+                CanSendChannels |= ChatSelectChannel.AntiGhost;
             }
         }
 
@@ -833,12 +836,6 @@ public sealed class ChatUIController : UIController
                 msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
         }
 
-        if (msg.Channel == ChatChannel.AntiGhost)
-        {
-            // https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5yqQDvUFSN2KGf25IDTfsS6n0-1BbpnQadg&s
-            msg.WrappedMessage = $"[color=#aa00ff][ERP][/color] {SharedChatSystem.GetStringInsideTag(msg, "Name")}: {msg.WrappedMessage}";
-        }
-
         // Color any codewords for minds that have roles that use them
         if (_player.LocalUser != null && _mindSystem != null && _roleCodewordSystem != null)
         {
@@ -853,24 +850,28 @@ public sealed class ChatUIController : UIController
         }
 
         // Start-ADT-Tweak: возможность выделять сообщения в чате
-        if (
-            (msg.Channel == ChatChannel.Radio || msg.Channel == ChatChannel.Local || msg.Channel == ChatChannel.Whisper)
+        if ((msg.Channel == ChatChannel.Radio || msg.Channel == ChatChannel.Local || msg.Channel == ChatChannel.Whisper)
             && _player.LocalEntity != null
-            && _ent.TryGetComponent<HighlightWordsInChatComponent>(_player.LocalEntity.Value, out var hlWords)
-        )
+            && _ent.TryGetComponent<HighlightWordsInChatComponent>(_player.LocalEntity.Value, out var hlWords))
         {
             foreach (var (color, locStrings) in hlWords.HighlightWords)
             {
                 foreach (var locString in locStrings)
                 {
                     var message = Loc.GetString(locString);
-                    if (SharedChatSystem.MessageTextContains(msg, message)) {
+                    if (SharedChatSystem.MessageTextContains(msg, message))
+                    {
                         msg.WrappedMessage = SharedChatSystem.InjectTagAroundString(msg, message, "color", color);
                     }
                 }
             }
         }
         // End-ADT-Tweak
+
+        if (msg.Channel == ChatChannel.AntiGhost)
+        {
+            msg.WrappedMessage = "[ERP]" + SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
+        }
 
         // Log all incoming chat to repopulate when filter is un-toggled
         if (!msg.HideChat)

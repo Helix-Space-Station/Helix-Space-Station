@@ -19,6 +19,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Maths;
 using Content.Shared.ADT.CCVar;
 using Content.Server.Discord;
 using Content.Shared.Ghost;
@@ -98,7 +100,7 @@ internal sealed partial class ChatManager : IChatManager
         _netManager.ServerSendToAll(msg);
     }
 
-        public void SendERPMessage(EntityUid source, string message, float range)
+        public void SendAntiGhostMessage(EntityUid source, string message, float range)
         {
             var sourceTransform = _entityManager.GetComponent<TransformComponent>(source);
             var filter = Filter.Entities()
@@ -111,9 +113,10 @@ internal sealed partial class ChatManager : IChatManager
                     var distance = (transform.Coordinates.Position - sourceTransform.Coordinates.Position).Length();
                     return distance <= range && !_entityManager.HasComponent<GhostComponent>(entityUid);
                 });
-            ChatMessageToManyFiltered(filter, ChatChannel.AntiGhost, message, message, source, false, true);
+            var name = _entityManager.GetComponentOrNull<MetaDataComponent>(source)?.EntityName ?? "Unknown";
+            var wrappedMessage = $"{name} {FormattedMessage.EscapeText(message)}";
+            ChatMessageToManyFiltered(filter, ChatChannel.AntiGhost, message, wrappedMessage, source, false, true);
         }
-    // SD-Tweak
 
     [return: NotNullIfNotNull(nameof(author))]
     public ChatUser? EnsurePlayer(NetUserId? author)

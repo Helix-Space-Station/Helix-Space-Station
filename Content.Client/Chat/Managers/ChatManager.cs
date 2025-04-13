@@ -61,7 +61,7 @@ internal sealed class ChatManager : IChatManager
                 break;
 
             case ChatSelectChannel.AntiGhost:
-                _consoleHost.ExecuteCommand($"ag \"{CommandParsing.Escape(str)}\"");
+                _consoleHost.ExecuteCommand($"AntiGhost \"{CommandParsing.Escape(str)}\"");
                 break;
             // SD-Tweak
 
