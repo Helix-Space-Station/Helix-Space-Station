@@ -870,7 +870,13 @@ public sealed class ChatUIController : UIController
 
         if (msg.Channel == ChatChannel.AntiGhost)
         {
-            msg.WrappedMessage = "[ERP]" + SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
+            msg.WrappedMessage = $"[color=#aa00ff]AntiGhost[/color] {msg.WrappedMessage}";
+        }
+
+        if (msg.Channel == ChatChannel.Emotes)
+        {
+
+            msg.WrappedMessage = $"[i]{msg.WrappedMessage}[/i]";
         }
 
         // Log all incoming chat to repopulate when filter is un-toggled
@@ -908,7 +914,6 @@ public sealed class ChatUIController : UIController
             case ChatChannel.Dead:
                 if (_ghost is not {IsGhost: true})
                     break;
-
                 AddSpeechBubble(msg, SpeechBubble.SpeechType.Say);
                 break;
 

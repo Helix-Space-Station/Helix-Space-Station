@@ -100,7 +100,7 @@ internal sealed partial class ChatManager : IChatManager
         _netManager.ServerSendToAll(msg);
     }
 
-        public void SendAntiGhostMessage(EntityUid source, string message, float range)
+        public void SendAntiGhostMessage(EntityUid source, string message, float range, bool hideLog = false)
         {
             var sourceTransform = _entityManager.GetComponent<TransformComponent>(source);
             var filter = Filter.Entities()
