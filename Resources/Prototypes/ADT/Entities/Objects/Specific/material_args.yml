@@ -60,25 +60,22 @@
                     collection: GenericHit
             - actionsNeeds:
                 - Hit
+                - Disarm
                 - Hit
               comboEvent:
                 - !type:ComboMoreDamageToDownedEffect
                   damage:
                     types:
-                      Blunt: 20
+                      Blunt: 15
                 - !type:ComboPopupEffect
                   localeText: combo-cqc-kick-end
                 - !type:ComboDamageEffect
                   damage:
                     types:
                       Blunt: 15
-                - !type:ComboStunEffect
-                  stunTime: 2
-                  dropItems: false
                 - !type:ComboAudioEffect
                   sound:
                     collection: GenericHit
-                - !type:ComboTrowTargetEffect
             - actionsNeeds:
                 - Disarm
                 - Grab

@@ -617,7 +617,7 @@
   description: uplink-invisible-cloak-desc
   productEntity: ADTClothingNeckInvisibleCloak
   cost:
-    Telecrystal: 5
+    Telecrystal: 15
   categories:
     - UplinkWearables
 
@@ -702,9 +702,9 @@
   productEntity: ADTCqcManual
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 13
   cost:
-    Telecrystal: 5
+    Telecrystal: 15
   categories:
   - UplinkWeaponry
 
