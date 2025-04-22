@@ -60,13 +60,13 @@
                     collection: GenericHit
             - actionsNeeds:
                 - Hit
-                - Disarm
+                - Disarm # SD-Tweak
                 - Hit
               comboEvent:
                 - !type:ComboMoreDamageToDownedEffect
                   damage:
                     types:
-                      Blunt: 15
+                      Blunt: 20
                 - !type:ComboPopupEffect
                   localeText: combo-cqc-kick-end
                 - !type:ComboDamageEffect
@@ -76,6 +76,9 @@
                 - !type:ComboAudioEffect
                   sound:
                     collection: GenericHit
+                - !type:ComboStunEffect
+                  stunTime: 0.5 # SD-Tweak
+                - !type:ComboTrowTargetEffect
             - actionsNeeds:
                 - Disarm
                 - Grab
