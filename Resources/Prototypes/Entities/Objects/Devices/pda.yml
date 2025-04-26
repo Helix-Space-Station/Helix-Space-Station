@@ -106,6 +106,8 @@
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
         type: HealthAnalyzerBoundUserInterface
+      enum.GasAnalyzerUiKey.Key: # SD Elf Atmos
+        type: GasAnalyzerBoundUserInterface
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -152,6 +154,21 @@
       - ADTWalletCartridge # ADT-Economy
     diskSpace: 8 # ADT tweak
 
+- type: entity # SD Elf Atmos
+  parent: BasePDA
+  id: BaseEngineerPDA
+  abstract: true
+  components:
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - AtmoTechCartridge
+      - ADTWalletCartridge # ADT-Economy
+    diskSpace: 8 # ADT tweak
+
 - type: entity
   parent: BasePDA
   id: PassengerPDA
@@ -164,7 +181,7 @@
     borderColor: "#717059"
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: TechnicalAssistantPDA
   name: technical assistant PDA
   description: Why isn't it yellow?
@@ -667,7 +684,7 @@
     state: pda-hop
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: CEPDA
   name: chief engineer PDA
   description: Looks like it's barely been used.
@@ -694,7 +711,7 @@
     state: pda-ce
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: EngineerPDA
   name: engineer PDA
   description: Rugged and well-worn.
@@ -1036,7 +1053,7 @@
     - DoorBumpOpener
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: AtmosPDA
   name: atmos PDA
   description: Still smells like plasma.
@@ -1163,6 +1180,18 @@
   components:
   - type: Pda
     id: ERTEngineerIDCard
+  - type: CartridgeLoader # SD Elf Atmos
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - WantedListCartridge
+      - AstroNavCartridge
+      - AtmoTechCartridge
+      - ADTWalletCartridge # ADT-Economy
+    diskSpace: 8 # ADT tweak
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1380,7 +1409,7 @@
   - type: Unremoveable
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: SeniorEngineerPDA
   name: senior engineer PDA
   description: Seems to have been taken apart and put back together several times.

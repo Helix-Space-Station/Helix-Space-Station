@@ -126,6 +126,7 @@
     contents:
         - id: OxygenTankFilled
         - id: ADTClothingModsuitBackAtmos #ADT tweak
+        - id: SDClothingShoesBootsMagAtmos #SD tweak
         - id: ClothingMaskBreath
   - type: AccessReader
     access: [["Atmospherics"]]
