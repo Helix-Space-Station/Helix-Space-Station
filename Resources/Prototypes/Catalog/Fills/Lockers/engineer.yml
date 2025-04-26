@@ -87,7 +87,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ADTClothingModsuitBackAtmos #ADT tweak
+      - id: ClothingOuterHardsuitAtmos
       - id: ClothingMaskGasAtmos
       - id: ClothingOuterSuitAtmosFire
       - id: ClothingHeadHelmetAtmosFire
@@ -106,7 +106,7 @@
       - id: RCD
       - id: RCDAmmo
       - id: ClothingHandsGlovesColorYellow
-      - id: SDClothingShoesBootsMagAtmos
+      - id: ClothingShoesBootsMagAtmos
   # SD-ElfAtmos-End
 
 
@@ -144,7 +144,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ADTClothingModsuitBackEngineering #ADT tweak
+      - id: ClothingOuterHardsuitEngineering
       - id: ClothingHandsGlovesColorYellow
       - id: ClothingMaskGas
       - id: ClothingShoesBootsMag
