@@ -189,6 +189,10 @@
         - !type:ReagentThreshold
           reagent: Healium
           min: 1
+        - !type:ReagentThreshold
+          reagent: Nitrium
+          min: 1
+          not: true
         key: ForcedSleep
         component: ForcedSleeping
         refresh: false
