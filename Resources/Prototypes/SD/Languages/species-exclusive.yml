@@ -1,7 +1,6 @@
-# Spoken by the Elf
+# Spoken by the elves.
 - type: language
   id: Sindarin
-  roundstart: true
   uiColor: "#297187"
   parent: BaseVocalLanguage
   speech: !type:Generic
