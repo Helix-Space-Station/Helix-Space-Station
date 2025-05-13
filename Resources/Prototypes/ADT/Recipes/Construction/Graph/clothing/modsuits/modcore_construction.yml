@@ -1,4 +1,4 @@
-﻿- type: constructionGraph
+- type: constructionGraph
   id: ADTModsuitAssembled
   start: start
   graph:
@@ -20,13 +20,6 @@
         - !type:VisualizerDataInt
           key: "enum.MechAssemblyVisuals.State"
           data: 2
-
-      - component: PowerCell
-        name: battery
-        store: battery-container
-        icon:
-          sprite: Objects/Power/power_cells.rsi
-          state: small
 
       - tag: ADTModsuitHelmet
         name: MOD helmet
@@ -76,5 +69,7 @@
 
   - node: adtmodsuitassembled
     actions:
-    - !type:BuildMech
-      mechPrototype: ADTModsuitAssembled
+      - !type:SpawnPrototype
+        prototype: ADTModsuitAssembled
+        amount: 1
+      - !type:DeleteEntity {}
