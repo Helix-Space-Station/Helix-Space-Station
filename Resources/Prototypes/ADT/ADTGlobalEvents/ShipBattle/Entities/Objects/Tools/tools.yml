@@ -92,6 +92,7 @@
     - HVCable
     - CableTerminal
     - MachineFrame # SD tweak
+    - ComputerFrame # SD tweak
     - Deconstruct
   - type: Sprite
     sprite: ADT/ADTGlobalEvents/ShipBattle/Objects/Tools/rcd_tsf.rsi
