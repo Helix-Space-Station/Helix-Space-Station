@@ -113,7 +113,6 @@
     - Sheet
     - NoPaint #ADT tweak
 
-
 - type: entity
   parent: SheetPlasma
   id: SheetPlasma10
@@ -176,8 +175,6 @@
         - ReagentId: Phosphorus
           Quantity: 5
         canReact: false
-
-
 
 - type: entity
   parent: SheetPlastic
