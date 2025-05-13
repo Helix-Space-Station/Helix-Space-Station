@@ -29,9 +29,9 @@
   - IPCTranslator
   - DwarfTranslator
   - SindarinTranslator # SD-tweak
-  position: 4,2
+  position: 3,2
   requiredTech:
-  - ADTMedicalMODsuit
+  - ADTServiceMODsuitMODs
 
 - type: technology
   id: AdvancedTranslation
@@ -67,6 +67,6 @@
   - BorgTranslatorImplanter
   - DwarfTranslatorImplanter
   - SindarinTranslatorImplanter # SD-tweak
-  position: 5,3
+  position: 4,2
   requiredTech:
   - BasicTranslation
