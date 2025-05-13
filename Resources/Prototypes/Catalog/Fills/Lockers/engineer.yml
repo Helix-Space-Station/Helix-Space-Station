@@ -87,7 +87,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterHardsuitAtmos
+      - id: ADTClothingModsuitBackAtmos #ADT tweak
       - id: ClothingMaskGasAtmos
       - id: ClothingOuterSuitAtmosFire
       - id: ClothingHeadHelmetAtmosFire
@@ -144,7 +144,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterHardsuitEngineering
+      - id: ADTClothingModsuitBackEngineering #ADT tweak
       - id: ClothingHandsGlovesColorYellow
       - id: ClothingMaskGas
       - id: ClothingShoesBootsMag

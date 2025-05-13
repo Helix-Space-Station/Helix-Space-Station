@@ -15,7 +15,6 @@
   - ADTModsuitPlateStandard
   - ADTModsuitHelmet
   - ADTModsuitPlateCience
-  - ADTModsuitCoreEnergy # SD tweak
   position: 0,-1
   requiredTech:
   - MagnetsTech

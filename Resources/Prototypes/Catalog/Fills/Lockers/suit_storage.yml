@@ -111,7 +111,7 @@
     contents:
         - id: OxygenTankFilled
         - id: ClothingShoesBootsMag
-        - id: ClothingOuterHardsuitEngineering
+        - id: ADTClothingModsuitBackEngineering #ADT tweak
         - id: ClothingMaskBreath
   - type: AccessReader
     access: [["Engineering"]]
@@ -125,7 +125,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitAtmos
+        - id: ADTClothingModsuitBackAtmos #ADT tweak
         - id: ClothingShoesBootsMagAtmos #SD tweak
         - id: ClothingMaskBreath
   - type: AccessReader
@@ -140,7 +140,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitSecurity
+        - id: ADTClothingModsuitBackSecurity #ADT tweak
         - id: ClothingMaskBreath
   - type: AccessReader
     access: [["Security"]]
