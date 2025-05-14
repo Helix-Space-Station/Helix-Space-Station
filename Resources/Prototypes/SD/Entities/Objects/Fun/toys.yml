@@ -75,23 +75,3 @@
   - type: EmitSoundOnTrigger
     sound:
       path: /Audio/Effects/Cargo/ping.ogg
-
-- type: entity
-  parent: BasePlushie
-  id: SDPlushieAmetist
-  name: Ametist plushie
-  description: wow.
-  components:
-  - type: Sprite
-    sprite: SD/Objects/Fun/toys.rsi
-    state: plush_ametist
-
-- type: entity
-  parent: BasePlushie
-  id: SDPlushieDirk
-  name: Dirk plushie
-  description: wow.
-  components:
-  - type: Sprite
-    sprite: SD/Objects/Fun/toys.rsi
-    state: plush_dirk
