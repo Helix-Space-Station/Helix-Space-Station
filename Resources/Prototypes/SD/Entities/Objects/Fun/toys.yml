@@ -96,3 +96,9 @@
   - type: Sprite
     sprite: SD/Objects/Fun/toys.rsi
     state: plush_dirk
+  - type: AmbientSound
+    enabled: true
+    volume: -6
+    range: 7
+    sound:
+      path: /Audio/Items/Toys/beatdownDirk.ogg
