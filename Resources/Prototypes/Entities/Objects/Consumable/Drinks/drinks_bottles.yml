@@ -1012,7 +1012,7 @@
         maxVol: 150
   - type: Drink
 
-  - type: entity
+- type: entity
   parent: DrinkBottlePlasticBaseFull
   id: DrinkKvasBottleFull
   name: бутылка кваса
@@ -1027,4 +1027,3 @@
   - type: Drink
   - type: Sprite
     sprite: Objects/Consumable/Drinks/kvasbottle.rsi
-
