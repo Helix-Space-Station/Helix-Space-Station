@@ -191,7 +191,7 @@
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/ADT/Mecha/tank.ogg
-    - type: Fixtures
+  - type: Fixtures
     fixtures:
       fix1:
         shape:
