@@ -22,10 +22,11 @@
           bounds: "-0.9, -1.3, 0.9, 1.3"
         density: 1000
         mask:
-        - MobMask
-        - AllMask
+        - FullTileMask
         layer:
-        - MachineLayer
+        - WallLayer
+  - type: Physics
+    bodyType: Dynamic
   - type: Mech
     startingEquipment: ["ADTMechGunSRM8","ADTMechGunUltraAC2"]
     modifiers:
@@ -110,10 +111,11 @@
           bounds: "-0.9, -1.3, 0.9, 1.3"
         density: 1000
         mask:
-        - MobMask
-        - AllMask
+        - FullTileMask
         layer:
-        - MachineLayer
+        - WallLayer
+  - type: Physics
+    bodyType: Dynamic
   - type: Mech
     modifiers:
       coefficients: #Коэффициент для тяжелобронированных мехов
@@ -189,7 +191,7 @@
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/ADT/Mecha/tank.ogg
-  - type: Fixtures
+    - type: Fixtures
     fixtures:
       fix1:
         shape:
@@ -197,10 +199,11 @@
           bounds: "-0.9, -1.3, 0.9, 1.3"
         density: 1000
         mask:
-        - MobMask
-        - AllMask
+        - FullTileMask
         layer:
-        - MachineLayer
+        - WallLayer
+  - type: Physics
+    bodyType: Dynamic
   - type: Mech
     modifiers:
       coefficients: #Коэффициент для тяжелобронированных мехов
