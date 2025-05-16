@@ -43,12 +43,12 @@ public sealed partial class JukeboxMenu : FancyWindow
 
         MusicList.OnItemSelected += args =>
         {
-            var entry = MusicList[args.ItemIndex];
-
-            if (entry.Metadata is not string juke)
-                return;
-
-            OnSongSelected?.Invoke(juke);
+            var metadata = MusicList[args.ItemIndex].Metadata;
+            Logger.Debug($"Выбрана песня: {metadata}");
+            if (metadata is ProtoId<JukeboxPrototype> songId)
+            {
+                OnSongSelected?.Invoke(songId);
+            }
         };
 
         PlayButton.OnPressed += args =>
