@@ -105,6 +105,7 @@ public sealed partial class JukeboxMenu : FancyWindow
             return;
 
         var filter = SearchBar.Text.Trim().ToLowerInvariant();
+        
         MusicList.Clear();
 
         foreach (var (name, id) in _allSongs)
