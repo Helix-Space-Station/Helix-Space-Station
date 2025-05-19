@@ -1,9 +1,0 @@
-- type: cargoProduct
-  id: FunDakis
-  icon:
-    sprite: Sirena/Objects/Fun/daki.rsi
-    state: ian
-  product: VendingMachinePillowmat
-  cost: 3000
-  category: Fun
-  group: market
