@@ -634,6 +634,12 @@
     Telecrystal: 5
   categories:
     - UplinkWearables
+    - UplinkContractor
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink # SD-Tweak
 
 - type: listing
   id: ADTUplinkNightVision
@@ -644,6 +650,7 @@
     Telecrystal: 5
   categories:
     - UplinkWearables
+    - UplinkContractor
 
 - type: listing
   id: ADTUplinkThermalVision
