@@ -2168,15 +2168,17 @@
     - Chef
     - Mime
 
+  # sd-tweak-start
 - type: listing
-  id: UplinkSmugglerSatchel
-  name: uplink-smuggler-satchel-name
-  description: uplink-smuggler-satchel-desc
-  productEntity: ClothingBackpackSatchelSmugglerUnanchored
+  id: UplinkClothingOuterVestSyndReflect
+  name: uplink-reflector-vest-name
+  description: uplink-reflector-vest-desc
+  productEntity: ClothingOuterVestSyndReflect
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 6
   cost:
-    Telecrystal: 2
+    Telecrystal: 4
   categories:
-  - UplinkDeception
+  - UplinkWearables
+  # sd-tweak-end

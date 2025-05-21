@@ -28,8 +28,7 @@ namespace Content.Client.VendingMachines.UI
         // ADT vending eject count end
         public VendingMachineMenu()
         {
-            MinSize = new Vector2(250, 150); // Corvax-Resize
-            SetSize = new Vector2(450, 150); // Corvax-Resize
+            MinSize = SetSize = new Vector2(330, 440);
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
 
@@ -133,7 +132,7 @@ namespace Content.Client.VendingMachines.UI
 
                 MainContainer.AddChild(outOfStockLabel);
 
-                SetSizeAfterUpdate(outOfStockLabel.Text.Length, 0);
+                //SetSizeAfterUpdate(outOfStockLabel.Text.Length, 0);
 
                 return;
             }
@@ -181,14 +180,14 @@ namespace Content.Client.VendingMachines.UI
 
             VendingContents.PopulateList(listData);
 
-            SetSizeAfterUpdate(longestEntry.Length, inventory.Count);
+            // SetSizeAfterUpdate(longestEntry.Length, inventory.Count); ПОШЕЛ НАХУЙ
         }
 
-        private void SetSizeAfterUpdate(int longestEntryLength, int contentCount)
-        {
-            SetSize = new Vector2(Math.Clamp((longestEntryLength + 2) * 12, 250, 400),
-                Math.Clamp(contentCount * 50, 150, 350));
-        }
+        //private void SetSizeAfterUpdate(int longestEntryLength, int contentCount)
+        //{
+        //    SetSize = new Vector2(Math.Clamp((longestEntryLength + 2) * 12, 890, 450),
+        //       Math.Clamp(contentCount * 50, 100, 500));*/
+        //}
     }
 
 }

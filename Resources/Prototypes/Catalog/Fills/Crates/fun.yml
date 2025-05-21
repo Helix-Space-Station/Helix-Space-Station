@@ -355,6 +355,7 @@
       - id: BeachBall
       - id: ClothingShoesSkates
       - id: RubberChicken
+      - id: RubberPig # SD tweak, Corvax tweak
       #ADT tweak start
       - id: FunnyPaint
         orGroup: Paint

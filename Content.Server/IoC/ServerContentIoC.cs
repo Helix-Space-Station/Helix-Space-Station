@@ -91,6 +91,7 @@ namespace Content.Server.IoC
             IoCManager.Register<ConnectionManager>();
             IoCManager.Register<MultiServerKickManager>();
             IoCManager.Register<CVarControlManager>();
+            // IoCManager.Register<PlayerSpawnItemSystem>();
         }
     }
 }

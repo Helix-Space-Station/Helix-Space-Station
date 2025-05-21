@@ -631,10 +631,11 @@
   description: uplink-invisible-cloak-desc
   productEntity: ADTClothingNeckInvisibleCloak
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
     - UplinkWearables
     - UplinkContractor
+
   conditions:
   - !type:StoreWhitelistCondition
     blacklist:
@@ -731,11 +732,11 @@
   name: uplink-cqc-name
   description: uplink-cqc-desc
   productEntity: ADTCqcManual
-  discountCategory: usualDiscounts
+  discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 2
-  cost:
     Telecrystal: 5
+  cost:
+    Telecrystal: 10
   categories:
   - UplinkWeaponry
 
