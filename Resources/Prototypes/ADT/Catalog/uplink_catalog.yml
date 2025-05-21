@@ -478,25 +478,25 @@
     - Mime
     - Passenger
 
-- type: listing
-  id: ADTuplinkStraightRazor
-  name: uplink-ADT-straight-razor-name
-  description: uplink-ADT-straight-razor-desc
-  productEntity: ADTStraightRazor
-  cost:
-    Telecrystal: 3
-  categories:
-  - UplinkJob
-  conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - ADTBarber
+# - type: listing
+#   id: ADTuplinkStraightRazor
+#   name: uplink-ADT-straight-razor-name
+#   description: uplink-ADT-straight-razor-desc
+#   productEntity: ADTStraightRazor
+#   cost:
+#     Telecrystal: 3
+#   categories:
+#   - UplinkJob
+#   conditions:
+#   - !type:BuyerJobCondition
+#     whitelist:
+#     - ADTBarber
 
 - type: listing
   id: ADTuplinkMuteToxin
   name: uplink-mute-toxin-name
   description: uplink-mute-toxin-desc
-  productEntity: MuteToxinChemistryBottle
+  productEntity: ChemistryBottleMuteToxin
   cost:
     Telecrystal: 2
   categories:
@@ -631,15 +631,30 @@
   description: uplink-invisible-cloak-desc
   productEntity: ADTClothingNeckInvisibleCloak
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
     - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink # SD-Tweak
 
 - type: listing
   id: ADTUplinkNightVision
   name: uplink-night-vision-name
   description: uplink-night-vision-desc
   productEntity: ClothingEyesNightVision
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkWearables
+
+- type: listing
+  id: ADTUplinkThermalVision
+  name: uplink-thermal-name
+  description: uplink-thermal-desc
+  productEntity: ClothingEyesGlassesThermal
   cost:
     Telecrystal: 5
   categories:
@@ -714,11 +729,11 @@
   name: uplink-cqc-name
   description: uplink-cqc-desc
   productEntity: ADTCqcManual
-  discountCategory: usualDiscounts
+  discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 2
-  cost:
     Telecrystal: 5
+  cost:
+    Telecrystal: 10
   categories:
   - UplinkWeaponry
 
@@ -764,6 +779,20 @@
   categories:
   - UplinkWearables
 
+- type: listing
+  id: ADTUplinkKravMaga
+  name: uplink-cravmaga-name
+  description: uplink-cravmaga-description
+  icon: { sprite: /Textures/ADT/Clothing/Hands/Gloves/kravgloves.rsi, state: icon }
+  productEntity: ADTClothingHandsGlovesKravMagaChameleon
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkWearables
+
 ## Disruption
 - type: listing
   id: UplinkNuclearPhysicistKit
@@ -789,3 +818,14 @@
     Telecrystal: 6
   categories:
     - UplinkAllies
+
+- type: listing
+  id: UplinkSyndicateSupermatterScalpel
+  name: uplink-supermatter-scalpel-name
+  description: uplink-supermatter-scalpel-desc
+  productEntity: ADTSupermatterScalpel
+  categories:
+    - UplinkDisruption
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
