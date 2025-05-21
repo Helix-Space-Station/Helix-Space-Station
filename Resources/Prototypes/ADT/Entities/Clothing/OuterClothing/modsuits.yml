@@ -489,11 +489,11 @@
     staminaModifier: 0.3
   - type: ClothingSpeedModifier
     walkModifier: 1
-    sprintModifier: 1
+    sprintModifier: 1.1
   - type: TemperatureProtection
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
   - type: ExplosionResistance
-    damageCoefficient: 0.1
+    damageCoefficient: 0.6
   - type: FireProtection
     reduction: 1
