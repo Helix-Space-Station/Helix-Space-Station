@@ -478,19 +478,19 @@
     - Mime
     - Passenger
 
-- type: listing
-  id: ADTuplinkStraightRazor
-  name: uplink-ADT-straight-razor-name
-  description: uplink-ADT-straight-razor-desc
-  productEntity: ADTStraightRazor
-  cost:
-    Telecrystal: 3
-  categories:
-  - UplinkJob
-  conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - ADTBarber
+# - type: listing
+#   id: ADTuplinkStraightRazor
+#   name: uplink-ADT-straight-razor-name
+#   description: uplink-ADT-straight-razor-desc
+#   productEntity: ADTStraightRazor
+#   cost:
+#     Telecrystal: 3
+#   categories:
+#   - UplinkJob
+#   conditions:
+#   - !type:BuyerJobCondition
+#     whitelist:
+#     - ADTBarber
 
 - type: listing
   id: ADTuplinkMuteToxin
@@ -634,6 +634,8 @@
     Telecrystal: 10
   categories:
     - UplinkWearables
+    - UplinkContractor
+
   conditions:
   - !type:StoreWhitelistCondition
     blacklist:
@@ -645,6 +647,17 @@
   name: uplink-night-vision-name
   description: uplink-night-vision-desc
   productEntity: ClothingEyesNightVision
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkWearables
+    - UplinkContractor
+
+- type: listing
+  id: ADTUplinkThermalVision
+  name: uplink-thermal-name
+  description: uplink-thermal-desc
+  productEntity: ClothingEyesGlassesThermal
   cost:
     Telecrystal: 5
   categories:
@@ -766,6 +779,20 @@
     Telecrystal: 6
   cost:
     Telecrystal: 12
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: ADTUplinkKravMaga
+  name: uplink-cravmaga-name
+  description: uplink-cravmaga-description
+  icon: { sprite: /Textures/ADT/Clothing/Hands/Gloves/kravgloves.rsi, state: icon }
+  productEntity: ADTClothingHandsGlovesKravMagaChameleon
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
   categories:
   - UplinkWearables
 
