@@ -7,7 +7,7 @@
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    sprite: Objects/Specific/Mech/tank.rsi
+    sprite: SD/Entities/Fun/tank.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: vattank
@@ -96,7 +96,7 @@
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    sprite: Objects/Specific/Mech/tank.rsi
+    sprite: SD/Entities/Fun/tank.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: t34tank
@@ -184,7 +184,7 @@
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    sprite: Objects/Specific/Mech/tank.rsi
+    sprite: SD/Entities/Fun/tank.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: tigertank
