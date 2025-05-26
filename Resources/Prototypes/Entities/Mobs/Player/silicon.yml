@@ -67,6 +67,7 @@
         toggleAction: ActionStationAiCommunications
       enum.AtmosAlertsComputerUiKey.Key:
         toggleAction: ActionStationAiAtmosphericAlerts
+  - type: AtmosAlertsComputer
     # ADT End
   - type: CrewMonitoringConsole
   - type: GeneralStationRecordConsole
@@ -513,6 +514,7 @@
       CintaTaj: Speak
       SiliconCollectiveMind: Speak
       NeoRusskiya: Speak
+      # Sindrin: Speak # SD-tweak
   - type: CollectiveMindRank
     rankName: collective-mind-sai-rank
   - type: StationAiBrain
