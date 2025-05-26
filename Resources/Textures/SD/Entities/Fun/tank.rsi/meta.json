@@ -1,0 +1,43 @@
+{
+  "copyright" : "Sprites by Log_Dog",
+  "license" : "CC-BY-SA-3.0",
+  "version": 1,
+  "size": {
+    "x": 128,
+    "y": 128
+  },
+    "states": [
+        {
+            "name": "vattank",
+            "directions": 4
+        },
+        {
+            "name": "vattank-open",
+            "directions": 4
+        },
+        {
+            "name": "t34tank",
+            "directions": 4
+        },
+        {
+            "name": "t34tank-open",
+            "directions": 4
+        },
+        {
+            "name": "t34tank-broken",
+            "directions": 4
+        },
+        {
+            "name": "tigertank",
+            "directions": 4
+        },
+        {
+            "name": "tigertank-open",
+            "directions": 4
+        },
+        {
+            "name": "tigertank-broken",
+            "directions": 4
+        }
+    ]
+}
