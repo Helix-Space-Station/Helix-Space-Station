@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Made by Tamioki(discord). Vox states by Flareguy for Space Station 14",
+  "copyright": "Created by discord:SOL(Артур)#8162. Vox states by Flareguy for Space Station 14",
   "size": {
     "x": 32,
     "y": 32
@@ -14,23 +14,19 @@
       "name": "icon-flash"
     },
     {
-      "name": "equipped-HELMET",
+      "name": "off-equipped-HELMET",
       "directions": 4
     },
     {
-      "name": "equipped-HELMET-unshaded",
+      "name": "off-equipped-HELMET-vox",
       "directions": 4
     },
     {
-      "name": "equipped-HELMET-vox",
+      "name": "on-equipped-HELMET",
       "directions": 4
     },
     {
-      "name": "equipped-HELMET-light",
-      "directions": 4
-    },
-    {
-      "name": "equipped-HELMET-vulp",
+      "name": "on-equipped-HELMET-vox",
       "directions": 4
     }
   ]
