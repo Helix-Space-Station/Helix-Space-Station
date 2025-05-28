@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: SDClothingNeckPinGerman
+  name: german pin
+  description: Just a pin with German flag
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: SD/Clothing/Neck/Misc/german_pin.rsi
+  - type: Clothing
+    sprite: SD/Clothing/Neck/Misc/german_pin.rsi
+
