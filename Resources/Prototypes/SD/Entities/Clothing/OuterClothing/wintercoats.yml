@@ -8,3 +8,24 @@
     sprite: SD/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
   - type: Clothing
     sprite: SD/Clothing/OuterClothing/WinterCoats/coatwardenarmored.rsi
+
+- type: entity
+  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband, ClothingOuterArmorBasic, BadgeOnClothingWithContainer]
+  id: SDClothingOuterCoatSkipper
+  name: флотский китель пилота
+  description: Китель, сшитый специально для шкиперов.
+  components:
+  - type: Sprite
+    sprite: SD/Clothing/OuterClothing/WinterCoats/skippercoat.rsi
+  - type: Clothing
+    sprite: SD/Clothing/OuterClothing/WinterCoats/skippercoat.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      badge: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null

@@ -12,3 +12,26 @@
   - ChiefEngineerBackpack
   - ChiefEngineerSatchel
   - ChiefEngineerDuffel
+
+# Pilot SD tweaks start
+
+- type: loadoutGroup
+  id: FleetPilotHat
+  name: loadout-group-pilot-hat
+  loadouts:
+  - SDClothingHeadHatSkipper
+
+- type: loadoutGroup
+  id: FleetPilotUniform
+  name: loadout-group-pilot-jumpsuit
+  loadouts:
+  - ClothingUniformJumpsuitSkipper
+  - SecurityJumpsuit
+
+- type: loadoutGroup
+  id: FleetPilotCoat
+  name: loadout-group-pilot-coat
+  loadouts:
+  - SDClothingOuterCoatSkipper
+
+  # Pilot SD tweaks end
