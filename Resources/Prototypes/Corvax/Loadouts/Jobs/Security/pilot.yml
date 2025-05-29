@@ -1,0 +1,14 @@
+- type: loadout
+  id: SkipperPilotHat
+  equipment:
+    head: SDClothingHeadHatSkipper
+
+- type: loadout
+  id: SkipperPilotUniform
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSkipper
+
+- type: loadout
+  id: SkipperPilotCoat
+  equipment:
+    outerClothing: SDClothingOuterCoatSkipper

@@ -5,6 +5,8 @@
   maxLimit: 5
   loadouts: []
 
+
+
 - type: loadoutGroup
   id: ChiefEngineerBackpack
   name: loadout-group-chief-engineer-backpack
@@ -12,3 +14,37 @@
   - ChiefEngineerBackpack
   - ChiefEngineerSatchel
   - ChiefEngineerDuffel
+
+  #SD start
+
+- type: loadoutGroup
+  id: PilotJumpsuit
+  name: Пилот, комбинезон
+  loadouts: 
+  - SecurityJumpsuit
+  - SecurityJumpskirt
+  - SecurityJumpsuitGrey
+  - SecurityJumpskirtGrey
+  - SkipperPilotUniform
+
+- type: loadoutGroup
+  id: PilotHat
+  name: Пилот, голова
+  loadouts: 
+  - SecurityHelmet
+  - SecurityBeret
+  - SecurityHat
+  - SkipperPilotHat
+
+- type: loadoutGroup
+  id: PilotOuter
+  name: Пилот, верхняя одежда
+  loadouts:
+  - ArmorVestSec # Corvax
+  - ArmorVest
+  - ArmorVestSlim
+  - SecurityOfficerWintercoat
+  - ADTArmorVestHidden #ADT-Loadout
+  - SkipperPilotCoat
+
+  #SD end

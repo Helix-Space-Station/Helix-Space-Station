@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSkipper
+  name: флотская униформа пилота
+  description: Униформа для реальных флотских мужчин.
+  components:
+    - type: Sprite
+      sprite: SD/Clothing/Uniforms/jumpsuit/skipper_shirt.rsi
+    - type: Clothing
+      sprite: SD/Clothing/Uniforms/jumpsuit/skipper_shirt.rsi

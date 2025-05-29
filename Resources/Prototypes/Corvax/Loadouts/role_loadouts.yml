@@ -19,10 +19,11 @@
   id: JobPilot
   groups:
   - Inventory # Corvax-Loadouts
-  - SecurityJumpsuit
+  - PilotJumpsuit #SD
   - SecurityOfficerNeckADT # ADT-Loadouts
   - SecurityBackpack
-  - SecurityOuterClothing
+  - PilotOuter #SD
+  - PilotHat #SD
   - SecurityBelt
   - SecurityShoes
   - SurvivalSecurity # ADT fix
