@@ -58,6 +58,7 @@
     - PinpointerNuclear
     - HandheldGPSBasic
     - HandHeldMassScanner
+    - ADTCqcManual
     belt:
     - ADTCombatHypospray
     - WeaponTaser
