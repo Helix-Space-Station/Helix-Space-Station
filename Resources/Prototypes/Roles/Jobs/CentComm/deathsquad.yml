@@ -52,6 +52,12 @@
     - ADTAttachmentVerticalGrip
     - ADTAttachmentAntiLyingWarrior
     - ADTAttachmentMagneticHarness
+    - DefibrillatorCompact
+    - PowerCellHyper
+    - HandheldCrewMonitor
+    - PinpointerNuclear
+    - HandheldGPSBasic
+    - HandHeldMassScanner
     belt:
     - ADTCombatHypospray
     - WeaponTaser
