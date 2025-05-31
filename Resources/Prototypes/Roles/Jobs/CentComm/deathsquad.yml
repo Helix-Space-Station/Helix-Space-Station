@@ -30,7 +30,7 @@
     id: DeathsquadPDA
     pocket1: EnergySwordDouble
     pocket2: DoubleEmergencyOxygenTankFilled
-    belt: ClothingBeltMilitaryWebbingMedFilled
+    belt: ClothingBeltAssault
   storage:
     back:
     - ADTWeaponRifleTAR60SF
