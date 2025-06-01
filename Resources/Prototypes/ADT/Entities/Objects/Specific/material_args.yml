@@ -152,7 +152,7 @@
     - type: AddComponentsOnUse
       components:
         - type: Reflect
-          reflectProb: 0.6
+          reflectProb: 0.85
         - type: CantShoot
           popup: combo-cantshoot
         - type: Puller
