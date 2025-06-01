@@ -2,6 +2,8 @@ species-name-aegi = Эльф
 
 entity-name-BaseMobAegi = Урист МакЭльф
 
+metabolizer-type-aegi = Эльф
+
 organ-name-aegi-brain = мозг
 organ-desc-aegi-brain = Источник невероятного, бесконечного интеллекта.
 
