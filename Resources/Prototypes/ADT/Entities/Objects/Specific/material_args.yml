@@ -152,7 +152,7 @@
     - type: AddComponentsOnUse
       components:
         - type: Reflect
-          reflectProb: 1
+          reflectProb: 0.6
         - type: CantShoot
           popup: combo-cantshoot
         - type: Puller
@@ -197,7 +197,7 @@
                   localeText: combo-backhit-end
                 - !type:ComboStopGrabEffect
                 - !type:ComboStunEffect
-                  stunTime: 4
+                  stunTime: 0.5
                   dropItems: false
                 - !type:ComboSpeechEffect
                   speech: speech-carp-backhit
