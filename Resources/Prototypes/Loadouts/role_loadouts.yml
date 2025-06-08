@@ -164,6 +164,7 @@
   - LawyerNeck
   - LawyerJumpsuit
   - CommonBackpack
+  - ADTLawyerGloves # ADT-Tweak
   - LawyerShoes # ADT tweak
   - Glasses
   - ADTlawyerID # ADT tweak
@@ -210,6 +211,10 @@
   - JanitorGloves
   - CommonBackpack
   - JanitorOuterClothing
+  # SD Tweak
+  - JanitorBelt
+  - JanitorShoes
+  # SD Tweak end
   - Glasses
   - ADTJanitorPDA # ADT tweak
   # ADT underwear tweak start
