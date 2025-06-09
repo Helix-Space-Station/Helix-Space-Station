@@ -1,9 +1,9 @@
 - type: gameMap
-  id: SD_Radiance
+  id: sd_Radiance
   mapName: 'Radiance Station'
   mapPath: /Maps/SDMaps/SDStations/sd_Radiance.yml
   maxRandomOffset: 0
-  minPlayers: 50
+  minPlayers: 30
   stations:
     ADT_Kerberos:
       stationProto: StandardNanotrasenStation
