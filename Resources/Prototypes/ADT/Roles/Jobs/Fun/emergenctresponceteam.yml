@@ -474,7 +474,7 @@
 #Janitor (ТЕПЕРЬ УЧЕНЫЙ)
 
 - type: startingGear
-  id: ADTERTSCIENTISTGear
+  id: ADTERTJanitorGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
     back: ClothingBackpackERTJanitor
