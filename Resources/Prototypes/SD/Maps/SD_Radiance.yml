@@ -1,5 +1,5 @@
 - type: gameMap
-  id: sd_Radiance
+  id: SD_Radiance
   mapName: 'Radiance Station'
   mapPath: /Maps/SDMaps/SDStations/sd_Radiance.yml
   maxRandomOffset: 0
