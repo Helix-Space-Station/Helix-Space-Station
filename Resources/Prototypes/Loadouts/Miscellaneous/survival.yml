@@ -31,6 +31,7 @@
     - UrsusSpecies
     - VulpkaninSpecies
     #ADT_Species End
+    - Aegi # SD tweak
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
