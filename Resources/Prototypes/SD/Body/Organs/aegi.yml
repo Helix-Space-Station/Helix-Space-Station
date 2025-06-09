@@ -192,7 +192,7 @@
     state: heart-on
   - type: Metabolizer
     updateInterval: 1.5
-    maxReagents: 3
+    maxReagents: 4
     metabolizerTypes: [ Aegi ]
     groups:
     - id: Medicine
