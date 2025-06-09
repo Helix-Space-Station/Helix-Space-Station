@@ -2,7 +2,7 @@
   id: Aegi
   name: species-name-aegi
   roundStart: true
-  prototype: MobHuman
+  prototype: MobAegi
   sprites: MobAegiSprites
   markingLimits: MobAegiMarkingLimits
   dollPrototype: MobAegiDummy
