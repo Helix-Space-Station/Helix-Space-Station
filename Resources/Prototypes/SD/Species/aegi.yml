@@ -7,6 +7,10 @@
   markingLimits: MobAegiMarkingLimits
   dollPrototype: MobAegiDummy
   skinColoration: HumanToned
+  maleFirstNames: names_aegi_first_male
+  femaleFirstNames: names_aegi_first_female
+  maleLastNames: names_aegi_last
+  femaleLastNames: names_aegi_last
   description: "/ServerInfo/SD/SpeciesDescriptions/Aegi.xml"
   pros:
     - Слегка быстрее перемещаются без гравитации из-за развитого вестибулярного аппарата.
