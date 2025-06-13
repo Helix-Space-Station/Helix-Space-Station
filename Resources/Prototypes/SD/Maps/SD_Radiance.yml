@@ -3,7 +3,7 @@
   mapName: 'Radiance Station'
   mapPath: /Maps/SDMaps/SDStations/sd_Radiance.yml
   maxRandomOffset: 0
-  minPlayers: 30
+  minPlayers: 0
   stations:
     ADT_Kerberos:
       stationProto: StandardNanotrasenStation
