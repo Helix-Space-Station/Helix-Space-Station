@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/07/2025 13:50:35
-  entityCount: 16031
-maps:
-- 1
+  time: 06/15/2025 17:55:11
+  entityCount: 16038
+maps: []
 grids:
 - 2
-orphans: []
+orphans:
+- 2
 nullspace: []
 tilemap:
   0: Space
@@ -81,25 +81,13 @@ tilemap:
 entities:
 - proto: ""
   entities:
-  - uid: 1
-    components:
-    - type: MetaData
-      name: Пространство штаба ДСО Mjolnir
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
   - uid: 2
     components:
     - type: MetaData
       name: NT-DSO Mjolnir
     - type: Transform
       pos: -0.640625,-0.140625
-      parent: 1
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -9003,7 +8991,7 @@ entities:
       pos: -1.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -62205.777
+      secondsUntilStateChange: -62259.484
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9328,7 +9316,7 @@ entities:
       pos: -10.5,-137.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -45245.516
+      secondsUntilStateChange: -45299.223
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9527,7 +9515,7 @@ entities:
       pos: -7.5,-86.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -94937.34
+      secondsUntilStateChange: -94991.055
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -24143,6 +24131,41 @@ entities:
     components:
     - type: Transform
       pos: -10.5,-120.5
+      parent: 2
+  - uid: 15285
+    components:
+    - type: Transform
+      pos: -0.5,19.5
+      parent: 2
+  - uid: 15286
+    components:
+    - type: Transform
+      pos: -0.5,20.5
+      parent: 2
+  - uid: 15287
+    components:
+    - type: Transform
+      pos: -0.5,21.5
+      parent: 2
+  - uid: 15288
+    components:
+    - type: Transform
+      pos: 0.5,21.5
+      parent: 2
+  - uid: 15289
+    components:
+    - type: Transform
+      pos: 1.5,21.5
+      parent: 2
+  - uid: 15290
+    components:
+    - type: Transform
+      pos: 1.5,20.5
+      parent: 2
+  - uid: 15291
+    components:
+    - type: Transform
+      pos: 1.5,19.5
       parent: 2
   - uid: 16066
     components:
@@ -62243,6 +62266,13 @@ entities:
     components:
     - type: Transform
       pos: 23.5,-113.5
+      parent: 2
+- proto: GravityGenerator
+  entities:
+  - uid: 1
+    components:
+    - type: Transform
+      pos: 0.5,21.5
       parent: 2
 - proto: Grille
   entities:

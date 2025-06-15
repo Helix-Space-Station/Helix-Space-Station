@@ -77,12 +77,12 @@ public sealed class SendERTCommand : IConsoleCommand
         #region ERT type check
         switch (args[0].ToLower())
         {
-            case "default":
+            case "universal":
                 audioPath = $"{defaultAudioPath}/yesert.ogg";
                 isLoadGrid = true;
                 break;
 
-            case "default-rev":
+            case "securityriot":
                 audioPath = $"{defaultAudioPath}/yesert.ogg";
                 isLoadGrid = true;
                 break;
@@ -92,7 +92,7 @@ public sealed class SendERTCommand : IConsoleCommand
                 isLoadGrid = true;
                 break;
 
-            case "engineer":
+            case "engi":
                 audioPath = $"{defaultAudioPath}/yesert.ogg";
                 isLoadGrid = true;
                 break;
@@ -102,7 +102,7 @@ public sealed class SendERTCommand : IConsoleCommand
                 isLoadGrid = true;
                 break;
 
-            case "janitor":
+            case "scientist":
                 audioPath = $"{defaultAudioPath}/yesert.ogg";
                 isLoadGrid = true;
                 break;
@@ -112,7 +112,7 @@ public sealed class SendERTCommand : IConsoleCommand
                 isLoadGrid = true;
                 break;
 
-            case "cbun":
+            case "cburn":
                 audioPath = $"{defaultAudioPath}/yesert.ogg";
                 isLoadGrid = true;
                 break;
@@ -123,8 +123,8 @@ public sealed class SendERTCommand : IConsoleCommand
                 isLoadGrid = true;
                 break;
 
-            case "Mjolnir":
-                announceColor = Color.White;
+            case "mjolnir":
+                announceColor = Color.Purple;
                 isLoadGrid = true;
                 break;
 
@@ -196,16 +196,16 @@ public sealed class SendERTCommand : IConsoleCommand
         {
             var type = new CompletionOption[]
             {
-                new("Universal", Loc.GetString("send-ert-hint-type-default")),
-                new("SecurityRiot", Loc.GetString("send-ert-hint-type-default-rev")),
-                new("Security", Loc.GetString("send-ert-hint-type-security")),
-                new("Engineer", Loc.GetString("send-ert-hint-type-engineer")),
-                new("Medical", Loc.GetString("send-ert-hint-type-medical")),
-                new("Scientist", Loc.GetString("send-ert-hint-type-chaplain")),
-                new("MajorCBURN", Loc.GetString("send-ert-hint-type-cbrn")),
-                new("DeathSquad", Loc.GetString("send-ert-hint-type-deathsquad")),
-                new("Denial", Loc.GetString("send-ert-hint-type-denial")),
-                new("Mjolnir", Loc.GetString("send-ert-hint-type-Mjolnir")),
+                new("universal", Loc.GetString("send-ert-hint-type-default")),
+                new("securityriot", Loc.GetString("send-ert-hint-type-default-rev")),
+                new("security", Loc.GetString("send-ert-hint-type-security")),
+                new("engi", Loc.GetString("send-ert-hint-type-engineer")),
+                new("medical", Loc.GetString("send-ert-hint-type-medical")),
+                new("scientist", Loc.GetString("send-ert-hint-type-chaplain")),
+                new("cburn", Loc.GetString("send-ert-hint-type-cbrn")),
+                new("deathsquad", Loc.GetString("send-ert-hint-type-deathsquad")),
+                new("denial", Loc.GetString("send-ert-hint-type-denial")),
+                new("mjolnir", Loc.GetString("send-ert-hint-type-mjolnir")),
             };
             return CompletionResult.FromHintOptions(type, Loc.GetString("send-ert-hint-type"));
         }

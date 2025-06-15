@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/14/2025 19:13:53
-  entityCount: 1388
-maps:
-- 1
+  time: 06/15/2025 17:47:03
+  entityCount: 1389
+maps: []
 grids:
 - 2
-orphans: []
+orphans:
+- 2
 nullspace: []
 tilemap:
   2: Space
@@ -34,25 +34,13 @@ tilemap:
 entities:
 - proto: ""
   entities:
-  - uid: 1
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
   - uid: 2
     components:
     - type: MetaData
-      name: NT-DSO NEXUS-900
+      name: NT-DSO NEXUS-700
     - type: Transform
       pos: -0.53125,-0.5625
-      parent: 1
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -737,10 +725,10 @@ entities:
           - 0
           - 0
         - volume: 2500
-          temperature: 293.14917
+          temperature: 293.14948
           moles:
-          - 16.99477
-          - 63.932716
+          - 18.472576
+          - 69.49208
           - 0
           - 0
           - 0
@@ -866,36 +854,60 @@ entities:
       rot: 6.283185307179586 rad
       pos: 1.3434695,15.690783
       parent: 2
-- proto: ADTRandomHumanoidSpawnerERTLeaderEVA
+- proto: ADTRandomHumanoidSpawnerERTEngineerEVA
   entities:
-  - uid: 576
+  - uid: 1305
     components:
     - type: Transform
-      pos: 0.15529752,23.566298
+      pos: -2.5454693,20.535795
       parent: 2
-- proto: ADTRandomHumanoidSpawnerERTMedicalEVA
-  entities:
   - uid: 1375
     components:
     - type: Transform
-      pos: -2.5009525,20.410048
+      pos: -2.5454693,20.20767
       parent: 2
-- proto: ADTRandomHumanoidSpawnerERTSecurityEVA
+  - uid: 1376
+    components:
+    - type: Transform
+      pos: -2.5767193,20.848295
+      parent: 2
+  - uid: 1388
+    components:
+    - type: Transform
+      pos: -2.5454693,21.192045
+      parent: 2
+- proto: ADTRandomHumanoidSpawnerERTJanitorEVA
+  entities:
+  - uid: 484
+    components:
+    - type: Transform
+      pos: 3.4545307,20.14517
+      parent: 2
+- proto: ADTRandomHumanoidSpawnerERTLeaderEVA
+  entities:
+  - uid: 945
+    components:
+    - type: Transform
+      pos: 0.51703084,21.598295
+      parent: 2
+- proto: ADTRandomHumanoidSpawnerERTMedicalEVA
   entities:
   - uid: 1374
     components:
     - type: Transform
-      pos: 3.6084225,21.238173
+      pos: 3.3607807,21.33267
       parent: 2
-  - uid: 1386
+- proto: ADTRandomHumanoidSpawnerERTSecurityEVA
+  entities:
+  - uid: 576
     components:
     - type: Transform
-      pos: 3.1865475,20.816298
+      pos: 3.4389057,20.910795
       parent: 2
   - uid: 1387
     components:
     - type: Transform
-      pos: 3.1865475,21.160048
+      pos: 3.4857807,20.629545
       parent: 2
 - proto: ADTRPD
   entities:
@@ -1288,25 +1300,6 @@ entities:
     components:
     - type: Transform
       pos: -0.27627516,16.130804
-      parent: 2
-- proto: BoxCleanerGrenades
-  entities:
-  - uid: 484
-    components:
-    - type: Transform
-      pos: -0.6296637,30.607351
-      parent: 2
-  - uid: 1373
-    components:
-    - type: Transform
-      pos: 0.4484613,30.654226
-      parent: 2
-- proto: BoxFlashbang
-  entities:
-  - uid: 945
-    components:
-    - type: Transform
-      pos: 1.4328363,30.560476
       parent: 2
 - proto: BoxFolderBlack
   entities:
@@ -2505,6 +2498,11 @@ entities:
       parent: 2
 - proto: CableHV
   entities:
+  - uid: 1
+    components:
+    - type: Transform
+      pos: 0.5,21.5
+      parent: 2
   - uid: 60
     components:
     - type: Transform
@@ -3157,7 +3155,7 @@ entities:
     - type: Transform
       pos: 0.5,18.5
       parent: 2
-  - uid: 1305
+  - uid: 1373
     components:
     - type: Transform
       pos: 0.5,21.5
@@ -5638,39 +5636,11 @@ entities:
           ent: null
 - proto: GunSafeDisabler
   entities:
-  - uid: 1388
+  - uid: 1389
     components:
     - type: Transform
       pos: 3.5,28.5
       parent: 2
-    - type: Lock
-      locked: False
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14563
-        moles:
-        - 1.4778061
-        - 5.559366
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
 - proto: Gyroscope
   entities:
   - uid: 72
@@ -6266,52 +6236,52 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,12.5
       parent: 2
-  - uid: 1376
+  - uid: 1377
     components:
     - type: Transform
       pos: -6.5,11.5
       parent: 2
-  - uid: 1377
+  - uid: 1378
     components:
     - type: Transform
       pos: -6.5,17.5
       parent: 2
-  - uid: 1378
+  - uid: 1379
     components:
     - type: Transform
       pos: 7.5,11.5
       parent: 2
-  - uid: 1379
+  - uid: 1380
     components:
     - type: Transform
       pos: 7.5,17.5
       parent: 2
-  - uid: 1380
+  - uid: 1381
     components:
     - type: Transform
       pos: 6.5,21.5
       parent: 2
-  - uid: 1381
+  - uid: 1382
     components:
     - type: Transform
       pos: -5.5,21.5
       parent: 2
-  - uid: 1382
+  - uid: 1383
     components:
     - type: Transform
       pos: -3.5,32.5
       parent: 2
-  - uid: 1383
+  - uid: 1384
     components:
     - type: Transform
       pos: 4.5,32.5
       parent: 2
-  - uid: 1384
+  - uid: 1385
     components:
     - type: Transform
       pos: 6.5,7.5
       parent: 2
-  - uid: 1385
+  - uid: 1386
     components:
     - type: Transform
       pos: -5.5,7.5

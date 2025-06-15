@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 250.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/14/2025 19:20:48
+  time: 06/15/2025 17:46:24
   entityCount: 1392
-maps:
-- 1
+maps: []
 grids:
 - 2
-orphans: []
+orphans:
+- 2
 nullspace: []
 tilemap:
   2: Space
@@ -34,25 +34,13 @@ tilemap:
 entities:
 - proto: ""
   entities:
-  - uid: 1
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
   - uid: 2
     components:
     - type: MetaData
       name: NT-DSO NEXUS-150
     - type: Transform
       pos: -0.53125,-0.5625
-      parent: 1
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -2529,6 +2517,11 @@ entities:
       parent: 2
 - proto: CableHV
   entities:
+  - uid: 1
+    components:
+    - type: Transform
+      pos: 0.5,21.5
+      parent: 2
   - uid: 60
     components:
     - type: Transform
