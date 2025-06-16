@@ -37,6 +37,7 @@ public sealed class MeleeUpgradeSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damage = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private readonly SharedGunSystem _gun = default!;
 
     public override void Initialize()
     {
@@ -98,7 +99,7 @@ public sealed class MeleeUpgradeSystem : EntitySystem
         var meleeEv = new MeleeRefreshModifiersEvent(ent);
         RaiseLocalEvent(ent, meleeEv);
 
-        RefreshGunModifiers(ent);
+        _gun.RefreshModifiers(ent.Owner);
 
         args.Handled = _container.Insert(args.Used, _container.GetContainer(ent, ent.Comp.UpgradesContainerId));
     }
@@ -116,26 +117,6 @@ public sealed class MeleeUpgradeSystem : EntitySystem
                 return true;
         }
         return false;
-    }
-
-    private void RefreshGunModifiers(EntityUid entityUid)
-    {
-        if (TryComp<GunComponent>(entityUid, out var gunComp))
-        {
-            var ev = new GunRefreshModifiersEvent(
-                (entityUid, gunComp),
-                gunComp.SoundGunshot,
-                gunComp.CameraRecoilScalar,
-                gunComp.AngleIncrease,
-                gunComp.AngleDecay,
-                gunComp.MaxAngle,
-                gunComp.MinAngle,
-                gunComp.ShotsPerBurst,
-                gunComp.FireRate,
-                gunComp.ProjectileSpeed
-            );
-            RaiseLocalEvent(entityUid, ref ev);
-        }
     }
 
     private void RelayEvent<T>(Entity<UpgradeableMeleeComponent> ent, ref T args) where T : notnull

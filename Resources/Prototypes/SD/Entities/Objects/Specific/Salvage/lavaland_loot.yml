@@ -30,22 +30,24 @@
   - type: MeleeDamageUpgrade
     damageBonus:
       types:
-        Blunt: 15
+        Slash: 10
         Structural: 15
 
-- type: entity
-  id: MeleeLegionSkullUpgrade
-  parent: BaseMeleeUpgrade
-  name: legion skull
-  description: An legion skull upgrade.
-  components:
-  - type: Sprite
-    sprite: ADT/Objects/Specific/Lavaland/loot.rsi
-    state: legion_skull
-  - type: Item
-    size: Small
-  - type: MeleeUpgrade
-    tags: [ LegionSkullUpgrade, MeleeUpgrade ]
-    examineText: melee-upgrade-examine-text-legionskull
-  - type: MeleeSpeedUpgrade
-    speedMultiplier: 2
+# - type: entity
+#  id: MeleeLegionSkullUpgrade
+#  parent: BaseMeleeUpgrade
+#  name: legion skull
+#  description: An legion skull upgrade.
+#  components:
+#  - type: Sprite
+#    sprite: ADT/Objects/Specific/Lavaland/loot.rsi
+#    state: legion_skull
+#  - type: Item
+#    size: Small
+#  - type: MeleeUpgrade
+#    tags: [ LegionSkullUpgrade, MeleeUpgrade ]
+#    examineText: melee-upgrade-examine-text-legionskull
+#  - type: MeleeSpeedUpgrade
+#    speedMultiplier: 2
+
+# Времено удалено иза того что не работает. В будущем пофикшу(наверное)

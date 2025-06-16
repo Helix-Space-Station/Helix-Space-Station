@@ -3,8 +3,8 @@ melee-upgrade-examine-text-goliathtentacle = Содержит [color=#b52902][bo
 
 melee-upgrade-examine-text-legionskull = Содержит [color=#8f725d][bold]череп легионов.[/bold][/color]
 
-ent-MeleeGoliathTentacleUpgrade = тентакля голиафа
-    .desc = Тентакля одного из голиафа. Можно использовать как улучшение для крушителя.
+ent-MeleeGoliathTentacleUpgrade = щупальце голиафа
+    .desc = Щупальце одного из голиафов. Можно использовать как улучшение для крушителя.
 
-ent-MeleeLegionSkullUpgrade = череп легионов
+ent-MeleeLegionSkullUpgrade = череп легиона
     .desc = Череп легионера. Можно использовать как улучшение для крушителя.
