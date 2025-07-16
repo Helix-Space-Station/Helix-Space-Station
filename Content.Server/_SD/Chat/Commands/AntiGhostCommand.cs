@@ -4,7 +4,7 @@ using Content.Shared.Chat;
 using Robust.Shared.Console;
 using Robust.Shared.Enums;
 
-namespace Content.Server.SD.Chat.Commands
+namespace Content.Server._SD.Chat.Commands
 {
     [AnyCommand]
     internal sealed class AntiGhostCommand : IConsoleCommand

@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.SD.Keypad;
+namespace Content.Shared._SD.Keypad;
 
 [Serializable, NetSerializable]
 public enum KeypadUiKey

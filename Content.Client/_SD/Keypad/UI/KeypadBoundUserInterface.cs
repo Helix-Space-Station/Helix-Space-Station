@@ -1,9 +1,9 @@
-using Content.Shared.SD.Keypad;
+using Content.Shared._SD.Keypad;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 
-namespace Content.Client.SD.Keypad.UI;
+namespace Content.Client._SD.Keypad.UI;
 
 [UsedImplicitly]
 public sealed class KeypadBoundUserInterface : BoundUserInterface

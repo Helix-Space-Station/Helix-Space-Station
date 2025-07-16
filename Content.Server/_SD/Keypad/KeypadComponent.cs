@@ -1,9 +1,9 @@
 using Content.Shared.DeviceLinking;
-using Content.Shared.SD.Keypad;
+using Content.Shared._SD.Keypad;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Server.SD.Keypad;
+namespace Content.Server._SD.Keypad;
 
 [RegisterComponent, Access(typeof(KeypadSystem))]
 public sealed partial class KeypadComponent : Component

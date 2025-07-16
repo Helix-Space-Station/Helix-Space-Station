@@ -1,11 +1,11 @@
 using Content.Server.DeviceLinking.Systems;
-using Content.Shared.SD.Keypad;
+using Content.Shared._SD.Keypad;
 using Content.Shared.Hands.Components;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Server.SD.Keypad;
+namespace Content.Server._SD.Keypad;
 
 public sealed class KeypadSystem : EntitySystem
 {

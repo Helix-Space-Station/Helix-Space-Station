@@ -1,4 +1,4 @@
-namespace Content.Shared.SD;
+namespace Content.Shared._SD;
 
 
 public enum EnumERPStatus : byte
