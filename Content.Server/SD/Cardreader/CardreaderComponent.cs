@@ -16,7 +16,7 @@ public sealed partial class CardreaderComponent : Component
     public TimeSpan LastActivationTime;
 
     [DataField]
-    public ProtoId<SinkPortPrototype> Trigger = "Output";
+    public ProtoId<SourcePortPrototype> Trigger = "Output";
 
     [DataField("soundAccept"), ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier SoundAccept = new SoundPathSpecifier("/Audio/SD/Cardreader/entity_cardlock_granted.ogg");

@@ -8,6 +8,9 @@
     size: Small
   - type: Rfid
     accessLevel: 2
+    limitedUse: true
+    maxUses: 3
+    usesLeft: 3
   - type: Sprite
     sprite: SD/Objects/Specific/Cardreader/Cards/card.rsi
     state: silver  # Используем состояние 'silver' из RSI
