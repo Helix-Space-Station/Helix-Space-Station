@@ -19,12 +19,12 @@ public sealed partial class CardreaderComponent : Component
     public ProtoId<SinkPortPrototype> Trigger = "Output";
 
     [DataField("soundAccept"), ViewVariables(VVAccess.ReadWrite)]
-    public SoundSpecifier SoundAccept = new SoundPathSpecifier("/Audio/Machines/twobeep.ogg");
+    public SoundSpecifier SoundAccept = new SoundPathSpecifier("/Audio/SD/Cardreader/entity_cardlock_granted.ogg");
 
     [DataField("soundDeny"), ViewVariables(VVAccess.ReadWrite)]
-    public SoundSpecifier SoundDeny = new SoundPathSpecifier("/Audio/Effects/Cargo/ping.ogg");
+    public SoundSpecifier SoundDeny = new SoundPathSpecifier("/Audio/SD/Cardreader/entity_cardlock_denied.ogg");
 
-    [DataField("requiredAccess") , ViewVariables(VVAccess.ReadWrite)]
+    [DataField("requiredAccess"), ViewVariables(VVAccess.ReadWrite)]
     public int RequiredAccess = 1;
 
     [DataField("allowHigherAccess"), ViewVariables(VVAccess.ReadWrite)]

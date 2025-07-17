@@ -47,7 +47,6 @@ public sealed class CardreaderSystem : EntitySystem
             return;
         args.Handled = true;
 
-        // Проверяем кулдаун
         var time = _timing.CurTime;
         if ((time - component.LastActivationTime).TotalSeconds < component.Cooldown)
         {
