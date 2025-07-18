@@ -16,7 +16,7 @@
     canCollide: false
   - type: Sprite
     drawdepth: SmallObjects
-    sprite: Structures/Wallmounts/switch.rsi
+    sprite: SD/Entities/Structures/cardreader.rsi
     state: dead
   - type: Rotatable
   - type: Fixtures
