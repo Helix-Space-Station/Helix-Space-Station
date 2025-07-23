@@ -10,8 +10,8 @@
   - type: Clothing
     sprite: SD/Clothing/Shoes/Boots/atmos_magboots.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.85
+    sprintModifier: 0.85
   - type: Tag
     tags:
     - WhitelistChameleon
