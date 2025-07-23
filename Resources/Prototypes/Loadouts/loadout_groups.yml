@@ -474,6 +474,20 @@
   - JanitorWintercoat
 
 - type: loadoutGroup
+  id: JanitorShoes
+  name: loadout-group-janitor-shoes
+  loadouts:
+  - JanitorGaloshes
+  - SDJanitorTacticalJanimaidShoes
+
+- type: loadoutGroup
+  id: JanitorBelt
+  name: loadout-group-janitor-belt
+  loadouts:
+  - JanitorBeltie
+  - SDJanitorTacticalJanimaidBelt
+
+- type: loadoutGroup
   id: JanitorPlunger
   name: loadout-group-janitor-plunger
   minLimit: 0
@@ -789,8 +803,10 @@
   id: SalvageSpecialistOuterClothing
   name: loadout-group-salvage-specialist-outerclothing
   minLimit: 0
+  maxLimit: 1 #ADT tweak
   loadouts:
   - SalvageSpecialistWintercoat
+  - ADTNeckSalvageSpecialistEBomber # ADT tweak
 
 - type: loadoutGroup
   id: SalvageSpecialistShoes
@@ -1016,6 +1032,7 @@
   - BrownShoes
   - ScienceWinterBoots
   # ADT tweak start
+  - PurpleShoes
   - ADTFootWrapsW
   - ADTFootWrapsHighW
   - ADTFootWrapsBr
@@ -1074,6 +1091,7 @@
   - BlackShoes
   - ScienceWinterBoots
   # ADT tweak start
+  - PurpleShoes
   - ADTFootWrapsW
   - ADTFootWrapsHighW
   - ADTFootWrapsBr
@@ -1140,11 +1158,11 @@
   - HeadofSecurityMantle
   # ADT-Loadout-Start
   - HeadofSecurityMantleShoulder
-  - ADTSecurityOfficerNeckBadgeBronze
-  - ADTSecurityOfficerNeckBadgeSilver
-  - ADTSecurityOfficerNeckBadgeGold
+  - ADTNeckSecBadgeBronze
+  - ADTNeckSecBadgeSilver
+  - ADTNeckSecBadgeGold
+  # - HeadofSecurityShoulderMantle # Corvax-Loadouts
   # ADT-Loadout-End
-  - HeadofSecurityShoulderMantle # Corvax-Loadouts
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
@@ -1267,9 +1285,9 @@
   loadouts:
   - DetectiveTie
   # ADT-Loadout-Start
-  - ADTSecurityOfficerNeckBadgeBronze
-  - ADTSecurityOfficerNeckBadgeSilver
-  - ADTSecurityOfficerNeckBadgeGold
+  - ADTNeckSecBadgeBronze
+  - ADTNeckSecBadgeSilver
+  - ADTNeckSecBadgeGold
   # ADT-Loadout-End
 
 - type: loadoutGroup
@@ -1492,6 +1510,7 @@
   minLimit: 0
   loadouts:
   - ParamedicHead
+  - ADTParamedicBeret # ADT tweak
 
 - type: loadoutGroup
   id: ParamedicJumpsuit
@@ -1499,6 +1518,7 @@
   loadouts:
   - ParamedicJumpsuit
   - ParamedicJumpskirt
+  - ADTClothingJumpsuitParamedicField # ADT tweak
 
 - type: loadoutGroup
   id: ParamedicOuterClothing
