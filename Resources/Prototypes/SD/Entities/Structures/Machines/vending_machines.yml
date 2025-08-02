@@ -12,7 +12,7 @@
     denyState: deny-unshaded
     loopDeny: false
   - type: Sprite
-    sprite: _ST14/Structures/Machines/VendingMachines/pillowmat.rsi
+    sprite: SD/Structures/Machines/VendingMachines/pillowmat.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

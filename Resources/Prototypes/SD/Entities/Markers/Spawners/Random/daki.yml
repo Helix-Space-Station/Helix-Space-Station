@@ -6,7 +6,7 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: _ST14/Objects/Fun/daki.rsi
+        - sprite: SD/Objects/Fun/daki.rsi
           state: ian
     - type: RandomSpawner
       prototypes:
