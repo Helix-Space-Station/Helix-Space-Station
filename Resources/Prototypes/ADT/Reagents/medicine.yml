@@ -445,14 +445,46 @@
   flavor: medicine
   color: "#c8a2c8"
   physicalDesc: reagent-physical-desc-powdery
+  # SD tweak start
+  worksOnTheDead: true
+  reactiveEffects:
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: false # Делает невозможным за секунду выхилить уйму хп за моментальное выливание на себя 20u
+        ignoreResistances: false
+        ignoreBlockers: false
+        damage:
+          groups:
+            Brute: -5
+        conditions:
+        - !type:HasComponentOnEquipmentCondition
+          components:
+          - type: PressureProtection # не работает сквозь скафандры!
+          invert: true
+      - !type:ModifyBleedAmount
+        amount: -1
+        conditions:
+        - !type:HasComponentOnEquipmentCondition
+          components:
+          - type: PressureProtection
+          invert: true
+  # SD tweak end
   metabolisms:
     Medicine:
-      metabolismRate : 0.75
+      metabolismRate : 3 # SD tweak
       effects:
       - !type:HealthChange
         damage:
           groups:
-            Brute: -2.25
+            Brute: -2 # SD tweak
+      # SD tweak start
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+      # SD tweak end
       - !type:ModifyBleedAmount
         amount: -1 #почему кровоостанавливающая пудра не останавливала кровотечение?
       - !type:PopupMessage
@@ -463,6 +495,7 @@
         visualType: Small
         messages: [ "medicine-effect-usual" ]
         probability: 0.05
+
 #Сульфадиазин серебра
 - type: reagent
   id: ADTSilverSulfadiazine
@@ -470,16 +503,41 @@
   group: Medicine
   desc: reagent-desc-silver-sulfadiazine
   flavor: medicine
-  color: "#c8a2c8"
+  color: "#ffed24" # SD tweak "#c8a2c8" -> "#ffed24"
   physicalDesc: reagent-physical-desc-powdery
+  # SD tweak start
+  worksOnTheDead: true
+  reactiveEffects:
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: false # Делает невозможным за секунду выхилить уйму хп за моментальное выливание на себя 20u
+        ignoreResistances: false
+        ignoreBlockers: false
+        damage:
+          groups:
+            Burn: -5
+        conditions:
+        - !type:HasComponentOnEquipmentCondition
+          components:
+          - type: PressureProtection # не работает сквозь скафандры!
+          invert: true
+  # SD tweak end
   metabolisms:
     Medicine:
-      metabolismRate : 0.75
+      metabolismRate : 3 # SD tweak
       effects:
       - !type:HealthChange
         damage:
           groups:
             Burn: -3
+      # SD tweak start
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+      # SD tweak end
       - !type:PopupMessage
         conditions:
         - !type:TotalDamage
