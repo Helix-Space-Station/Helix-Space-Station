@@ -452,12 +452,11 @@
       methods: [ Touch ]
       effects:
       - !type:HealthChange
-        scaleByQuantity: false # Делает невозможным за секунду выхилить уйму хп за моментальное выливание на себя 20u
+        scaleByQuantity: true
         ignoreResistances: false
-        ignoreBlockers: false
         damage:
           groups:
-            Brute: -5
+            Brute: -0.4
         conditions:
         - !type:HasComponentOnEquipmentCondition
           components:
@@ -512,12 +511,11 @@
       methods: [ Touch ]
       effects:
       - !type:HealthChange
-        scaleByQuantity: false # Делает невозможным за секунду выхилить уйму хп за моментальное выливание на себя 20u
+        scaleByQuantity: true
         ignoreResistances: false
-        ignoreBlockers: false
         damage:
           groups:
-            Burn: -5
+            Burn: -0.4
         conditions:
         - !type:HasComponentOnEquipmentCondition
           components:
