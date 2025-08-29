@@ -455,8 +455,10 @@
         scaleByQuantity: true
         ignoreResistances: false
         damage:
-          groups:
-            Brute: -0.4
+          types:
+            Blunt: -0.5
+            Piercing: -0.5
+            Slash: -0.5
         conditions:
         - !type:HasComponentOnEquipmentCondition
           components:
@@ -514,8 +516,11 @@
         scaleByQuantity: true
         ignoreResistances: false
         damage:
-          groups:
-            Burn: -0.4
+          types:
+            Heat: -0.5
+            Cold: -0.5
+            Shock: -0.5
+            Caustic: -0.5
         conditions:
         - !type:HasComponentOnEquipmentCondition
           components:
