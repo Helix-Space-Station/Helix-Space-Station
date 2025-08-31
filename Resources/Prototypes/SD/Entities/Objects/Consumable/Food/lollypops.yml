@@ -947,9 +947,9 @@
     - id: FoodSnackLollypopSynaptizine
       orGroup: LollypopMystery
       prob: 0.35
-    - id: FoodSnackLollypopCyanide
-      orGroup: LollypopMystery
-      prob: 0.20
+#    - id: FoodSnackLollypopCyanide
+#      orGroup: LollypopMystery
+#      prob: 0.20
     - id: FoodSnackLollypopPotassiumBomb
       orGroup: LollypopMystery
       prob: 0.15
