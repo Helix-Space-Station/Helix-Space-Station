@@ -218,7 +218,6 @@
       - !type:HealthChange
         scaleByQuantity: true
         ignoreResistances: false
-        ignoreBlockers: false
         damage:
           types:
             Cellular: 0.75
@@ -230,7 +229,6 @@
       - !type:HealthChange
         scaleByQuantity: true
         ignoreResistances: false
-        ignoreBlockers: false
         damage:
           groups:
             Brute: -1
