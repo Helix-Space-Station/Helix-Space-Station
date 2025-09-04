@@ -3,13 +3,13 @@
 // the original Bingle PR can be found here: https://github.com/Goob-Station/Goob-Station/pull/1519
 
 using Content.Client.DamageState;
-using Content.Shared._Impstation.Replicator;
+using Content.Shared.SD.Replicator;
 using Content.Shared.CombatMode;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._Impstation.Replicator;
+namespace Content.Client.SD.Replicator;
 
 public sealed class ReplicatorVisualsSystem : EntitySystem
 {

@@ -2,7 +2,7 @@
 // all credit for the core gameplay concepts and a lot of the core functionality of the code goes to the folks over at Goob, but I re-wrote enough of it to justify putting it in our filestructure.
 // the original Bingle PR can be found here: https://github.com/Goob-Station/Goob-Station/pull/1519
 
-using Content.Shared._Impstation.SpawnedFromTracker;
+using Content.Shared.SD.SpawnedFromTracker;
 using Content.Shared.Actions;
 using Content.Shared.Audio;
 using Content.Shared.Construction.Components;
@@ -32,7 +32,7 @@ using Robust.Shared.Containers;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
 
-namespace Content.Shared._Impstation.Replicator;
+namespace Content.Shared.SD.Replicator;
 
 public abstract class SharedReplicatorNestSystem : EntitySystem
 {

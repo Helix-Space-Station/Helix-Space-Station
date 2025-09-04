@@ -8,8 +8,8 @@ using Content.Server.Ghost.Roles.Events;
 using Content.Server.Pinpointer;
 using Content.Server.Popups;
 using Content.Server.Stunnable;
-using Content.Shared._Impstation.Replicator;
-using Content.Shared._Impstation.SpawnedFromTracker;
+using Content.Shared.SD.Replicator;
+using Content.Shared.SD.SpawnedFromTracker;
 using Content.Shared.Actions;
 using Content.Shared.CombatMode;
 using Content.Shared.Interaction.Events;
@@ -23,7 +23,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Impstation.Replicator;
+namespace Content.Server.SD.Replicator;
 
 public sealed class ReplicatorSystem : EntitySystem
 {

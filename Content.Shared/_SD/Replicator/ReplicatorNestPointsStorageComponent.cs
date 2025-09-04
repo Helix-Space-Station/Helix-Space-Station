@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Impstation.Replicator;
+namespace Content.Shared.SD.Replicator;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class ReplicatorNestPointsStorageComponent : Component

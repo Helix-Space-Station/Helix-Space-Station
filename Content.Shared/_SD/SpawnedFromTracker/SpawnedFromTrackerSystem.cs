@@ -1,4 +1,4 @@
-namespace Content.Shared._Impstation.SpawnedFromTracker;
+namespace Content.Shared.SD.SpawnedFromTracker;
 
 /// <summary>
 /// Tag component that just stores an EntityUid. Currently used for replicators to track the nest that a GhostRoleSpawnPoint was spawned by.

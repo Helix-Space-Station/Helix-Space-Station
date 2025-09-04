@@ -11,7 +11,7 @@ using Content.Server.Popups;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Server.Stunnable;
-using Content.Shared._Impstation.Replicator;
+using Content.Shared.SD.Replicator;
 using Content.Shared.Actions;
 using Content.Shared.Audio;
 using Content.Shared.Buckle.Components;
@@ -38,7 +38,7 @@ using System.Linq;
 using Content.Shared.Movement.Systems;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
-namespace Content.Server._Impstation.Replicator;
+namespace Content.Server.SD.Replicator;
 
 public sealed class ReplicatorNestSystem : SharedReplicatorNestSystem
 {
