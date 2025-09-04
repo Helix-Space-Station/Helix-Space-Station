@@ -275,6 +275,11 @@
         - SmallMobMask
         layer:
         - SmallMobLayer
+  - type: Body
+    prototype: Replicator1
+  - type: Loadout
+    prototypes:
+    - StartingGearReplicatorT1Weapon
   - type: NpcFactionMember
     factions:
     - Replicator
