@@ -82,6 +82,10 @@
   abstract: true
   parent: PlayerSiliconBase
   components:
+  - type: LanguageSpeaker
+    languages:
+      ReplicatorCollectiveMind: Speak
+      RobotTalk: Speak
   - type: Puller
     needsHands: false
     applySpeedModifier: false
@@ -125,19 +129,7 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: Replicator
-  - type: Vocal
-    sounds:
-      Unsexed: UnisexSilicon
   - type: DamagedSiliconAccent
-  - type: ReplacementAccent
-    accent: silicon
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
   - type: Actions
   - type: ProtectedFromStepTriggers
   - type: InputMover
@@ -226,6 +218,13 @@
   - type: Inventory
     templateId: replicator
   - type: InventorySlots
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
 
 - type: entity
   id: MobReplicatorQueen
@@ -234,6 +233,10 @@
   categories: [ HideSpawnMenu ]
   suffix: Queen
   components:
+  - type: LanguageSpeaker
+    languages:
+      ReplicatorCollectiveMind: Speak
+      RobotTalk: Speak
   - type: Replicator
     queen: true
   - type: Sprite
