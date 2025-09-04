@@ -1,81 +1,44 @@
-law-replicator-1 = Preserve the Hive.
-law-replicator-2 = Defend the Nest.
-law-replicator-3 = Replicate.
-laws-owner-replicatorhive = the Replicator hive.
+law-replicator-1 = Оберегать Рой.
+law-replicator-2 = Защищать Гнездо.
+law-replicator-3 = Реплицироваться.
+laws-owner-replicatorhive = Рой Репликаторов.
 
-replicator-on-replicator-attack-fail = You cannot harm your kin.
-replicator-on-nest-attack-fail = You cannot harm the nest.
+replicator-on-replicator-attack-fail = Ты не можешь причинить вред своим сородичам.
+replicator-on-nest-attack-fail = Ты не можешь причинить вред своему Гнезду.
 
-replicator-nest-end-of-round = The Replicator Hive:
-                               - Colonized {$location}
-                               - Grew to a maximum [color=#d70aa0]Level[/color] of [color=#d70aa0]{$level}[/color].
-                               - Produced a total of [color=#d70aa0]{$replicators} Replicators[/color].
-                               - Amassed a total of [color=#d70aa0]{$points} points[/color].
+replicator-nest-end-of-round = Рой Репликаторов:
+                               - Колонизировал: {$location}
+                               - Достиг [color=#d70aa0]{$level}[/color] [color=#d70aa0]Уровня[/color].
+                               - Произвёл всего [color=#d70aa0]{$replicators} Репликаторов[/color].
+                               - Накопил всего [color=#d70aa0]{$points} очков[/color].
 
-replicator-upgrade-t1-self = Nanites buzz around you.
-replicator-upgrade-t1-others = {CAPITALIZE(THE($replicator))} clicks and whirrs softly.
+replicator-upgrade-t1-self = Вас окружает жужжащий рой нанитов.
+replicator-upgrade-t1-others = {CAPITALIZE(THE($replicator))} тихо щёлкает и гудит.
 
-replicator-upgrade-t2-self = More nanites coalesce.
-replicator-upgrade-t2-others = {CAPITALIZE(THE($replicator))} chitters loudly.
+replicator-upgrade-t2-self = Вокруг вас собирается ещё больше нанитов.
+replicator-upgrade-t2-others = {CAPITALIZE(THE($replicator))} громко стрекочет.
 
-replicator-cant-find-nest = You are not linked to a nest. You cannot upgrade without it.
+replicator-cant-find-nest = Вы не подключены к Гнезду. Без связи вы не можете развиваться.
 
 # messages for when the nest is upgraded
-replicator-nest-level2 = The nest chitters loudly.
-replicator-nest-level3 = The floor groans.
-replicator-nest-level4 = You can hear the subfloor buckling.
-replicator-nest-level5 = How is the hull still intact?!
+replicator-nest-level2 = Гнездо громко стрекочет.
+replicator-nest-level3 = Пол скрипит под тяжестью.
+replicator-nest-level4 = Слышен треск перекрытий под полом.
+replicator-nest-level5 = Как корпус до сих пор цел?!
+replicator-nest-levelup = От Гнезда исходит всплеск активности.
 
-# the default message for when we run out of custom levelup messages.
-replicator-nest-levelup = There is a flurry of activity from the nest.
-
-replicator-nest-destroyed = Your nest has been destroyed.
-                            A Replicator has been selected to replace it.
-                            Your pinpointer has been updated to follow them.
-replicator-queen-died-msg = The Queen has been deactivated.
-                            It is probable that you are orphaned from your nest.
+replicator-nest-destroyed = Ваше Гнездо уничтожено.
+                            Для его замены выбран новый Репликатор.
+                            Ваш целеуказатель перенастроен на него.
+replicator-queen-died-msg = Королева деактивирована.
+                            Вероятно, вы оторваны от своего Гнезда.
 
 # action confirmations
-replicator-nest-confirm = Are you sure? Use the action again to confirm.
-replicator-levelup-confirm = Are you sure? Use the action again to confirm.
+replicator-nest-confirm = Вы уверены? Используйте способность ещё раз для подтверждения.
+replicator-levelup-confirm = Вы уверены? Используйте способность ещё раз для подтверждения.
 
 # ninja spawn warning
-terror-replicators = Attention crew, it appears that someone on your station has made an unexpected communication with a distributed machine intelligence in nearby space.
+terror-replicators = Внимание, экипаж. Зафиксирована несанкционированная связь с распределённым машинным интеллектом в ближайшем космосе.
 
 # level 5 nest warning
-replicator-level-warning = Our sensors have detected an exponential increase in machine intelligence signatures aboard the station. Please inform Security if you encounter self-replicating nanites.
-
-# AAC phrases
-
-rep-phrase-query = Query:
-rep-phrase-affirmative = Affirmative
-rep-phrase-negative = Negative
-rep-phrase-questionmark = ?
-
-rep-phrase-hostile = Hostile
-rep-phrase-combatant = Combatant
-rep-phrase-noncombatant = Noncombatant
-rep-phrase-ally = Ally
-rep-phrase-hazardous = Hazardous
-
-rep-phrase-unit = Unit
-rep-phrase-units = Units
-rep-phrase-i = This unit
-rep-phrase-you = You
-rep-phrase-we = We
-
-rep-phrase-are = Are
-rep-phrase-is = Is
-rep-phrase-will = Will
-rep-phrase-not = Not
-
-rep-phrase-leave = Leave
-rep-phrase-attack = Attack
-rep-phrase-dismantle = Dismantle
-rep-phrase-consume = Consume
-rep-phrase-endanger = Endanger
-rep-phrase-cease = Cease
-rep-phrase-suspend = Suspend
-
-rep-phrase-the-nest = The Nest
-rep-phrase-the-hive = The Hive
+replicator-level-warning = Сенсоры фиксируют экспоненциальный рост сигнатур машинного интеллекта на станции. Сообщите службе безопасности при обнаружении самовоспроизводящихся нанитов.
