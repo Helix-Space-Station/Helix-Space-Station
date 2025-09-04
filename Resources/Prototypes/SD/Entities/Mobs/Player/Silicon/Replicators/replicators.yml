@@ -89,7 +89,6 @@
       RobotTalk: Speak
   - type: Puller
     needsHands: false
-    applySpeedModifier: false
   - type: ZombieImmune
   - type: Replicator
   - type: NameIdentifier

@@ -58,7 +58,6 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 1000
-    sound: /Audio/Weapons/egloves.ogg
   - type: Prying
     pryPowered: true
     force: true
@@ -162,7 +161,6 @@
   - type: Pinpointer
     component: ReplicatorNest
     targetName: replicator nest
-    activateImmediately: true
 
 - type: entity
   parent: PinpointerReplicator
