@@ -1,4 +1,9 @@
 - type: startingGear
+  id: StartingGearReplicatorQueen
+  inhand:
+    - PinpointerReplicatorUnremoveable
+
+- type: startingGear
   id: StartingGearReplicatorTools
   inhand:
     - OmnitoolUnremoveable
