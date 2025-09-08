@@ -82,3 +82,13 @@
   - type: Sprite
     sprite: SD/Objects/Fun/toys.rsi
     state: plush_melima
+
+- type: entity
+  parent: BasePlushie
+  id: SDPlushieSammy
+  name: Sammy plushie
+  description: wow.
+  components:
+  - type: Sprite
+    sprite: SD/Objects/Fun/toys.rsi
+    state: plush_sammy
