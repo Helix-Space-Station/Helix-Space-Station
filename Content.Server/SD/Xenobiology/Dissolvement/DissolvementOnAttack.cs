@@ -1,3 +1,4 @@
+using Content.Server.SD.Mitosis;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Interaction;
 using Content.Shared.Damage;
@@ -18,6 +19,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Standing;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.SD.Dissolvement;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -42,7 +44,7 @@ namespace Content.Server.SD.Dissolvement
             base.Initialize();
 
             SubscribeLocalEvent<DissolvementOnAttackComponent, ComponentStartup>(OnStartup);
-            SubscribeLocalEvent<DissolvementOnAttackComponent, MeleeHitEvent>(OnAttacked);
+            SubscribeLocalEvent<DissolvementOnAttackComponent, ActionStartDissolvementEvent>(OnAction);
             SubscribeLocalEvent<DissolvementOnAttackComponent, UpdateCanMoveEvent>(OnMoveAttempt);
             SubscribeLocalEvent<DissolvementOnAttackComponent, AttackAttemptEvent>(OnAttackAttempt);
             SubscribeLocalEvent<DissolvementOnAttackComponent, StandAttemptEvent>(OnStandAttempt);
@@ -56,39 +58,41 @@ namespace Content.Server.SD.Dissolvement
             Transform(uid).AttachToGridOrMap();
         }
 
-        private void OnAttacked(EntityUid uid, DissolvementOnAttackComponent component, MeleeHitEvent args)
+        private void OnAction(EntityUid uid, DissolvementOnAttackComponent component, ActionStartDissolvementEvent args)
         {
             if (component.DissolvementOn != null)
                 return;
 
-            foreach (var hitEntity in args.HitEntities)
+            if (TryComp<MitosisableComponent>(uid, out var mitosComp) && mitosComp.IsMitosising)
+                return;
+
+            var hitEntity = args.Target;
+
+            if (_mobState.IsIncapacitated(hitEntity))
             {
-                if (_mobState.IsIncapacitated(hitEntity))
-                {
-                    return;
-                }
-
-                if (!TryComp<CanDissolvementComponent>(hitEntity, out var dissolvemented))
-                {
-                    return;
-                }
-
-                if (dissolvemented.CurrentDissolvements >= dissolvemented.MaxDissolvement)
-                {
-                    return;
-                }
-
-                component.DissolvementOn = hitEntity;
-
-                dissolvemented.Followers.Add(uid);
-                dissolvemented.CurrentDissolvements++;
-
-                Transform(uid).AttachToGridOrMap();
-                Transform(uid).Coordinates = Transform(hitEntity).Coordinates;
-                Transform(uid).AttachParent(hitEntity);
-
-                _actionBlockerSystem.UpdateCanMove(uid);
+                return;
             }
+
+            if (!TryComp<CanDissolvementComponent>(hitEntity, out var dissolvemented))
+            {
+                return;
+            }
+
+            if (dissolvemented.CurrentDissolvements >= dissolvemented.MaxDissolvement)
+            {
+                return;
+            }
+
+            component.DissolvementOn = hitEntity;
+
+            dissolvemented.Followers.Add(uid);
+            dissolvemented.CurrentDissolvements++;
+
+            Transform(uid).AttachToGridOrMap();
+            Transform(uid).Coordinates = Transform(hitEntity).Coordinates;
+            Transform(uid).AttachParent(hitEntity);
+
+            _actionBlockerSystem.UpdateCanMove(uid);
         }
         public void StopDissolvement(EntityUid uid, DissolvementOnAttackComponent? component = null)
         {

@@ -65,6 +65,7 @@
         - Mouse
         - Candle
   # ADT tweak end
+  - type: CanDissolvement
 
 - type: entity
   save: false

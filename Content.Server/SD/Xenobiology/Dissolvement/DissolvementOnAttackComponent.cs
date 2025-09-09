@@ -1,10 +1,18 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 
 namespace Content.Server.SD.Dissolvement
 {
-    [RegisterComponent]
+    [RegisterComponent, AutoGenerateComponentPause]
     public sealed partial class DissolvementOnAttackComponent : Component
     {
+        [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+        [AutoPausedField]
+        public TimeSpan NextUpdate = TimeSpan.Zero;
+
         /// <summary>
         /// Существо, на которое залезли.
         /// </summary>
