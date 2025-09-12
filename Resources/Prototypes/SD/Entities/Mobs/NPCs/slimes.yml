@@ -149,11 +149,11 @@
   description: Tasty flesh.
   components:
   - type: EntityTargetAction
-    icon: Structures/Specific/anomaly.rsi/anom1.png
+    icon: SD/Actions/actions_slime.rsi/slimeeat.png
     event: !type:ActionStartDissolvementEvent
     useDelay: 5
     canTargetSelf: false
-    range: 1
+    range: 2
 
 - type: weightedRandomEntity
   id: SDSlimeActions
@@ -180,6 +180,9 @@
         Base: blue_adult_slime
       Dead:
         Base: blue_adult_slime_dead
+  - type: HaveExtract
+    extractProto: Crowbar
+    extractQuantity: 1
   - type: Mitosisable
     mutations:
       - MobSlimesPet
