@@ -9,6 +9,7 @@
   - type: Mitosisable
   - type: NPCUseActionOnTarget
     actions: SDSlimeActions
+    range: 1.5
   - type: Appearance
     starvingSlowdownModifier: 0
   - type: Sprite
@@ -153,7 +154,7 @@
     event: !type:ActionStartDissolvementEvent
     useDelay: 5
     canTargetSelf: false
-    range: 2
+    range: 1
 
 - type: weightedRandomEntity
   id: SDSlimeActions
