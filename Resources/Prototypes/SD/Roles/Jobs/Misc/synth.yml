@@ -1,0 +1,101 @@
+- type: job
+  id: SD_JobSynthetic
+  name: sd-job-name-synth
+  description: sd-job-description-synth
+  playTimeTracker: SD_JobSynthetic
+  startingGear: SD_GearSynthetic
+  dummyStartingGear: SD_GearSyntheticEquipped
+  icon: "SD_JobIconSynth"
+  whitelisted: true
+  supervisors: job-captain
+  accessGroups:
+  - AllAccess
+  - Silicon
+  roleWeight: 0.25
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: MeleeWeapon
+      soundHit:
+        path: /Audio/SD/RMC/synthpunch1.ogg
+        params:
+          variation: 0.15
+          volume: -1
+      angle: 30
+      animation: WeaponArcFist
+      attackRate: 1
+      damage:
+        types:
+          Blunt: 35
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        150: Dead
+    - type: MobState
+      allowedStates:
+      - Alive
+      - Dead
+    - type: Repairable
+      fuelCost: 6
+      selfRepairPenalty: 2
+      doAfterDelay: 4
+      damage:
+        types:
+          Blunt: -20
+          Slash: -20
+          Piercing: -20
+    - type: Damageable
+      damageContainer: ADTSiliconDamageContainer
+      damageModifierSet: SD_Synth
+    - type: Synth
+      addComponents:
+      - type: EyeProtection
+      - type: Insulated
+      - type: ZombieImmune
+      removeComponents:
+      - type: Hunger
+      - type: Thirst
+      - type: Perishable
+      - type: ThermalRegulator
+      - type: Stamina
+      - type: DamageForceSay
+      - type: Dna
+      - type: InjectableSolution
+      - type: Barotrauma
+      - type: Respirator
+  hidden: true
+
+- type: jobIcon
+  parent: JobIcon
+  id: SD_JobIconSynth
+  icon:
+    sprite: /Textures/SD/Interface/job_icons.rsi
+    state: synth
+  jobName: sd-job-name-synth
+
+- type: startingGear
+  id: SD_GearSynthetic
+  equipment:
+    id: SD_IDCardSynth
+
+- type: startingGear
+  id: SD_GearSyntheticEquipped
+  equipment:
+    gloves: ClothingHandsGlovesColorYellow
+    shoes: ClothingShoesColorBlack
+  #  id: SD_IDCardSynth
+  #  ears: RMCHeadsetSynth
+  #  belt: CMBeltUtilityFilled
+
+#- type: entity
+#  parent: CMSpawnPointJobBase
+#  id: RMCSpawnPointSynth
+#  name: synthetic spawn point
+#  components:
+#  - type: SpawnPoint
+#    job_id: RMCJobSynthetic
+#  - type: Sprite
+#    state: syn_spawn
+
+- type: playTimeTracker
+  id: SD_JobSynthetic

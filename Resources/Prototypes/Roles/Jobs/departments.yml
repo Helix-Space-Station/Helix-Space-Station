@@ -143,6 +143,7 @@
   roles:
   - Borg
   - StationAi
+  - SD_JobSynthetic # SD change
 
 - type: department
   id: Specific
