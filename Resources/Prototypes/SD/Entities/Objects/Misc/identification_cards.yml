@@ -5,6 +5,8 @@
   components:
   - type: Sprite
     layers:
-    - state: default
+    - state: silver
   - type: PresetIdCard
     job: SD_JobSynthetic
+  - type: Item
+    heldPrefix: silver

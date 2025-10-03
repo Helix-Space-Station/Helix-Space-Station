@@ -11,7 +11,6 @@
   accessGroups:
   - AllAccess
   - Silicon
-  roleWeight: 0.25
   special:
   - !type:AddComponentSpecial
     components:
@@ -59,6 +58,34 @@
       damageModifierSet: SD_Synth
     - type: FireProtection
       reduction: 0.15
+    - type: AddComponentsOnUse
+      components:
+        - type: Puller
+          grabStats:
+            None:
+              requiredHands: 1
+              doaftersToEscape: 0
+              movementSpeedModifier: 0.9
+              escapeAttemptTime: 0
+              setStageTime: 0
+            Soft:
+              requiredHands: 1
+              doaftersToEscape: 4
+              movementSpeedModifier: 0.8
+              escapeAttemptTime: 1.5
+              setStageTime: 0
+            Hard:
+              requiredHands: 1
+              doaftersToEscape: 6
+              movementSpeedModifier: 0.75
+              escapeAttemptTime: 1.5
+              setStageTime: 0.75
+            Choke:
+              requiredHands: 2
+              doaftersToEscape: 7
+              movementSpeedModifier: 0.7
+              escapeAttemptTime: 1.5
+              setStageTime: 1.25
     - type: Synth
       addComponents:
       - type: EyeProtection
@@ -67,6 +94,10 @@
       - type: PressureImmunity
       - type: NoSlip
       - type: GrabProtection
+      - type: NightVision
+      - type: ShowHealthBars
+      - type: ShowHealthIcons
+      - type: ShowJobIcons
       removeComponents:
       - type: Hunger
       - type: Thirst
@@ -89,11 +120,6 @@
   jobName: sd-job-name-synth
 
 - type: startingGear
-  id: SD_GearSynthetic
-  equipment:
-    id: SD_IDCardSynth
-
-- type: startingGear
   id: SD_GearSyntheticEquipped
   equipment:
     shoes: ClothingShoesBootsWork
@@ -104,6 +130,7 @@
     outerClothing: ClothingOuterVestHazard
     belt: ClothingBeltUtility
     back: ADTClothingBackpackDuffelDurathead
+    mask: ClothingMaskGasAtmos
   storage:
     belt:
     - RCDExperimental
