@@ -23,6 +23,9 @@ public sealed class SynthSystem : SharedSynthSystem
         if (TryComp<DamageableComponent>(ent.Owner, out var damageable))
             _damageable.SetDamageModifierSetId(ent.Owner, ent.Comp.NewDamageModifier, damageable);
 
+        if (HasComp<RespiratorComponent>(ent.Owner))
+            RemComp<RespiratorComponent>(ent.Owner);
+
         if (TryComp<BloodstreamComponent>(ent.Owner, out var bloodstream)) // These TryComps are so tests don't fail
         {
             // This makes it so the synth doesn't take bloodloss damage.

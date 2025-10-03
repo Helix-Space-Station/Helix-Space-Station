@@ -3,11 +3,11 @@
   name: sd-job-name-synth
   description: sd-job-description-synth
   playTimeTracker: SD_JobSynthetic
-  startingGear: SD_GearSynthetic
-  dummyStartingGear: SD_GearSyntheticEquipped
+  startingGear: SD_GearSyntheticEquipped
+  canBeAntag: false
   icon: "SD_JobIconSynth"
   whitelisted: true
-  supervisors: job-captain
+  supervisors: job-supervisors-captain
   accessGroups:
   - AllAccess
   - Silicon
@@ -31,27 +31,42 @@
       thresholds:
         0: Alive
         150: Dead
+      allowRevives: true
     - type: MobState
       allowedStates:
       - Alive
       - Dead
     - type: Repairable
-      fuelCost: 6
+      fuelCost: 10
       selfRepairPenalty: 2
-      doAfterDelay: 4
+      doAfterDelay: 3
       damage:
         types:
           Blunt: -20
           Slash: -20
           Piercing: -20
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        25: 1
+    - type: Temperature
+      heatDamageThreshold: 600
+      coldDamageThreshold: 0
+    - type: TemperatureSpeed
+      thresholds:
+        220: 1
     - type: Damageable
       damageContainer: ADTSiliconDamageContainer
       damageModifierSet: SD_Synth
+    - type: FireProtection
+      reduction: 0.15
     - type: Synth
       addComponents:
       - type: EyeProtection
       - type: Insulated
       - type: ZombieImmune
+      - type: PressureImmunity
+      - type: NoSlip
+      - type: GrabProtection
       removeComponents:
       - type: Hunger
       - type: Thirst
@@ -61,8 +76,8 @@
       - type: DamageForceSay
       - type: Dna
       - type: InjectableSolution
-      - type: Barotrauma
-      - type: Respirator
+      - type: PassiveDamage
+      - type: Muted
   hidden: true
 
 - type: jobIcon
@@ -81,11 +96,22 @@
 - type: startingGear
   id: SD_GearSyntheticEquipped
   equipment:
-    gloves: ClothingHandsGlovesColorYellow
-    shoes: ClothingShoesColorBlack
-  #  id: SD_IDCardSynth
-  #  ears: RMCHeadsetSynth
-  #  belt: CMBeltUtilityFilled
+    shoes: ClothingShoesBootsWork
+    id: SD_SynthIdCard
+    ears: SD_ClothingHeadsetSynth
+    jumpsuit: ClothingUniformJumpsuitColorWhite
+    head: ClothingHeadHatHardhatWhite
+    outerClothing: ClothingOuterVestHazard
+    belt: ClothingBeltUtility
+    back: ADTClothingBackpackDuffelDurathead
+  storage:
+    belt:
+    - RCDExperimental
+    - JawsOfLife
+    - PowerDrill
+    - WelderExperimental
+    - Multitool
+    - HolofanProjector
 
 #- type: entity
 #  parent: CMSpawnPointJobBase
