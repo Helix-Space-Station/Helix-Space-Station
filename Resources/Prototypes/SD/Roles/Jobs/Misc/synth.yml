@@ -3,6 +3,10 @@
   name: sd-job-name-synth
   description: sd-job-description-synth
   playTimeTracker: SD_JobSynthetic
+  requirements:
+  - !type:SpeciesRequirement
+      species:
+      - Human
   startingGear: SD_GearSyntheticEquipped
   canBeAntag: false
   icon: "SD_JobIconSynth"
@@ -109,7 +113,6 @@
       - type: InjectableSolution
       - type: PassiveDamage
       - type: Muted
-  hidden: true
 
 - type: jobIcon
   parent: JobIcon
