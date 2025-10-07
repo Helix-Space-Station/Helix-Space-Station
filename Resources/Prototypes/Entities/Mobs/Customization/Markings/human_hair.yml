@@ -1397,6 +1397,7 @@
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: longbow
+<<<<<<< HEAD
       # SD added start
 - type: marking
   id: SDHumanHairSeph
@@ -1420,3 +1421,12 @@
     - sprite: Mobs/Customization/human_hair.rsi
       state: seph_floorlength_braid
       # SD added end
+=======
+- type: marking
+  id: HumanHairLongWithBangs
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: Mobs/Customization/human_hair.rsi
+    state: longwithbangs
+>>>>>>> 41627513e7177b3ad3522659c0740bd3ee8d1224
