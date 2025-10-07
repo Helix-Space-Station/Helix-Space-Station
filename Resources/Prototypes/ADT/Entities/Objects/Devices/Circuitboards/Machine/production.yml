@@ -239,7 +239,6 @@
   - type: MachineBoard
     prototype: ADTBluespaceHarvester
     stackRequirements:
-<<<<<<< HEAD
       Glass: 200
       Steel: 200
       Diamond: 20
@@ -247,13 +246,6 @@
       Manipulator: 20
       Capacitor: 20
       MatterBin: 40
-=======
-      Glass: 15
-      Steel: 15
-      CableHV: 5
-      Manipulator: 20
-      ADTBScrystalArt: 10
->>>>>>> 41627513e7177b3ad3522659c0740bd3ee8d1224
     tagRequirements:
       GlassBeaker:
         amount: 5

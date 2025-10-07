@@ -227,28 +227,15 @@
 
 - type: entity
   parent: ADTClothingModsuitShoesBase
-<<<<<<< HEAD
-  id: ADTClothingModsuitShoesSyndicateContractor
-  name: syndicate MOD boots
-  components:
-  - type: Sprite
-    sprite: ADT/Clothing/Shoes/Modsuit/syndicate_contractor.rsi
-=======
   id: ADTClothingModsuitShoesCMO
   name: CMO MOD boots
   components:
   - type: Sprite
     sprite: ADT/Clothing/Shoes/Modsuit/cmo.rsi
->>>>>>> 41627513e7177b3ad3522659c0740bd3ee8d1224
     state: icon
   - type: Clothing
     equipDelay: 3
     unequipDelay: 3
-<<<<<<< HEAD
-    sprite: ADT/Clothing/Shoes/Modsuit/syndicate_contractor.rsi
-    equipSound: /Audio/Mecha/mechmove03.ogg
-    unequipSound: /Audio/Mecha/mechmove03.ogg
-=======
     sprite: ADT/Clothing/Shoes/Modsuit/cmo.rsi
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
@@ -297,4 +284,3 @@
     sprite: ADT/Clothing/Shoes/Modsuit/warden.rsi
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
->>>>>>> 41627513e7177b3ad3522659c0740bd3ee8d1224

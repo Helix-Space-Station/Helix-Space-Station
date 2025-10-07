@@ -235,15 +235,6 @@
 
 - type: entity
   parent: ADTClothingHandsModsuitBase
-<<<<<<< HEAD
-  id: ADTClothingHandsModsuitSyndicateContractor
-  name: syndicate contractor MOD gauntlets
-  components:
-  - type: Sprite
-    sprite: ADT/Clothing/Hands/Modsuit/syndicate_contractor.rsi
-  - type: Clothing
-    sprite: ADT/Clothing/Hands/Modsuit/syndicate_contractor.rsi
-=======
   id: ADTClothingHandsModsuitCMO
   name: CMO MOD gauntlets
   components:
@@ -251,16 +242,11 @@
     sprite: ADT/Clothing/Hands/Modsuit/cmo.rsi
   - type: Clothing
     sprite: ADT/Clothing/Hands/Modsuit/cmo.rsi
->>>>>>> 41627513e7177b3ad3522659c0740bd3ee8d1224
     equipSound: /Audio/Mecha/mechmove03.ogg
     unequipSound: /Audio/Mecha/mechmove03.ogg
     equipDelay: 3
     unequipDelay: 3
   - type: Fiber
-<<<<<<< HEAD
-    fiberMaterial: fibers-advancedcarbon-adt
-    fiberColor: fibers-darkgrey-adt
-=======
     fiberColor: fibers-red
 
 - type: entity
@@ -310,4 +296,3 @@
     unequipDelay: 3
   - type: Fiber
     fiberColor: fibers-white
->>>>>>> 41627513e7177b3ad3522659c0740bd3ee8d1224

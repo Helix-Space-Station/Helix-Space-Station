@@ -486,8 +486,6 @@
   - type: ClothingGrantComponent
     component:
     - type: GrabProtection
-<<<<<<< HEAD
-=======
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -667,4 +665,3 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
->>>>>>> 41627513e7177b3ad3522659c0740bd3ee8d1224
