@@ -1,9 +1,9 @@
-using Content.Server.Body.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.EntityEffects;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.EntityEffects.EffectConditions;
+namespace Content.Shared.EntityEffects.EffectConditions;
 
 public sealed partial class UniqueBloodstreamChemThreshold : EntityEffectCondition
 {

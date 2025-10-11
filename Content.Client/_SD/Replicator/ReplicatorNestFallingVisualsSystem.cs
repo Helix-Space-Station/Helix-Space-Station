@@ -11,9 +11,12 @@ namespace Content.Client.SD.Replicator;
 
 /// <summary>
 ///     Handles the falling animation for entities that fall into a Binglepit. shamlesly copied from chasm
-///     imp note: i didn't really change much here, aside from updating it to fit current Entity<T> conventions. 
+///     imp note: i didn't really change much here, aside from updating it to fit current Entity<T> conventions.
 /// </summary>
-public sealed class ReplicatorNestFallingVisualsSystem : EntitySystem
+public sealed class
+
+
+    ReplicatorNestFallingVisualsSystem : EntitySystem
 {
     [Dependency] private readonly AnimationPlayerSystem _anim = default!;
 

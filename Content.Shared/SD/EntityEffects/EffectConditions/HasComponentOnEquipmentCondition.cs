@@ -2,7 +2,7 @@ using Content.Shared.EntityEffects;
 using Content.Shared.Inventory;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.EntityEffects.EffectConditions;
+namespace Content.Shared.EntityEffects.EffectConditions;
 
 public sealed partial class HasComponentOnEquipmentCondition : EntityEffectCondition
 {

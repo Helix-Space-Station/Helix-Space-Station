@@ -5,7 +5,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Localizations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.EntityEffects.EffectConditions;
+namespace Content.Shared.EntityEffects.EffectConditions;
 
 /// <summary>
 /// Checking for at least this amount of damage, but only for specified types/groups

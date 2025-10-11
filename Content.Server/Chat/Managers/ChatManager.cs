@@ -24,6 +24,7 @@ using Content.Shared.ADT.CCVar;
 using Content.Server.Discord;
 using Content.Server.ADT.Chat;
 using Content.Server.Corvax.Sponsors;
+using Content.Shared.Ghost; // sd fix
 
 namespace Content.Server.Chat.Managers;
 
