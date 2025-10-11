@@ -8,8 +8,6 @@
       state: engineering
     - type: MachineBoard
       prototype: ADTUniversalPipeDispenser
-      stackRequirements:
-        Manipulator: 4
       tagRequirements:
         GlassBeaker:
           amount: 2
@@ -24,8 +22,6 @@
   components:
   - type: MachineBoard
     prototype: ADTBookPrinter
-    stackRequirements:
-      Manipulator: 2
 # Ganimed-Book-Printer-End
 
 - type: entity
@@ -89,7 +85,6 @@
       stackRequirements:
         Steel: 5
         Plasma: 5
-        Manipulator: 3
         Glass: 5
       tagRequirements:
           GlassBeaker:
@@ -137,7 +132,6 @@
     - type: MachineBoard
       prototype: ADTAdvancedKitchenReagentGrinder
       stackRequirements:
-        Manipulator: 6
         Plasma: 5
       tagRequirements:
         GlassBeaker:
@@ -157,7 +151,6 @@
     - type: MachineBoard
       prototype: ADTMedicalAssembler
       stackRequirements:
-        Manipulator: 1
         Steel: 5
         Glass: 2
         Cable: 4
@@ -215,7 +208,6 @@
     - type: MachineBoard
       prototype: ADTKitchenAssembler
       stackRequirements:
-        Manipulator: 2
         Glass: 2
         Cable: 2
       tagRequirements:
@@ -243,9 +235,6 @@
       Steel: 200
       Diamond: 20
       CableHV: 50
-      Manipulator: 20
-      Capacitor: 20
-      MatterBin: 40
     tagRequirements:
       GlassBeaker:
         amount: 5
