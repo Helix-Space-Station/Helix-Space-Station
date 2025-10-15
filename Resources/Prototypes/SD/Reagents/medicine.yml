@@ -272,10 +272,9 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:HealthChange
+      - !type:EvenHealthChange
         damage:
-          groups:
-            Brute: -4
+          Brute: -4
         conditions:
         - !type:TypedDamageThreshold
           damage:
@@ -283,10 +282,9 @@
               Brute: 25
         - !type:ReagentThreshold
           max: 5.5
-      - !type:HealthChange
+      - !type:EvenHealthChange
         damage:
-          groups:
-            Brute: -1.5
+          Brute: -1.5
         conditions:
         - !type:TypedDamageThreshold
           damage:
@@ -295,10 +293,9 @@
           inverse: true
         - !type:ReagentThreshold
           max: 5.5
-      - !type:HealthChange
+      - !type:EvenHealthChange
         damage:
-          groups:
-            Brute: 3
+          Brute: 3
         conditions:
         - !type:ReagentThreshold
           min: 5.5
