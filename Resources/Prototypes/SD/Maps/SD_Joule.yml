@@ -3,7 +3,7 @@
   mapName: 'Joule Station'
   mapPath: /Maps/SDMaps/SDStations/SD_Joule.yml
   maxRandomOffset: 0
-  minPlayers: 5
+  minPlayers: 5 #
   stations:
     SD_Joule:
       stationProto: StandardNanotrasenStation
