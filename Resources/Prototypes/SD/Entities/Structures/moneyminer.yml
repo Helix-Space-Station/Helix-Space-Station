@@ -62,14 +62,6 @@
     color: "#ED760E"
   - type: PassiveHeatProducer
     energyPerSecond: 1500
-    #SD Tweak
-  - type: MachineSafety
-    criticalTemperature: 423
-    maxOverheatTimeSeconds: 600
-    alertChannel: Supply
-  - type: ActiveRadio
-    channels: ["Supply"]
-  #SD Tweak end
 
 - type: entity
   parent: BaseFlatpack

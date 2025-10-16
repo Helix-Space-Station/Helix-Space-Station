@@ -79,16 +79,6 @@
     radius: 0.8
     energy: 0.5
     color: "#ff0000"
-    #SD Tweak
-  - type: PassiveHeatProducer
-    energyPerSecond: 7000
-  - type: MachineSafety
-    criticalTemperature: 423
-    maxOverheatTimeSeconds: 600
-    alertChannel: Syndicate
-  - type: ActiveRadio
-    channels: ["Syndicate"]
-  #SD Tweak end
 
 - type: entity
   parent: BaseFlatpack
