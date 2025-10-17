@@ -446,15 +446,17 @@ namespace Content.Server.Atmos.EntitySystems
 
             // TODO: This needs cleanup to take off the crust from TemperatureComponent and shit.
             //SD Tweak (test) begin. remove toProcess and foreach if crushes.
-            var toProcess = new List<(EntityUid uid, FlammableComponent flammable)>(); // remove this if crushes
+            var toProcess = new List<(EntityUid uid, FlammableComponent flammable)>();
+            //
             var query = EntityQueryEnumerator<FlammableComponent, TransformComponent>();
             while (query.MoveNext(out var uid, out var flammable, out _))
             {
-                toProcess.Add((uid, flammable)); // remove this if crushes
-            } //remove this if crushes
-            foreach (var (uid, flammable) in toProcess) // remove this if crushes
-            { // remove this if crushes
-                //SD Tweak (test) end. remove \uparrow if crushes
+                toProcess.Add((uid, flammable));
+            }
+            //SD Tweak (test) remove if crushes
+            foreach (var (uid, flammable) in toProcess)
+            {
+            //SD Tweak (test) end. remove \uparrow if crushes
                 // Slowly dry ourselves off if wet.
                 if (flammable.FireStacks < 0)
                 {
