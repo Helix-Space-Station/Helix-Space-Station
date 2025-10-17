@@ -11,9 +11,11 @@
   - type: GuideHelp
     guides:
     - Science
+  #SD Tweak start
   - type: Tag
     tags:
     - ResearchDisk
+  #SD Tweak end
 
 - type: entity
   parent: ResearchDisk
