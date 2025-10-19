@@ -1,0 +1,507 @@
+# Base prototypes
+
+- type: latheRecipe
+  abstract: true
+  id: BaseAmmoRecipe
+  categories:
+  - Ammo
+  completetime: 5
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseAmmoRecipe
+  id: BaseAmmoBoxRecipe
+  categories:
+  - Ammo
+  - Boxes
+
+- type: latheRecipe
+  abstract: true
+  id: BaseEmptyAmmoRecipe
+  categories:
+  - Magazines
+  completetime: 1
+
+## Recipes
+
+# .20 Rifle
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazineRifleEmpty
+  result: MagazineRifleEmpty
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineRifle
+  result: MagazineRifle
+  materials:
+    Lead: 475 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineRifleIncendiary
+  result: MagazineRifleIncendiary
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+    Plastic: 450
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineRiflePractice
+  result: MagazineRiflePractice
+  materials:
+    Lead: 175 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineRifleUranium
+  result: MagazineRifleUranium
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+    Plastic: 300
+    Uranium: 300
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxRifle
+  result: MagazineBoxRifle
+  materials:
+    Lead: 750 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxRifleIncendiary
+  result: MagazineBoxRifleIncendiary
+  materials:
+    Plastic: 750
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxRiflePractice
+  result: MagazineBoxRiflePractice
+  materials:
+    Lead: 250 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxRifleUranium
+  result: MagazineBoxRifleUranium
+  materials:
+    Plastic: 500
+    Uranium: 500
+
+# .30 Rifle
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazineLightRifleEmpty
+  result: MagazineLightRifleEmpty
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineLightRifle
+  result: MagazineLightRifle
+  materials:
+    Lead: 565 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineLightRifleIncendiary
+  result: MagazineLightRifleIncendiary
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+    Plastic: 540
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineLightRiflePractice
+  result: MagazineLightRiflePractice
+  materials:
+    Lead: 205 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineLightRifleUranium
+  result: MagazineLightRifleUranium
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+    Plastic: 360
+    Uranium: 360
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxLightRifle
+  result: MagazineBoxLightRifle
+  materials:
+    Lead: 900 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxLightRifleIncendiary
+  result: MagazineBoxLightRifleIncendiary
+  materials:
+    Plastic: 900
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxLightRiflePractice
+  result: MagazineBoxLightRiflePractice
+  materials:
+    Lead: 300 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxLightRifleUranium
+  result: MagazineBoxLightRifleUranium
+  materials:
+    Plastic: 600
+    Uranium: 600
+
+# .35 Auto
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazinePistolEmpty
+  result: MagazinePistolEmpty
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistol
+  result: MagazinePistol
+  materials:
+    Lead: 145 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolIncendiary
+  result: MagazinePistolIncendiary
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+    Plastic: 120
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolPractice
+  result: MagazinePistolPractice
+  materials:
+    Lead: 85 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolUranium
+  result: MagazinePistolUranium
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+    Plastic: 65
+    Uranium: 120
+
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazinePistolSubMachineGunEmpty
+  result: MagazinePistolSubMachineGunEmpty
+  materials:
+    Lead: 30 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolSubMachineGun
+  result: MagazinePistolSubMachineGun
+  materials:
+    Lead: 300 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolSubMachineGunIncendiary
+  result: MagazinePistolSubMachineGunIncendiary
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+    Plastic: 275
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolSubMachineGunPractice
+  result: MagazinePistolSubMachineGunPractice
+  materials:
+    Steel: 150
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolSubMachineGunUranium
+  result: MagazinePistolSubMachineGunUranium
+  materials:
+    Lead: 25 #ADT-BFUU-Tweak
+    Plastic: 250
+    Uranium: 250
+
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazinePistolSubMachineGunTopMountedEmpty
+  result: MagazinePistolSubMachineGunTopMountedEmpty
+  materials:
+    Lead: 30 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolSubMachineGunTopMounted
+  result: MagazinePistolSubMachineGunTopMounted
+  materials:
+    Lead: 300 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxPistol
+  result: MagazineBoxPistol
+  materials:
+    Lead: 600 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxPistolIncendiary
+  result: MagazineBoxPistolIncendiary
+  materials:
+    Plastic: 600
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxPistolPractice
+  result: MagazineBoxPistolPractice
+  materials:
+    Lead: 300 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxPistolUranium
+  result: MagazineBoxPistolUranium
+  materials:
+    Plastic: 300
+    Uranium: 600
+
+# .45 Magnum
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: SpeedLoaderMagnumEmpty
+  result: SpeedLoaderMagnumEmpty
+  materials:
+    Lead: 50 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: SpeedLoaderMagnum
+  result: SpeedLoaderMagnum
+  materials:
+    Lead: 190 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: SpeedLoaderMagnumIncendiary
+  result: SpeedLoaderMagnumIncendiary
+  materials:
+    Lead: 50 #ADT-BFUU-Tweak
+    Plastic: 150
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: SpeedLoaderMagnumPractice
+  result: SpeedLoaderMagnumPractice
+  materials:
+    Lead: 90 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: SpeedLoaderMagnumUranium
+  result: SpeedLoaderMagnumUranium
+  materials:
+    Lead: 50 #ADT-BFUU-Tweak
+    Plastic: 150
+    Uranium: 110
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxMagnum
+  result: MagazineBoxMagnum
+  materials:
+    Lead: 240 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxMagnumIncendiary
+  result: MagazineBoxMagnumIncendiary
+  materials:
+    Plastic: 240
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxMagnumPractice
+  result: MagazineBoxMagnumPractice
+  materials:
+    Lead: 60 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxMagnumUranium
+  result: MagazineBoxMagnumUranium
+  materials:
+    Plastic: 240
+    Uranium: 180
+
+# .50 Shell
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazineShotgunEmpty
+  result: MagazineShotgunEmpty
+  materials:
+    Lead: 50 #ADT-BFUU-Tweak
+    Copper: 10  #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineShotgun
+  result: MagazineShotgun
+  materials:
+    Lead: 240 #ADT-BFUU-Tweak
+    Copper: 100  #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineShotgunIncendiary
+  result: MagazineShotgunIncendiary
+  materials:
+    Lead: 100 #ADT-BFUU-Tweak
+    Plastic: 190
+    Copper: 100  #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineShotgunBeanbag
+  result: MagazineShotgunBeanbag
+  materials:
+    Lead: 150 #ADT-BFUU-Tweak
+    Plastic: 140
+    Copper: 150  #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineShotgunSlug
+  result: MagazineShotgunSlug
+  materials:
+    Lead: 190 #ADT-BFUU-Tweak
+    Plastic: 100
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: BoxLethalshot
+  result: BoxLethalshot
+  materials:
+    Lead: 320 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: BoxShotgunIncendiary
+  result: BoxShotgunIncendiary
+  materials:
+    Lead: 80 #ADT-BFUU-Tweak
+    Plastic: 320
+    Copper: 80  #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: BoxShotgunPractice
+  result: BoxShotgunPractice
+  materials:
+    Lead: 80 #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: BoxShotgunUranium
+  result: BoxShotgunUranium
+  materials:
+    Plastic: 320
+    Uranium: 240
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: BoxBeanbag
+  result: BoxBeanbag
+  materials:
+    Lead: 160 #ADT-BFUU-Tweak
+    Plastic: 240
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: BoxShotgunSlug
+  result: BoxShotgunSlug
+  materials:
+    Lead: 240 #ADT-BFUU-Tweak
+    Plastic: 160
+    Copper: 100  #ADT-BFUU-Tweak
+
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: BoxShellTranquilizer
+  result: BoxShellTranquilizer
+  materials:
+    Plastic: 240
+    Lead: 160 #ADT-BFUU-Tweak
+    Glass: 80
+    Plasma: 160
+    Silver: 80
+    Copper: 60  #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: BoxShotgunFlare
+  result: BoxShotgunFlare
+  materials:
+    Lead: 80 #ADT-BFUU-Tweak
+    Plastic: 80
+    Copper: 60  #ADT-BFUU-Tweak
+
+# Encampment ammo
+- type: latheRecipe
+  id: MagazineGrenadeEmpty
+  result: MagazineGrenadeEmpty
+  categories:
+  - Magazines
+  completetime: 3
+  materials:
+    Lead: 150 #ADT-BFUU-Tweak
+    Plastic: 50
+
+- type: latheRecipe
+  id: GrenadeEMP
+  result: GrenadeEMP
+  categories:
+  - Ammo
+  completetime: 3
+  materials:
+    Lead: 150 #ADT-BFUU-Tweak
+    Plastic: 100
+    Glass: 20
+    Copper: 20  #ADT-BFUU-Tweak
+
+- type: latheRecipe
+  id: GrenadeBlast
+  result: GrenadeBlast
+  categories:
+  - Ammo
+  completetime: 3
+  materials:
+    Lead: 450 #ADT-BFUU-Tweak
+    Plastic: 300
+    Gold: 150
+
+- type: latheRecipe
+  id: GrenadeFlash
+  result: GrenadeFlash
+  categories:
+  - Ammo
+  completetime: 3
+  materials:
+    Lead: 150 #ADT-BFUU-Tweak
+    Plastic: 100
+    Glass: 20

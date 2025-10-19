@@ -5,6 +5,7 @@
   id: BaseMob
   abstract: true
   components:
+  - type: PassiveHolyHealing
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -45,11 +46,25 @@
   - type: TTS # Corvax-TTS
   - type: RequireProjectileTarget
     active: False
+  - type: StunVisuals
   # ADT tweak start
   - type: CanEscapeMech
   - type: LanguageSpeaker
     languages:
       GalacticCommon: Speak
+  - type: CombatModePickupWhitelist
+    blacklist:
+      tags:
+        - Cartridge
+        - Trash
+        - Write
+        - Document
+        - Paper
+        - Figurine
+        - Payload
+        - ClothMade
+        - Mouse
+        - Candle
   # ADT tweak end
 
 - type: entity
@@ -114,6 +129,8 @@
     - Shock
     - Cold
     - Caustic
+    - Asphyxiation
+    - Radiation
   - type: DamageOnHighSpeedImpact
     damage:
       types:

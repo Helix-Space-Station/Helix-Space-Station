@@ -1,0 +1,52 @@
+- type: thiefBackpackSet
+  id: WeaponHoSUnika
+  name: hos-voucher-unika-name
+  description: hos-voucher-unika-description
+  sprite:
+    sprite: ADT/Objects/Weapons/Guns/Revolvers/unica.rsi
+    state: icon
+  content:
+  - ADTWeaponRevolverLesserUnica
+
+- type: thiefBackpackSet
+  id: WeaponHoSMultiphase
+  name: hos-voucher-multiphase-name
+  description: hos-voucher-multiphase-description
+  sprite:
+    sprite: ADT/Objects/Weapons/Guns/Battery/multifazpistol.rsi
+    state: icon
+  content:
+  - ADTWeaponPistolX01
+
+- type: thiefBackpackSet
+  id: WeaponHoSBat
+  name: hos-voucher-bat-name
+  description: hos-voucher-bat-description
+  sprite:
+    sprite: ADT/Objects/Weapons/Melee/tactic_bat.rsi
+    state: bat_on
+  content:
+  - ADTTacticBat
+
+
+# sd-tweak start
+
+- type: thiefBackpackSet
+  id: WeaponHoSCQC
+  name: hos-voucher-cqc
+  description: hos-voucher-cqc-description
+  sprite:
+    sprite: ADT/Objects/Specific/material_art_book.rsi
+    state: cqc
+  content:
+  - ADTCqcManual
+
+- type: thiefBackpackSet
+  id: WeaponHoSEnergyShotgun
+  name: hos-voucher-shotgun
+  description: hos-voucher-shotgun-description
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
+    state: base
+  content:
+  - WeaponEnergyShotgun

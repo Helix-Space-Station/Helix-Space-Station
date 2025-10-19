@@ -91,6 +91,7 @@
       types:
         Slash: 10
   - type: PressureDamageModify
+    minPressure: -1
     additionalDamage:
       types:
         Blunt: 10
@@ -112,6 +113,10 @@
   - type: PointLight
     color: "#ffeead"
     enabled: false
+  - type: Sharp
+  - type: Utensil
+    types:
+      - Knife
 
 - type: entity
   parent: WeaponKineticBase
@@ -125,11 +130,11 @@
   - type: UseDelay
     delay: 1
   - type: MeleeWeapon
-    attackRate: 1
+    attackRate: 0.75
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 20
+        Blunt: 10
         Slash: 5
     soundHit:
       collection: MetalThud
@@ -151,9 +156,10 @@
   - type: GunRequiresWield
   - type: Wieldable
   - type: PressureDamageModify
+    minPressure: -1
     additionalDamage:
       types:
-        Blunt: 10
+        Blunt: 20
         Slash: 15
   - type: Clothing
     sprite: ADT/Objects/Weapons/Melee/Crushers/crusher_hammer.rsi
@@ -192,7 +198,7 @@
       types:
         Blunt: 2.5
         Slash: 2.5
-        Structural: 30
+        Structural: 10
   - type: BackstabDamageMultipilier
     bonusDamage:
       types:
@@ -203,6 +209,7 @@
     size: Normal
     sprite: ADT/Objects/Weapons/Melee/Crushers/crusher_claws-inhands.rsi
   - type: PressureDamageModify
+    minPressure: -1
     additionalDamage:
       types:
         Blunt: 10
@@ -224,6 +231,10 @@
   - type: PointLight
     color: "#ffeead"
     enabled: false
+  - type: Sharp
+  - type: Utensil
+    types:
+      - Knife
 
 - type: entity
   parent: WeaponKineticBase
@@ -254,6 +265,7 @@
       types:
         Slash: 10
   - type: PressureDamageModify
+    minPressure: -1
     additionalDamage:
       types:
         Blunt: 10
@@ -275,3 +287,7 @@
   - type: PointLight
     color: "#ffeead"
     enabled: false
+  - type: Sharp
+  - type: Utensil
+    types:
+      - Knife

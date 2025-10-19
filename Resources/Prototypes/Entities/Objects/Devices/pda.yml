@@ -69,6 +69,7 @@
     radius: 2.5
     netsync: false
   - type: Ringer
+  - type: RingerUplink
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: PDA
@@ -108,6 +109,8 @@
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
         type: HealthAnalyzerBoundUserInterface
+      enum.GasAnalyzerUiKey.Key: # SD Elf Atmos
+        type: GasAnalyzerBoundUserInterface
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -175,6 +178,21 @@
       - ADTWalletCartridge # ADT-Economy
     diskSpace: 8 # ADT tweak
 
+- type: entity # SD Elf Atmos
+  parent: BasePDA
+  id: BaseEngineerPDA
+  abstract: true
+  components:
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - AtmoTechCartridge
+      - ADTWalletCartridge # ADT-Economy
+    diskSpace: 8 # ADT tweak
+
 - type: entity
   parent: BasePDA
   id: PassengerPDA
@@ -187,7 +205,7 @@
     borderColor: "#717059"
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: TechnicalAssistantPDA
   name: technical assistant PDA
   description: Why isn't it yellow?
@@ -225,7 +243,7 @@
     state: pda-internmed
   - type: GuideHelp
     guides:
-    - Medical Doctor
+    - MedicalDoctor
 
 - type: entity
   parent: BaseSecurityPDA
@@ -487,6 +505,13 @@
     accentVColor: "#a23e3e"
   - type: Icon
     state: pda-qm
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - AstroNavCartridge
 
 - type: entity
   parent: BasePDA
@@ -691,7 +716,7 @@
     state: pda-hop
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: CEPDA
   name: chief engineer PDA
   description: Looks like it's barely been used.
@@ -718,7 +743,7 @@
     state: pda-ce
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: EngineerPDA
   name: engineer PDA
   description: Rugged and well-worn.
@@ -784,7 +809,7 @@
     state: pda-medical
   - type: GuideHelp
     guides:
-    - Medical Doctor
+    - MedicalDoctor
 
 - type: entity
   parent: MedicalPDA
@@ -916,6 +941,7 @@
     - NewsReaderCartridge
     - WantedListCartridge
     - LogProbeCartridge
+    - ADTWalletCartridge # ADT-Economy
 
 - type: entity
   parent: BaseSecurityPDA
@@ -964,6 +990,7 @@
     id: CentcomIDCard
     penSlot:
       startingItem: PenCentcom
+      priority: -1
       whitelist:
         tags:
         - Write
@@ -998,6 +1025,7 @@
   - type: Pda
     id: UniversalIDCard
   - type: HealthAnalyzer
+    maxScanRange: null
     scanDelay: 0
     silent: true
   - type: CartridgeLoader
@@ -1087,7 +1115,7 @@
     - DoorBumpOpener
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: AtmosPDA
   name: atmos PDA
   description: Still smells like plasma.
@@ -1134,7 +1162,7 @@
     - DoorBumpOpener
 
 - type: entity
-  parent: BasePDA
+  parent: [ BasePDA, BaseSyndicateContraband ]
   id: SyndiPDA
   name: syndicate PDA
   description: Ok, time to be a productive member of- oh cool I'm a bad guy time to kill people!
@@ -1208,6 +1236,18 @@
   components:
   - type: Pda
     id: ERTEngineerIDCard
+  - type: CartridgeLoader # SD Elf Atmos
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - WantedListCartridge
+      - AstroNavCartridge
+      - AtmoTechCartridge
+      - ADTWalletCartridge # ADT-Economy
+    diskSpace: 8 # ADT tweak
 
 - type: entity
   parent: ERTLeaderPDA
@@ -1427,7 +1467,7 @@
   - type: Unremoveable
 
 - type: entity
-  parent: BasePDA
+  parent: BaseEngineerPDA # SD Elf Atmos
   id: SeniorEngineerPDA
   name: senior engineer PDA
   description: Seems to have been taken apart and put back together several times.
@@ -1505,7 +1545,7 @@
     state: pda-seniorofficer
 
 - type: entity
-  parent: SyndiPDA
+  parent: [ BaseMajorContraband, SyndiPDA ]
   id: PiratePDA
   name: pirate PDA
   description: Yargh!
@@ -1521,9 +1561,9 @@
     state: pda-pirate
 
 - type: entity
-  parent: BaseMedicalPDA
+  parent: [ BaseMedicalPDA, BaseSyndicateContraband ]
   id: SyndiAgentPDA
-  name: syndicate agent PDA
+  name: syndicate corpsman PDA
   description: For those days when healing normal syndicates aren't enough, try healing nuclear operatives instead!
   components:
   - type: Pda
@@ -1607,3 +1647,14 @@
     borderColor: "#7F3300"
   - type: Icon
     state: pda-wizard
+
+- type: entity
+  parent: ClearPDA
+  id: ScurretPDA
+  description: A temporary PDA granted to scurret temps. Doesn't do much. Wawa!
+  components:
+  - type: Pda
+    id: VisitorIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener

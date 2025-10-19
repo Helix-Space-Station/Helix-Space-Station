@@ -32,7 +32,7 @@
       # ADT tweak Start
       - id: ADTAntibioticOintment
         amount: 1
-      - id: ADTPatchPackFilled
+      - id: ADTPatchPackFilled # SD tweak
         amount: 1
       # ADT tweak End
       - id: Bloodpack
@@ -57,7 +57,7 @@
       # ADT tweak Start
       - id: ADTAntibioticOintment
         amount: 1
-      - id: ADTPatchPackFilled
+      - id: ADTPatchPackFilled # SD tweak
         amount: 1
       # ADT tweak End
       - id: Bloodpack

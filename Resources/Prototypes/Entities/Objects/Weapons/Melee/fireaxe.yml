@@ -45,6 +45,7 @@
       - AdvancedPrying # ADT-Axe-Great-Return
   - type: ToolTileCompatible
   - type: Prying
+    pryPowered: true # SD tweak
   - type: UseDelay
     delay: 1
   - type: StealTarget
@@ -95,6 +96,7 @@
   - type: Item
     sprite: Objects/Weapons/Melee/fireaxeflaming.rsi
   - type: ComboWeapon
+    swapSound: /Audio/ADT/Entities/skin_drop.ogg #ADT-tweak
     availableMoves:
       - actionsNeeds:
           - ProtectiveWideHit

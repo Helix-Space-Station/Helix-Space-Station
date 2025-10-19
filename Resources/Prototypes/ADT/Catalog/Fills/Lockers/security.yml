@@ -9,7 +9,7 @@
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 4
-      - id: ClothingOuterHardsuitBrigmedic
+      - id: ADTClothingModsuitBackBrigmedic
       - id: ClothingHandsGlovesNitrile
       - id: BrigmedicDuffelbagClothing
       - id: MedkitFilled
@@ -30,6 +30,7 @@
       - id: ChemistryBottleEpinephrine
         amount: 1
       - id: BrigmedHypo
+      - id: ADTHandheldCrewMonitorBrigmedic
 
 - type: entity
   id: LockerBrigmedicFilled
@@ -67,6 +68,7 @@
       - id: ChemistryBottleEpinephrine
         amount: 1
       - id: BrigmedicDuffelbagClothing
+      - id: ADTHandheldCrewMonitorBrigmedic
       - id: ADTBookSRPsec
       - id: ADTBookSRPmed
       - id: ADTBookPCDsec

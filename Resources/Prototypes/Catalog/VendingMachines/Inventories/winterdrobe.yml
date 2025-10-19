@@ -17,6 +17,7 @@
     ClothingOuterFlannelBlue: 2
     ClothingOuterFlannelGreen: 2
     ClothingOuterCoatBomber: 3
+    ClothingHeadHatCanadaBeanie: 4
     ClothingHeadHatSantahat: 2
     ClothingHeadHatXmasCrown: 2
     ClothingHeadHatUshanka: 3 #ADT-Tweak
@@ -49,4 +50,3 @@
   emaggedInventory:
     ClothingNeckScarfStripedSyndieGreen: 3
     ClothingNeckScarfStripedSyndieRed: 3
-    ClothingNeckScarfStripedCentcom: 3

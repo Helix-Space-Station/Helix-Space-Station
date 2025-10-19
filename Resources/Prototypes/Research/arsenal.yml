@@ -12,8 +12,6 @@
   recipeUnlocks:
   - WeaponProtoKineticAccelerator
   - ShuttleGunKineticCircuitboard
-  - ADTWeaponCutter #ADT plasmacutter
-  # These are roundstart but not replenishable for salvage
   position: 0,0 # ADT Research Console Rework
 
 - type: technology
@@ -214,6 +212,20 @@
   - ConcentratedLaserWeaponry
   # ADT Research Console Rework end
 
+#- type: technology
+#  id: KineticModifications
+#  name: research-technology-kinetic-modifications
+#  icon:
+#    sprite: Objects/Tools/upgrade.rsi
+#    state: display
+#  discipline: Arsenal
+#  tier: 2
+#  cost: 7500
+#  recipeUnlocks:
+#  - PKAUpgradeDamage
+#  - PKAUpgradeRange
+#  - PKAUpgradeFireRate
+
 - type: technology
   id: BasicShuttleArmament
   name: research-technology-basic-shuttle-armament
@@ -241,6 +253,24 @@
   - ExplosiveTechnology
   # ADT Research Console Rework end
 
+- type: technology
+  id: DualWieldingTechnology
+  name: research-technology-dual-wielding-technology
+  icon:
+    sprite: Clothing/Back/Specific/harmpack.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClothingBackpackHarmpack
+
+  # ADT Research Console Rework start
+  position: 3,-4
+  requiredTech:
+  - BasicShuttleArmament
+  # ADT Research Console Rework end
+
 # Tier 3
 
 - type: technology
@@ -258,20 +288,21 @@
   # ADT Research Console Rework start
   position: 6,-1
   requiredTech:
-  - ExperimentalBatteryAmmo
+  # - ExperimentalBatteryAmmo # В прототипах такого не найдено
   - WaveParticleHarnessing
   # ADT Research Console Rework end
 
 - type: technology
-  id: ExperimentalBatteryAmmo
-  name: research-technology-experimental-battery-ammo
+  id: ThermalWeaponry
+  name: research-technology-thermal-weaponry
   icon:
-    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+    sprite: Objects/Weapons/Guns/Battery/temp_gun.rsi
     state: icon
   discipline: Arsenal
   tier: 3
   cost: 15000
   recipeUnlocks:
+  - WeaponTemperatureGun
   - WeaponLaserSvalinn
   # ADT Research Console Rework start
   position: 5,0

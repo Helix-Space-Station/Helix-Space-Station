@@ -92,7 +92,7 @@ ent-ADTPostmanIDCard = ID карта почтальона
 ent-ADTInventoryAssociateIDCard = ID карта кладовщика
     .desc = ID карта кладовщика.
 
-ent-ADTExcavatorIDCard = ID карта шахтёра
+ent-ADTMinerIDCard = ID карта шахтёра
     .desc = ID карта шахтёра.
 
 ent-ADTLabTechIDCard = ID карта аналитика
@@ -175,3 +175,6 @@ ent-ADTCMOIDCard = ID карта старшего медицинского оф�
 
 ent-ADTTraumatologistIDCard = ID карта травматолога
     .desc = ID карта травматолога.
+
+ent-ADTintendantIDCard = ID карта интенданта
+    .desc = ID карта интенданта

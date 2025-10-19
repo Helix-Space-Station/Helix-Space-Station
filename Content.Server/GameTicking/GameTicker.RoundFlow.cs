@@ -25,13 +25,13 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
-using System.Threading;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Diagnostics;
+using Content.Server.Voting.Managers;
+using Content.Shared.Voting;
+
 namespace Content.Server.GameTicking
 {
     public sealed partial class GameTicker
@@ -39,6 +39,7 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly DiscordWebhook _discord = default!;
         [Dependency] private readonly RoleSystem _role = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
+        [Dependency] private readonly IVoteManager _voteManager = default!;
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -97,7 +98,7 @@ namespace Content.Server.GameTicking
         /// </remarks>
         private void LoadMaps()
         {
-            if (_mapManager.MapExists(DefaultMap))
+            if (_map.MapExists(DefaultMap))
                 return;
 
             AddGamePresetRules();
@@ -215,7 +216,7 @@ namespace Content.Server.GameTicking
                 }
 
                 _metaData.SetEntityName(mapUid, proto.MapName);
-                var g = new List<EntityUid> {grid.Value.Owner};
+                var g = new List<EntityUid> { grid.Value.Owner };
                 RaiseLocalEvent(new PostGameMapLoad(proto, mapId, g, stationName));
                 return g;
             }
@@ -265,7 +266,7 @@ namespace Content.Server.GameTicking
                 }
 
                 _metaData.SetEntityName(mapUid, proto.MapName);
-                var g = new List<EntityUid> {grid.Value.Owner};
+                var g = new List<EntityUid> { grid.Value.Owner };
                 RaiseLocalEvent(new PostGameMapLoad(proto, mapId, g, stationName));
                 return g;
             }
@@ -315,7 +316,7 @@ namespace Content.Server.GameTicking
                     throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
                 }
 
-                var g = new List<EntityUid> {grid.Value.Owner};
+                var g = new List<EntityUid> { grid.Value.Owner };
                 // TODO MAP LOADING use a new event?
                 RaiseLocalEvent(new PostGameMapLoad(proto, targetMap, g, stationName));
                 return g;
@@ -405,7 +406,7 @@ namespace Content.Server.GameTicking
                 HumanoidCharacterProfile profile;
                 if (_prefsManager.TryGetCachedPreferences(userId, out var preferences))
                 {
-                    profile = (HumanoidCharacterProfile) preferences.SelectedCharacter;
+                    profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
                 }
                 else
                 {
@@ -440,6 +441,24 @@ namespace Content.Server.GameTicking
 
             // MapInitialize *before* spawning players, our codebase is too shit to do it afterwards...
             _map.InitializeMap(DefaultMap);
+            // ADT-Tweak-start: ReWork Vote Map
+            if (_gameMapManager.GetSelectedMap() is { } selectedMap)
+                _gameMapManager.RegisterPlayedMap(selectedMap.ID);
+            // ADT-Tweak-End
+            // ADT-Tweak-start: Register Played Preset
+            foreach (var key in PlayedPresets.Keys.ToList())
+            {
+                PlayedPresets[key]--;
+                if (PlayedPresets[key] <= 0)
+                    PlayedPresets.Remove(key);
+            }
+
+            // Добавляем текущий пресет в бан-лист, если у него указан BannedRound > 0
+            if (CurrentPreset != null && CurrentPreset.BannedRound.HasValue && CurrentPreset.BannedRound.Value > 0)
+            {
+                PlayedPresets[CurrentPreset.ID] = CurrentPreset.BannedRound.Value;
+            }
+            // ADT-Tweak-end
 
             SpawnPlayers(readyPlayers, readyPlayerProfiles, force);
 
@@ -775,6 +794,9 @@ namespace Content.Server.GameTicking
             if (_serverUpdates.RoundEnded())
                 return;
 
+            // Check if the GamePreset needs to be reset
+            TryResetPreset();
+
             _sawmill.Info("Restarting round!");
 
             SendServerMessage(Loc.GetString("game-ticker-restart-round"));
@@ -804,6 +826,9 @@ namespace Content.Server.GameTicking
                 UpdateInfoText();
 
                 ReqWindowAttentionAll();
+                // Запуск голосования за Мапу и Режим в лобби
+                _voteManager.CreateStandardVote(initiator: null, voteType: StandardVoteType.Map);     // ADT-Tweak
+                _voteManager.CreateStandardVote(initiator: null, voteType: StandardVoteType.Preset);  // ADT-Tweak
             }
         }
 

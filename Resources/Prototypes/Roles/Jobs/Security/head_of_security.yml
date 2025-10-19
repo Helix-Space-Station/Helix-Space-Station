@@ -13,9 +13,6 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 198000 #55 hrs # ADT-RoleTime
-#    - !type:OverallPlaytimeRequirement
-#      time: 144000 #40 hrs
-      # ADT Restrict Start
     - !type:SpeciesRequirement
       inverted: true
       species:
@@ -46,6 +43,13 @@
     components:
       - type: CommandStaff
       # - type: PhantomTyranyTarget # ADT Phantom
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+      # - type: PhantomTyranyTarget # ADT Phantom
+      # ADT-Tweak-Start: метка персонала службы безопасности
+      - type: SecurityStaff
+      # ADT-Tweak-End
 
 - type: startingGear
   id: HoSGear
@@ -54,10 +58,16 @@
     # id: HoSPDA ADT: different PDAs in loadouts
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltSecurity
-    pocket1: ADTWeaponRevolverLesserUnica
   storage:
     back:
     - Flash
-    - ADTSpeedLoaderMagnumLesser
     - ADTtelescopicBaton #ADT-CustomADTLoadout
+    - MagazinePistol
 
+- type: chameleonOutfit
+  id: HeadOfSecurityChameleonOutfit
+  job: HeadOfSecurity
+  hasMindShield: true
+  equipment:
+    mask: ClothingMaskGasSecurity
+    neck: ClothingNeckCloakHos

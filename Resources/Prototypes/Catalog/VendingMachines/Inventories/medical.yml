@@ -3,7 +3,9 @@
   startingInventory:
     HandheldHealthAnalyzer: 3
     # ADT tweak start
-    ADTPatchPackFilled: 3
+    ADTPatchPackFilled: 3 # SD tweak
+    MedicalPatchPrefilledBicaridine: 3  #SD tweak
+    MedicalPatchPrefilledDermaline: 3   #SD tweak
     Brutepack: 4
     Ointment: 4
     ADTAntibioticOintment: 4
@@ -14,11 +16,15 @@
     BoxBottle: 3
     ClothingEyesHudMedical: 2
     ClothingEyesEyepatchHudMedical: 2
+    FoodSnackLollypopWrapped: 5 # SD tweak
+    FoodSnackLollypopWrappedTricordrazine: 3 # SD tweak
   contrabandInventory:
     FoodApple: 1
   # ADT tweak Start
   emaggedInventory:
     ADTMorphineBottle: 1
     ADTOmnizineBottle: 1
-    ADTPatchHonk: 3
+    FoodSnackLollypopWrappedLexorin: 3 # SD tweak
+    FoodSnackLollypopWrappedMysteryEvil: 5 # SD tweak
+  # ADTPatchHonk: 3 SD tweak
   # ADT tweak End

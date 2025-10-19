@@ -7,6 +7,7 @@
   - TrashBag  # ADT Tweak
   - ADTPlantAnalyzer # ADT Tweak
   - Bucket
+  - Ashtray
   - DrinkMug
   - DrinkMugMetal
   - DrinkGlass
@@ -22,10 +23,12 @@
   - FoodPlateMuffinTin
   - FoodKebabSkewer
   - SprayBottle
+  - TrashBag
   - LightReplacer
   - MopItem
   - Holoprojector
   - WetFloorSign
+  - WireBrush
 
 - type: latheRecipePack
   id: ServiceBoardsStatic
@@ -49,11 +52,13 @@
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
   - MegaSprayBottle
+  - ADTBluespaceTrashCan # ADT tweak
 
 - type: latheRecipePack
   id: Instruments
   recipes:
   - SynthesizerInstrument
+  - PushHorn
 
 - type: latheRecipePack
   id: ServiceBoards

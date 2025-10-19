@@ -9,8 +9,9 @@
       state: ertleader
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitaryLeader
-      - NamesLastMilitary
+      - ADTCmndNamesFirstMilitary
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
     - type: RandomHumanoidSpawner
       settings: ADTERTLeader
 
@@ -64,8 +65,9 @@
       prototypes: [ ADTERTLeaderGear ]
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitaryLeader
-      - NamesLastMilitary
+      - ADTCmndNamesFirstMilitary
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
 
 - type: randomHumanoidSettings
   id: ADTERTLeaderEVA
@@ -124,8 +126,9 @@
       state: ertjanitor
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesFirstERTEngineer
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
     - type: RandomHumanoidSpawner
       settings: ADTERTJanitor
 
@@ -164,8 +167,9 @@
         time: 180000 # 50h #
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesFirstERTEngineer
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
     - type: Loadout
       prototypes: [ ADTERTJanitorGear ]
 
@@ -238,8 +242,9 @@
       state: ertengineer
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesFirstERTEngineer
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
     - type: RandomHumanoidSpawner
       settings: ADTERTEngineer
 
@@ -278,8 +283,9 @@
         time: 180000 # 50h #
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesFirstERTEngineer
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
     - type: Loadout
       prototypes: [ ADTERTEngineerGear ]
 
@@ -352,8 +358,9 @@
       state: ertsecurity
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesFirstERTMilitary
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
     - type: RandomHumanoidSpawner
       settings: ADTERTSecurity
 
@@ -393,8 +400,9 @@
         time: 180000 # 50h
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesFirstERTMilitary
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
     - type: Loadout
       prototypes: [ ADTERTSecurityGear ]
 
@@ -463,8 +471,9 @@
       state: ertmedical
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesFirstERTMedical
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
     - type: RandomHumanoidSpawner
       settings: ADTERTMedical
 
@@ -503,8 +512,9 @@
         time: 180000 # 50h
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesFirstERTMedical
+      - NamesLastERTCallsign
+      nameFormat: name-format-standard
     - type: Loadout
       prototypes: [ ADTERTMedicalGear ]
 
@@ -608,6 +618,8 @@
     - type: GhostRole
       name: ghost-role-information-cmnd-cburn-agent-name
       description: ghost-role-information-cmnd-cburn-agent-description
+      raffle:
+        settings: short
       # ADT-tweak-start
       requirements:
       - !type:DepartmentTimeRequirement
@@ -624,6 +636,7 @@
       nameSegments:
       - ADTCmndNamesFirstMilitary
       - NamesLastERTCallsign  # Corvax Localization
+      nameFormat: name-format-standard
 # end Капитан РХБЗЗ
 
 # SPACE SEC
@@ -872,3 +885,57 @@
     randomizeName: true
   - type: Loadout
     prototypes: [ADTPirateFirstmateGear]
+
+
+- type: entity
+  name: Vox Raider
+  parent: MobVox
+  id: ADTMobVoxRaider
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: Loadout
+    prototypes: [ADTRoleMobVoxRaiderGear]
+
+- type: startingGear
+  id: ADTRoleMobVoxRaiderGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+    back: ClothingBackpackSatchel
+    ears: ClothingHeadsetFreelance
+    shoes: ADTClothingFootWrapsBlack
+    id: PiratePDA
+    pocket1: PlushieVox
+    outerClothing: ADTHardsuitRaidercommon
+    suitstorage: NitrogenTankFilled
+  storage:
+    back:
+    - BoxSurvivalNitrogen
+    - ChemistryBottleNocturine
+    - ChemistryBottleNocturine
+  
+- type: entity
+  name: ADTMobIanHero-name
+  parent: MobHuman
+  id: ADTMobIanHero
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: Loadout
+    prototypes: [ADTRoleMobIanHeroGear]
+
+- type: startingGear
+  id: ADTRoleMobIanHeroGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorOrange
+    gloves: ClothingHandsGlovesColorYellow
+    back: PortableRecharger
+    ears: ClothingHeadsetGrey
+    shoes: ClothingShoesBootsSpeed
+    id: ADTVisitorPDA
+    belt: ClothingBeltChampion
+    outerClothing: ClothingOuterSuitIan
+    suitstorage: WeaponTeslaGun

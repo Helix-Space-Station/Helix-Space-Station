@@ -163,7 +163,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         _research = _entity.System<ResearchSystem>();
         _sprite = _entity.System<SpriteSystem>();
         _accessReader = _entity.System<AccessReaderSystem>();
-        StaticSprite.SetFromSpriteSpecifier(new SpriteSpecifier.Rsi(new("ADT/Interface/rnd_nt.rsi"), "rnd_nt"), new(2));
+        StaticSprite.SetFromSpriteSpecifier(new SpriteSpecifier.Rsi(new("ADT/Interface/rnd-static.rsi"), "static"), new(2));
 
         ServerButton.OnPressed += _ => OnServerButtonPressed?.Invoke();
         DragContainer.OnKeyBindDown += args => OnKeybindDown(args);
@@ -349,7 +349,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         {
             if (item is not ResearchConsoleItem research)
                 continue;
-            LayoutContainer.SetPosition(item, _position + (research.Prototype.Position * 150));
+            LayoutContainer.SetPosition(item, _position + research.Prototype.Position * 150);
         }
     }
 
