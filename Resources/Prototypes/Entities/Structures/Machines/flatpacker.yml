@@ -45,6 +45,7 @@
       - RawMaterial
       - Ingot
       - ADTBSCrystal #ADT Tweak
+      - ADTSheet # SD Tweak - вообще по сути это должно быть у ADT, но они насрали.
   - type: OreSiloClient
   - type: AmbientSound
     enabled: false
