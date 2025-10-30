@@ -36,7 +36,7 @@
     - SD_Cartridge792
 
 - type: entity
-  parent: [ BaseCartridge, BaseRestrictedContraband ]
+  parent: BaseCartridge
   id: SD_CartridgeSmart
   name: cartridge (9x21 smart)
   description: A 9x21 smart bullet with a small charge of booster propellant at the bottom.

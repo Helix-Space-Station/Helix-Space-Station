@@ -52,7 +52,7 @@
 - type: entity
   id: SD_MagazineSmartPistol
   name: "magazine (9x21 smart)"
-  parent: [ BaseItem, BaseRestrictedContraband ]
+  parent: BaseItem
   components:
   - type: Tag
     tags:
