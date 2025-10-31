@@ -1,6 +1,6 @@
 reagent-name-liquiddarkmatter = жидкая тёмная материя
 reagent-desc-liquiddarkmatter = Концентрированная гипотетическая и нестабильная смесь. Активируется без стабилизирующего агента при температуре выше 290 кельвинов.
-reagent-name-stabilizing-agent = Стабилизирующий агент
+reagent-name-stabilizing-agent = стабилизирующий агент
 reagent-desc-stabilizing-agent = Важный компонент в пиротехнике для создания гранат.
 reagent-name-sorium = сорий
 reagent-desc-sorium = Концентрированная гипотетическая и нестабильная смесь, которая так и тянет к себе... Активируется при смешивании с жидкой тёмной материей.
