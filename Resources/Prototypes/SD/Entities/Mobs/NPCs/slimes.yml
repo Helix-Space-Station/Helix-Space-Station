@@ -1,0 +1,191 @@
+- type: entity
+  name: basic slime
+  id: BaseMobSDSlime
+  parent: [ SimpleMobBase, MobCombat ]
+  abstract: true
+  description: It looks so much like jelly. I wonder what it tastes like?
+  components:
+  - type: DissolvementOnAttack
+  - type: Mitosisable
+  - type: NPCUseActionOnTarget
+    actions: SDSlimeActions
+    range: 1.5
+  - type: Appearance
+    starvingSlowdownModifier: 0
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: ADT/Mobs/Aliens/slimes.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: blue_adult_slime
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: blue_adult_slime
+      Dead:
+        Base: blue_adult_slime_dead
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 4
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+      params:
+        volume: 3
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Hunger
+    startingHunger: 100
+    thresholds:
+      Overfed: 250
+      Okay: 100
+      Peckish: 25
+      Starving: 10
+      Dead: 0
+    hungerThresholdDecayModifiers:
+      Okay: 1.5
+      Peckish: 0.4
+      Starving: 0.2
+      Dead: 0.1
+    baseDecayRate: 0.2
+  - type: LanguageSpeaker
+    languages:
+      Bubblish: Speak
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodMeatSlime
+      amount: 2
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Slime
+  - type: Bloodstream
+    bloodReagent: Slime
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          0.5
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -0.25
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0.2
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
+    maxSaturation: 15
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.45
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+    reactions:
+    - reagents: [ Water, SpaceCleaner ]
+      methods: [ Touch ]
+      effects:
+      - !type:WashCreamPieReaction
+    - reagents: [ Water ]
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        damage:
+          types:
+            Caustic: 5
+      - !type:PopupMessage
+        type: Local
+        messages: [ "slime-hurt-by-water-popup" ]
+        probability: 0.25
+  - type: Body
+    prototype: Slimes
+    requiredLegs: 1
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-slimes
+    interactFailureString: petting-failure-generic
+  - type: VentCrawler
+  - type: Speech
+    speechVerb: Slime
+    speechSounds: Slime
+    allowedEmotes: ['Squish']
+  - type: TypingIndicator
+    proto: slime
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: HTN
+    rootTask:
+      task: SlimeCompound
+  - type: Tag
+    tags:
+    - FootstepSound
+    - DoorBumpOpener
+
+- type: entity
+  id: ActionStartDissolvement
+  name: Dissolvement
+  description: Tasty flesh.
+  components:
+  - type: EntityTargetAction
+    icon: SD/Actions/actions_slime.rsi/slimeeat.png
+    event: !type:ActionStartDissolvementEvent
+    useDelay: 5
+    canTargetSelf: false
+    range: 1
+
+- type: weightedRandomEntity
+  id: SDSlimeActions
+  weights:
+    ActionStartDissolvement: 1
+
+# Т0
+
+- type: entity
+  name: grey slime
+  id: MobSDGreySlime
+  parent: BaseMobSDSlime
+  description: It looks so much like jelly. I wonder what it tastes like?
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: ADT/Mobs/Aliens/slimes.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: blue_adult_slime # Текстурки потом заменим
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: blue_adult_slime
+      Dead:
+        Base: blue_adult_slime_dead
+  - type: HaveExtract
+    extractProto: Crowbar
+    extractQuantity: 1
+  - type: Mitosisable
+    mutations:
+      - MobSlimesPet
+      - MobReplicatorTier2Alt
+      - MobArgocyteCrawler
