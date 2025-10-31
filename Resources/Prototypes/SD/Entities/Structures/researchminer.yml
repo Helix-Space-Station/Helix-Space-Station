@@ -73,6 +73,14 @@
     color: "#8301F5"
   - type: PassiveHeatProducer
     energyPerSecond: 15000
+    #SD Tweak
+  - type: MachineSafety
+    criticalTemperature: 423
+    maxOverheatTimeSeconds: 600
+    alertChannel: Science
+  - type: ActiveRadio
+    channels: ["Science"]
+  #SD Tweak end
 
 - type: entity
   parent: BaseFlatpack

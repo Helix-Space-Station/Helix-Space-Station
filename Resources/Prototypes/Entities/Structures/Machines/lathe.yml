@@ -84,6 +84,14 @@
     modifiers:
       SpaceLube: 0.8 # being faster means less heat so lube needs to be nerfed
       SpaceGlue: 5 # no change from normal lathe, overheat!!!
+    #SD Tweak
+  - type: MachineSafety
+    criticalTemperature: 423
+    maxOverheatTimeSeconds: 600
+    alertChannel: Science
+  - type: ActiveRadio
+    channels: ["Science"]
+  #SD Tweak end
 
 - type: entity
   id: Autolathe
