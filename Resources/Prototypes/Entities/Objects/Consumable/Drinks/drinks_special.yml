@@ -178,6 +178,10 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/icebucket.rsi
     state: icon
+  # SD-tweak-start Кувшины вместо абуза ведёрок для льда
+  - type: Item
+      size: Normal
+  # SD-tweak-end
   - type: PhysicalComposition
     materialComposition:
       Steel: 75
