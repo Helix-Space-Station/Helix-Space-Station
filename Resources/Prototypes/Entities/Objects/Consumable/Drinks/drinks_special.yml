@@ -174,14 +174,10 @@
       drink:
         reagents:
         - ReagentId: Ice
-          Quantity: 200
+          Quantity: 50 # SD-tweak Кувшины вместо абуза ведёрок для льда
   - type: Sprite
     sprite: Objects/Consumable/Drinks/icebucket.rsi
     state: icon
-  # SD-tweak-start Кувшины вместо абуза ведёрок для льда
-  - type: Item
-      size: Normal
-  # SD-tweak-end
   - type: PhysicalComposition
     materialComposition:
       Steel: 75

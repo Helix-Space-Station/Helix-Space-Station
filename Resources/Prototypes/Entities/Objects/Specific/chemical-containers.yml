@@ -50,7 +50,7 @@
       inHandsFillBaseName: -fill-
     - type: StaticPrice
       price: 60
-    # SD-tweak-start Вместо ведёрок для льда
+    # SD-tweak-start Кувшины вместо абуза ведёрок для льда
     # - type: Damageable
     #   damageContainer: Inorganic
     # - type: Destructible
