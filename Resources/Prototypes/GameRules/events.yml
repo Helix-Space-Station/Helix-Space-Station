@@ -7,7 +7,7 @@
     - id: BluespaceLocker
     - id: BreakerFlip
     - id: BureaucraticError
-    - id: CentComRandomEvent # ADT-tweak
+    # - id: CentComRandomEvent # ADT-tweak # SD-tweak
     - id: ClericalError
     - id: CockroachMigration
     - id: GasLeak
