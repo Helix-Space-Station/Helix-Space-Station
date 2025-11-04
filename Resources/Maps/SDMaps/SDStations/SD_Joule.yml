@@ -1,4 +1,4 @@
-meta:
+maxRandomOffset: 400meta:
   format: 7
   category: Map
   engineVersion: 265.0.0
