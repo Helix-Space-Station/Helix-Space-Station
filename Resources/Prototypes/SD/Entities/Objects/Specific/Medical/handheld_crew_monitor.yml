@@ -5,7 +5,7 @@
   description: A hand-held crew monitor showing civil personnel only.
   components:
   - type: CrewMonitoringConsole
-    departments: [Engineering, Science, Medical, Cargo, Civilia]
+    departments: [Engineering, Science, Medical, Cargo, Civilian]
   - type: Sprite
     sprite: SD/Objects/Specific/Medical/paramedic_handheldcrewmonitor.rsi
     state: scanner
