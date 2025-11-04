@@ -9,7 +9,7 @@
       stationProto: StandardNanotrasenStation
       components:
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/S/Shuttles/adt_emergency.yml
+          emergencyShuttlePath: /Maps/ADTMaps/Shuttles/adt_emergency.yml
         - type: StationCargoShuttle
           path: /Maps/ADTMaps/Shuttles/adt_cargo.yml
         - type: StationNameSetup
