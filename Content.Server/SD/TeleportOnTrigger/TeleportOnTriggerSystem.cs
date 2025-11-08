@@ -70,7 +70,7 @@ public sealed class TeleportOnTriggerSystem : EntitySystem
         }
 
         _popup.PopupEntity(Loc.GetString("emergency-teleport-success"), user, user, PopupType.LargeCaution);
-        _chatManager.SendAdminAlert(Loc.GetString("admin-lifeline-tp", ("playerName", user)));
+        _chatManager.SendAdminAlert(Loc.GetString("admin-lifeline-tp", ("playerName", ToPrettyString(user))));
         args.Handled = true;
     }
 
