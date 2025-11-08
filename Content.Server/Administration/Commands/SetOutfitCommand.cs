@@ -62,6 +62,7 @@ namespace Content.Server.Administration.Commands
                 return;
             }
 
+             // helix start
              var doSpecial = true;
 
              if (args.Length == 3)
@@ -72,8 +73,9 @@ namespace Content.Server.Administration.Commands
                      return;
                  }
              }
+             // helix end
 
-            if (!_outfitSystem.SetOutfit(target.Value, args[1], doSpecial: doSpecial))
+            if (!_outfitSystem.SetOutfit(target.Value, args[1], doSpecial: doSpecial)) // helix tweak
                 shell.WriteLine(Loc.GetString("cmd-setoutfit-invalid-outfit-id-error"));
         }
     }
