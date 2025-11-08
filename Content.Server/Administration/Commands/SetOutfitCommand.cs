@@ -62,7 +62,18 @@ namespace Content.Server.Administration.Commands
                 return;
             }
 
-            if (!_outfitSystem.SetOutfit(target.Value, args[1]))
+             var doSpecial = true;
+
+             if (args.Length == 3)
+             {
+                 if (!bool.TryParse(args[2], out doSpecial))
+                 {
+                     shell.WriteLine(Loc.GetString("shell-argument-must-be-boolean"));
+                     return;
+                 }
+             }
+
+            if (!_outfitSystem.SetOutfit(target.Value, args[1], doSpecial: doSpecial))
                 shell.WriteLine(Loc.GetString("cmd-setoutfit-invalid-outfit-id-error"));
         }
     }
