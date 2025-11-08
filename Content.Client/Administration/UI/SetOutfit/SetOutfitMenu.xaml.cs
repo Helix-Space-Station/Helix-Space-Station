@@ -33,7 +33,7 @@ namespace Content.Client.Administration.UI.SetOutfit
             ConfirmButton.Text = Loc.GetString("set-outfit-menu-confirm-button");
             ToggleSpecial.Text = Loc.GetString("set-outfit-menu-toggle-special"); // helix
             ConfirmButton.OnPressed += ConfirmButtonOnOnPressed;
-            ToggleSpecial.OnToggled += OnToggleSpecialPressed;
+            ToggleSpecial.OnToggled += OnToggleSpecialPressed; // helix
             SearchBar.OnTextChanged += SearchBarOnOnTextChanged;
             OutfitList.OnItemSelected += OutfitListOnOnItemSelected;
             OutfitList.OnItemDeselected += OutfitListOnOnItemDeselected;
