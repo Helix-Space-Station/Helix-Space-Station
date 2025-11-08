@@ -128,7 +128,6 @@ public sealed class OutfitSystem : EntitySystem
                 roleLoadout.SetDefault(profile, session, _prototypeManager);
             }
 
-
             // Equip the target with the job loadout
             _spawningSystem.EquipRoleLoadout(target, roleLoadout, jobProto);
         }
