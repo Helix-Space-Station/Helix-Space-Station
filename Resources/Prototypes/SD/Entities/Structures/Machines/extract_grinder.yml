@@ -1,0 +1,50 @@
+- type: entity
+  id: ExtractGrinder
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: extract grinder
+  description: Produces extracts from a slimes corpse.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      sprite: SD/Structures/Machines/extract_grinder.rsi
+      granularLayersRendering: true
+      layers:
+        - state: processor
+          map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+    - type: GenericVisualizer
+      visuals:
+        enum.PowerDeviceVisuals.Powered:
+          enum.PowerDeviceVisualLayers.Powered:
+            True: { state: processor_on }
+            False: { state: processor }
+    - type: ContainerContainer
+      containers:
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: [ ]
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: [ ]
+        GrindedContainer: !type:Container
+          showEnts: False
+          occludes: True
+          ents: [ ]
+    - type: ThrowInsertContainer
+      containerId: GrindedContainer
+    - type: Rotatable
+    - type: Appearance
+    - type: ExtractGrinder
+    - type: Climbable
+      delay: 1
+    - type: AmbientSound
+      enabled: false
+      volume: -5
+      range: 5
+      sound:
+        path: /Audio/Ambience/Objects/reclaimer_ambience.ogg
+    - type: Machine
+      board: ExtractGrinderMachineCircuitboard
+

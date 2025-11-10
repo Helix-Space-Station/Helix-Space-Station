@@ -3,6 +3,7 @@ using Content.Server.NPC.Components;
 using Content.Server.NPC.HTN;
 using Content.Shared.Actions;
 using Content.Shared.Random.Helpers;
+using Content.Shared.Interaction; // SD tweak
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -14,6 +15,7 @@ public sealed class NPCUseActionOnTargetSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!; // SD tweak
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
     /// <inheritdoc/>
@@ -40,6 +42,14 @@ public sealed class NPCUseActionOnTargetSystem : EntitySystem
         if (!Resolve(user, ref user.Comp, false))
             return false;
 
+        // SD tweak start
+        if (user.Comp.Range > 0f)
+        {
+            if (!_interaction.InRangeUnobstructed(user, Transform(target).Coordinates, user.Comp.Range))
+                return false;
+        }
+        // SD tweak end
+ 
         var weights = _proto.Index(user.Comp.Actions);
         var act = weights.Pick();
         var actionEntity = user.Comp.ActionEntities.Keys.Where(x => Prototype(x)?.ID == act).First();

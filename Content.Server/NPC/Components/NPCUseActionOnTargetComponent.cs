@@ -38,6 +38,11 @@ public sealed partial class NPCUseActionOnTargetComponent : Component
     [DataField]
     public float Delay = 7f;
 
+    // SD tweak start
+    [DataField]
+    public float Range = 0f;
+    // SD tweak end
+
     [ViewVariables]
     public TimeSpan LastAction = TimeSpan.Zero;
 }
