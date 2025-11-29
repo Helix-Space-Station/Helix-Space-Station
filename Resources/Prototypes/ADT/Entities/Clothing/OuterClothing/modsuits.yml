@@ -202,8 +202,11 @@
     walkModifier: 0.9
     sprintModifier: 0.85
   - type: FireProtection
-    reduction: 0.8 # SD tweak 1 -> 0.8
-
+    reduction: 0.5
+  - type: ClothingGrantComponent
+    component:
+    - type: AshStormImmune
+    
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
   id: ADTClothingOuterModsuitBodySecurity
@@ -406,9 +409,12 @@
     sprintModifier: 1
   - type: FireProtection
     reduction: 0.7
-  - type: ClothingGrantComponent
-    component:
-    - type: GrabProtection
+  # ADT-Tweak-Start
+  - type: ModifyGrabStageTime
+    modifiers:
+      Hard: 2.25
+      Choke: 2
+  # ADT-Tweak-End
 
 - type: entity
   parent: ADTClothingOuterModsuitBodySyndicate
@@ -483,9 +489,12 @@
     damageCoefficient: 0.1
   - type: FireProtection
     reduction: 0.9
-  - type: ClothingGrantComponent
-    component:
-    - type: GrabProtection
+  # ADT-Tweak-Start
+  - type: ModifyGrabStageTime
+    modifiers:
+      Hard: 2.25
+      Choke: 2
+  # ADT-Tweak-End
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
