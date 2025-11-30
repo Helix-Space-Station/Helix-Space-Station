@@ -40563,13 +40563,6 @@ entities:
     - type: Transform
       pos: -48.5,61.5
       parent: 2
-- proto: ADTClothingHeadHatsGuardOfficerMaster
-  entities:
-  - uid: 209
-    components:
-    - type: Transform
-      pos: 63.5,20.5
-      parent: 2
 - proto: ADTClothingModsuitBackSecurity
   entities:
   - uid: 211
