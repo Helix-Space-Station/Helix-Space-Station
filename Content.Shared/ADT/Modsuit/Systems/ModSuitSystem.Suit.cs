@@ -390,17 +390,21 @@ public sealed partial class ModSuitSystem
         if (!TryComp<PowerCellDrawComponent>(ent, out var draw))
             return;
 
-        var attachedCount = GetAttachedToggleCount(ent);
-
-        if (attachedCount <= 0)
+        // CD-edit start
+        // Если у нас нет активных модулей — выключаем draw
+        if (ent.Comp.ModEnergyBaseUsing <= 0f)
         {
             _cell.SetDrawEnabled(ent.Owner, false);
-        }
-        else
-        {
-            _cell.SetDrawEnabled(ent.Owner, true);
-            draw.DrawRate = ent.Comp.ModEnergyBaseUsing * attachedCount;
+            return;
         }
 
+        // Включаем и ставим DrawRate только от активных модулей (и глобального множителя)
+        _cell.SetDrawEnabled(ent.Owner, true);
+        draw.DrawRate = ent.Comp.ModEnergyBaseUsing * GlobalEnergyMultiplier;
+
+        // Минимальная защита
+        if (draw.DrawRate < 0.00001f)
+            draw.DrawRate = 0.00001f;
+        // CD-edit end
     }
 }
