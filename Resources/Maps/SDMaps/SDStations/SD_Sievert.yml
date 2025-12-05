@@ -40185,6 +40185,13 @@ entities:
     - type: Transform
       pos: -14.5,38.5
       parent: 2
+- proto: ADTBoxBadPolice
+  entities:
+  - uid: 124
+    components:
+    - type: Transform
+      pos: 14.464771,5.458543
+      parent: 2
 - proto: ADTBoxMaintenanceRandom
   entities:
   - uid: 124
@@ -40678,6 +40685,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 94.41329,-30.680574
       parent: 2
+- proto: ADTClothingUniformJumpsuitSweaterHolidayBeige
+  entities:
+  - uid: 237
+    components:
+    - type: Transform
+      pos: -51.937298,-36.655376
+      parent: 2
 - proto: ADTClothingUniformOrangeBeachSuit
   entities:
   - uid: 235
@@ -40819,6 +40833,13 @@ entities:
     components:
     - type: Transform
       pos: 86.61713,-16.013247
+      parent: 2
+- proto: ADTDrinkCocoaGlass
+  entities:
+  - uid: 258
+    components:
+    - type: Transform
+      pos: 57.5,20.5
       parent: 2
 - proto: ADTDrinkNoStopCan
   entities:
@@ -41214,6 +41235,53 @@ entities:
     - type: Transform
       pos: 7.4552937,11.57037
       parent: 2
+- proto: ADTFoodSnackClownCake
+  entities:
+  - uid: 320
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 44.89156,-52.547085
+      parent: 2
+- proto: ADTFoodSnackNukieCake
+  entities:
+  - uid: 321
+    components:
+    - type: Transform
+      pos: 12.460777,55.511925
+      parent: 2
+- proto: ADTFoodSnackScientistCake
+  entities:
+  - uid: 322
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -21.322891,-27.412176
+      parent: 2
+  - uid: 323
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 45.049263,-51.702614
+      parent: 2
+  - uid: 324
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 45.408634,-52.12449
+      parent: 2
+  - uid: 325
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 45.533634,-52.74949
+      parent: 2
+  - uid: 326
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 45.08051,-53.21824
+      parent: 2
 - proto: ADTFunCasinoChip10
   entities:
   - uid: 316
@@ -41476,6 +41544,14 @@ entities:
     - type: Transform
       pos: -21.5,-66.5
       parent: 2
+- proto: ADTSlimeHappines
+  entities:
+  - uid: 367
+    components:
+    - type: Transform
+      parent: 366
+    - type: Physics
+      canCollide: False
 - proto: ADTSmartFridge
   entities:
   - uid: 355
@@ -41605,6 +41681,15 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: ADTStudentBomber
+  entities:
+  - uid: 387
+    components:
+    - type: Transform
+      parent: 386
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ADTSuitStorageBlueshield
   entities:
   - uid: 373
@@ -41687,6 +41772,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 86.5,-12.5
       parent: 2
+- proto: ADTTagillaSledgehammerToy
+  entities:
+  - uid: 400
+    components:
+    - type: Transform
+      pos: 61.624504,-30.375885
+      parent: 2
 - proto: ADTToyFigurineBlueshieldOfficer
   entities:
   - uid: 382
@@ -41757,6 +41849,13 @@ entities:
     components:
     - type: Transform
       pos: 89.5,36.5
+      parent: 2
+- proto: ADTVendingMachineHalloween
+  entities:
+  - uid: 412
+    components:
+    - type: Transform
+      pos: 33.5,-16.5
       parent: 2
 - proto: ADTVendingMachineParaDrobe
   entities:
