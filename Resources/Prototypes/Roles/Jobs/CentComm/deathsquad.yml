@@ -15,9 +15,6 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm, FreedomImplant, DeathAcidifierImplant ]
-  - !type:AddComponentSpecial
-    components:
-    - type: DeathSquadMember
 
 - type: startingGear
   id: DeathSquadGear
@@ -25,11 +22,11 @@
     jumpsuit: ClothingUniformJumpsuitDeathSquad
     back: ClothingDeathSquadronBackpack
     mask: ClothingMaskGasDeathSquad
-    eyes: ClothingEyesGlassesDeathSquad # SD tweak
+    eyes: ClothingEyesGlassesThermal
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitDeathsquad
-    shoes: ClothingShoesBootsMagDeathsquad # SD tweak
+    shoes: ADTClothingShoesBootsMagERT #ADT tweak
     id: DeathsquadPDA
     pocket1: EnergySwordDouble
     pocket2: DoubleEmergencyOxygenTankFilled
