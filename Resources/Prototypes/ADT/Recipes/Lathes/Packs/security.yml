@@ -5,8 +5,6 @@
   - ADTMagazineBoxMagnumSilver
   - ADTCartridgeMagnumSilver
   - ADTMagazineMagnumEmpty
-  - SmartpistolMagazine # sd tweak
-  - SmartpistolAmmoBox # sd tweak
 
 - type: latheRecipePack
   id: ADTMagazineUraniumPack
