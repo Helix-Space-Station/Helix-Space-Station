@@ -39516,6 +39516,17 @@ entities:
     - type: Transform
       pos: -10.424234,46.712902
       parent: 2
+- proto: ActionStartFishing
+  entities:
+  - uid: 8
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 7
+    - type: WorldTargetAction
+      originalIconColor: '#FFFFFFFF'
+      container: 7
 - proto: ActionToggleInternals
   entities:
   - uid: 10
@@ -40913,6 +40924,14 @@ entities:
     - type: Transform
       pos: 87.013466,-23.179682
       parent: 2
+    - type: FishingRod
+      throwLureActionEntity: 8
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 8
   - uid: 276
     components:
     - type: Transform
@@ -127068,6 +127087,7 @@ entities:
           - 1716
           - 1715
           - 1714
+          - invalid
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -137508,11 +137528,18 @@ entities:
     - type: Transform
       pos: 10.5,11.5
       parent: 2
+    - type: Storage
+      storedItems:
+        invalid:
+          position: 0,0
+          _rotation: South
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
           showEnts: False
           occludes: True
+          ents:
+          - invalid
 - proto: DresserCaptainFilled
   entities:
   - uid: 17548
@@ -206174,6 +206201,7 @@ entities:
           occludes: True
           ents:
           - 233
+          - invalid
           - 231
           - 235
           - 234
