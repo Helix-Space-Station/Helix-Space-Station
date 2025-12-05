@@ -70,6 +70,5 @@
     - WeaponHoSUnika
     - WeaponHoSMultiphase
     - WeaponHoSBat
-    - WeaponHoSEnergyShotgun #sd-tweak
     typeDropPlace: ThisPlace
     typeDrop: Rocket
