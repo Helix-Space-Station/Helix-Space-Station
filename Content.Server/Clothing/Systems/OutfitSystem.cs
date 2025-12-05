@@ -12,8 +12,6 @@ using Content.Shared.Roles;
 using Content.Shared.Station;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Content.Shared.Storage; // Helix
-using Content.Shared.Storage.EntitySystems; // Helix
 
 namespace Content.Server.Clothing.Systems;
 
@@ -24,9 +22,8 @@ public sealed class OutfitSystem : EntitySystem
     [Dependency] private readonly HandsSystem _handSystem = default!;
     [Dependency] private readonly InventorySystem _invSystem = default!;
     [Dependency] private readonly SharedStationSpawningSystem _spawningSystem = default!;
-    [Dependency] private readonly SharedStorageSystem _storageSystem = default!; // helix
 
-    public bool SetOutfit(EntityUid target, string gear, Action<EntityUid, EntityUid>? onEquipped = null, bool doSpecial = false)
+    public bool SetOutfit(EntityUid target, string gear, Action<EntityUid, EntityUid>? onEquipped = null)
     {
         if (!EntityManager.TryGetComponent(target, out InventoryComponent? inventoryComponent))
             return false;
@@ -65,25 +62,6 @@ public sealed class OutfitSystem : EntitySystem
                 _invSystem.TryEquip(target, equipmentEntity, slot.Name, silent: true, force: true, inventory: inventoryComponent);
 
                 onEquipped?.Invoke(target, equipmentEntity);
-               // helix edit start
-                if (startingGear.Storage.Count <= 0
-                    || slot.SlotFlags != SlotFlags.BACK
-                    || !TryComp<StorageComponent>(equipmentEntity, out var storage))
-                    continue;
-
-                foreach (var (_, entProtos) in startingGear.Storage)
-                {
-                    if (entProtos.Count == 0)
-                        continue;
-
-                    foreach (var entProto in entProtos)
-                    {
-                        var spawnedEntity = Spawn(entProto, Transform(target).Coordinates);
-                        _storageSystem.Insert(equipmentEntity, spawnedEntity, out _, storageComp: storage, playSound: false);
-                    }
-               // helix edit end
-
-                }
             }
         }
 
@@ -103,12 +81,6 @@ public sealed class OutfitSystem : EntitySystem
         {
             if (job.StartingGear != gear)
                 continue;
-
-            // helix - implants for setoutfit
-            if (doSpecial)
-                foreach (var jobSpecial in job.Special)
-                    jobSpecial.AfterEquip(target);
-            // helix end
 
             var jobProtoId = LoadoutSystem.GetJobPrototype(job.ID);
             if (!_prototypeManager.TryIndex<RoleLoadoutPrototype>(jobProtoId, out var jobProto))

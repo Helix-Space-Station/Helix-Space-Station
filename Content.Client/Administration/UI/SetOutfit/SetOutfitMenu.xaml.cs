@@ -20,7 +20,6 @@ namespace Content.Client.Administration.UI.SetOutfit
 
         public NetEntity? TargetEntityId { get; set; }
         private StartingGearPrototype? _selectedOutfit;
-        public bool DoSpecial; // Helix
 
         public SetOutfitMenu()
         {
@@ -31,9 +30,7 @@ namespace Content.Client.Administration.UI.SetOutfit
             Title = Loc.GetString("set-outfit-menu-title");
 
             ConfirmButton.Text = Loc.GetString("set-outfit-menu-confirm-button");
-            ToggleSpecial.Text = Loc.GetString("set-outfit-menu-toggle-special"); // helix
             ConfirmButton.OnPressed += ConfirmButtonOnOnPressed;
-            ToggleSpecial.OnToggled += OnToggleSpecialPressed; // helix
             SearchBar.OnTextChanged += SearchBarOnOnTextChanged;
             OutfitList.OnItemSelected += OutfitListOnOnItemSelected;
             OutfitList.OnItemDeselected += OutfitListOnOnItemDeselected;
@@ -44,17 +41,10 @@ namespace Content.Client.Administration.UI.SetOutfit
         {
             if (TargetEntityId == null || _selectedOutfit == null)
                 return;
-            var command = $"setoutfit {TargetEntityId} {_selectedOutfit.ID} {DoSpecial}"; // Helix
+            var command = $"setoutfit {TargetEntityId} {_selectedOutfit.ID}";
             _consoleHost.ExecuteCommand(command);
             Close();
         }
-
-        // Helix
-        private void OnToggleSpecialPressed(BaseButton.ButtonToggledEventArgs obj)
-        {
-            DoSpecial = obj.Pressed;
-        }
-
 
         private void OutfitListOnOnItemSelected(ItemList.ItemListSelectedEventArgs obj)
         {
