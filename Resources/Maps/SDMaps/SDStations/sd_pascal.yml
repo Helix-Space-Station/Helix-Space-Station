@@ -10650,7 +10650,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: SD_Pascal
+      id: ADT_Cluster
     - type: SpreaderGrid
     - type: GridPathfinding
     - type: SupermatterSpreaderGrid
