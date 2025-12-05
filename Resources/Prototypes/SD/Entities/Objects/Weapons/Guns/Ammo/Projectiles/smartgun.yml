@@ -39,6 +39,7 @@
     damage:
       types:
         Piercing: 16
+    ignoreReflect: true
   - type: Sprite
     sprite: SD/Objects/Weapons/Guns/Ammunition/Projectiles/smartgun.rsi
     layers:

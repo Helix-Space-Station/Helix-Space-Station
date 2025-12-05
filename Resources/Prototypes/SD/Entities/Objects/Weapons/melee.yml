@@ -19,7 +19,6 @@
       types:
         Slash: 10
         Heat: 5
-      armorPenetration: 0.25
     soundHit:
       collection: MetalThud
   - type: Wieldable
