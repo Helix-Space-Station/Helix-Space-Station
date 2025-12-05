@@ -34,7 +34,6 @@ public sealed class LaserPointerOverlay : Overlay
     {
         var handle = args.WorldHandle;
         var bounds = args.WorldAABB;
-        var currentMapId = args.MapId;
 
         var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
         var query = _entManager.EntityQueryEnumerator<LaserPointerManagerComponent>();
@@ -50,10 +49,6 @@ public sealed class LaserPointerOverlay : Overlay
                 if (xformQuery.TryComp(ent, out var xform))
                 {
                     var coords = _transform.GetMapCoordinates(ent, xform);
-
-                    if (coords.MapId != currentMapId)
-                        continue;
-
                     if (coords.MapId != MapId.Nullspace)
                         start = coords.Position;
                 }
