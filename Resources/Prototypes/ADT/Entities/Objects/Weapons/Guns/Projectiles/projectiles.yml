@@ -152,7 +152,7 @@
     impactEffect: ADTBulletImpactEffectLaser
     damage:
       types:
-        Heat: 20 #sd-tweak 15 ->  20
+        Heat: 15
     soundHit:
       collection: WeakHit
     forceSound: true

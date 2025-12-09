@@ -15,8 +15,6 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared.Inventory; // sd edit
-using Content.Shared.Whitelist; // sd edit
 
 namespace Content.Shared._RMC14.Weapons.Ranged;
 public sealed class CMGunSystem : EntitySystem
@@ -31,8 +29,6 @@ public sealed class CMGunSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!; // sd edit
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!; // sd edit
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<ProjectileComponent> _projectileQuery;
@@ -44,7 +40,6 @@ public sealed class CMGunSystem : EntitySystem
         SubscribeLocalEvent<ShootAtFixedPointComponent, AmmoShotEvent>(OnShootAtFixedPointShot);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, UniqueActionEvent>(OnRevolverUniqueAction);
         SubscribeLocalEvent<RMCAmmoEjectComponent, ActivateInWorldEvent>(OnAmmoEjectActivateInWorld);
-        SubscribeLocalEvent<GunRequireEquippedComponent, AttemptShootEvent>(OnRequireEquippedAttemptShoot); // sd edit
     }
 
     private void OnAmmoEjectActivateInWorld(Entity<RMCAmmoEjectComponent> gun, ref ActivateInWorldEvent args)
@@ -182,33 +177,4 @@ public sealed class CMGunSystem : EntitySystem
             comp.FlyEndTime = time + TimeSpan.FromSeconds(distance / gun.ProjectileSpeedModified);
         }
     }
-
-    // sd edit start
-    private void OnRequireEquippedAttemptShoot(Entity<GunRequireEquippedComponent> ent, ref AttemptShootEvent args)
-    {
-        if (args.Cancelled)
-            return;
-
-        if (HasRequiredEquippedPopup((ent, ent), args.User))
-            return;
-
-        args.Cancelled = true;
-    }
-
-    public bool HasRequiredEquippedPopup(Entity<GunRequireEquippedComponent?> gun, EntityUid user)
-    {
-        if (!Resolve(gun, ref gun.Comp, false))
-            return true;
-
-        var slots = _inventory.GetSlotEnumerator(user, SlotFlags.OUTERCLOTHING);
-        while (slots.MoveNext(out var slot))
-        {
-            if (_whitelist.IsValid(gun.Comp.Whitelist, slot.ContainedEntity))
-                return true;
-        }
-
-        _popup.PopupClient(Loc.GetString("sd-shoot-harness-required"), user, user, PopupType.MediumCaution);
-        return false;
-    }
-    // sd edit end
 }

@@ -37,7 +37,7 @@
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
   - type: FireProtection
-    reduction: 0.25
+    reduction: 0.25 # SD tweak 0.5 -> 0.25
   - type: CoveredSlot
     slots: [innerclothing, underwearb, underweart, socks]
 
@@ -76,7 +76,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: FireProtection
-    reduction: 1
+    reduction: 0.8 # SD tweak 1 -> 0.8
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -103,6 +103,10 @@
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
+  # SD tweak start
+  #- type: FireProtection
+  #  reduction: 0.5
+  # SD tweak end
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -133,8 +137,10 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.85
-  - type: FireProtection
-    reduction: 0.9
+  # SD tweak start
+  #- type: FireProtection
+  #  reduction: 1
+  # SD tweak end
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -163,8 +169,10 @@
     sprintModifier: 0.85
   - type: ExplosionResistance
     damageCoefficient: 0.8
-  - type: FireProtection
-    reduction: 0.4
+  # SD tweak start
+  #- type: FireProtection
+  #  reduction: 0.6
+  # SD tweak end
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -194,10 +202,7 @@
     walkModifier: 0.9
     sprintModifier: 0.85
   - type: FireProtection
-    reduction: 0.5
-  - type: ClothingGrantComponent
-    component:
-    - type: AshStormImmune
+    reduction: 0.8 # SD tweak 1 -> 0.8
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -229,8 +234,10 @@
     sprintModifier: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.6
-  - type: FireProtection
-    reduction: 0.7
+  # SD tweak start
+  #- type: FireProtection
+  #  reduction: 0.75
+  # SD tweak end
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -262,7 +269,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: FireProtection
-    reduction: 0.5
+    reduction: 0.6 # SD tweak 0.9 -> 0.6
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -295,7 +302,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: FireProtection
-    reduction: 0.8
+    reduction: 0.5 # SD tweak 1 -> 0.5
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -328,7 +335,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: FireProtection
-    reduction: 0.8
+    reduction: 0.5 # SD tweak 1 -> 0.5
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase
@@ -360,7 +367,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: FireProtection
-    reduction: 1
+    reduction: 0.8 # SD tweak 1 -> 0.8
   - type: ClothingGrantComponent
     component:
     - type: SupermatterImmune
@@ -399,12 +406,9 @@
     sprintModifier: 1
   - type: FireProtection
     reduction: 0.7
-  # ADT-Tweak-Start
-  - type: ModifyGrabStageTime
-    modifiers:
-      Hard: 2.25
-      Choke: 2
-  # ADT-Tweak-End
+  - type: ClothingGrantComponent
+    component:
+    - type: GrabProtection
 
 - type: entity
   parent: ADTClothingOuterModsuitBodySyndicate
@@ -441,13 +445,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: FireProtection
-    reduction: 1
-  # ADT-Tweak-Start
-  - type: ModifyGrabStageTime
-    modifiers:
-      Hard: 1.5
-      Choke: 2
-  # ADT-Tweak-End
+    reduction: 0.5 # SD tweak 1 -> 0.5
 
 - type: entity
   parent: ADTClothingOuterModsuitBodySyndicate
@@ -485,12 +483,9 @@
     damageCoefficient: 0.1
   - type: FireProtection
     reduction: 0.9
-  # ADT-Tweak-Start
-  - type: ModifyGrabStageTime
-    modifiers:
-      Hard: 2.25
-      Choke: 2
-  # ADT-Tweak-End
+  - type: ClothingGrantComponent
+    component:
+    - type: GrabProtection
 
 - type: entity
   parent: ADTClothingOuterModsuitBodyBase

@@ -14,7 +14,6 @@
       types:
         Slash: 20
         Piercing: 10
-      armorPenetration: 0.35
   - type: Item
     size: Ginormous
     sprite: ADT/Changeling/Objects/armblade.rsi
@@ -46,7 +45,6 @@
       types:
         Blunt: 40
         Structural: 80
-      armorPenetration: -0.25
     soundHit:
       collection: MetalThud
   - type: Item

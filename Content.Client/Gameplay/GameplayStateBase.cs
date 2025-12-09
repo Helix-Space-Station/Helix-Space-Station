@@ -21,7 +21,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using YamlDotNet.Serialization.TypeInspectors;
-using Content.Shared.Damage; // sd edit
 
 namespace Content.Client.Gameplay
 {
@@ -191,16 +190,6 @@ namespace Content.Client.Gameplay
                 return y.clicked.CompareTo(x.clicked);
             }
         }
-
-        // sd edit start
-        public EntityUid? GetDamageableClickedEntity(MapCoordinates coordinates) // Goobstation
-        {
-            var first = GetClickableEntities(coordinates, _eyeManager.CurrentEye)
-                .FirstOrDefault(e => _entityManager.HasComponent<DamageableComponent>(e));
-            return first.IsValid() ? first : null;
-        }
-
-        // sd edit end
 
         /// <summary>
         ///     Converts a state change event from outside the simulation to inside the simulation.
