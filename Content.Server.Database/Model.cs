@@ -437,6 +437,10 @@ namespace Content.Server.Database
         [Column("char_name")] public string CharacterName { get; set; } = null!;
         public string FlavorText { get; set; } = null!;
         public int ERPStatus { get; set; } // SD-ERPStatus
+        //ADT-tweak-start
+        public string OOCNotes { get; set; } = null!;
+        public string HeadshotUrl { get; set; } = null!;
+        //ADT-tweak-end
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
