@@ -145,10 +145,19 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
                 flavor.FlavorText = profile.FlavorText;
                 flavor.OOCNotes = profile.OOCNotes;
                 flavor.HeadshotUrl = profile.HeadshotUrl;
-                flavor.ERPStatus = profile.ERPStatus;
                 //возможное TODO: добавить кастомное описание рас
                 //ADT-tweak-end
             }
+            // SD-ERPStatus-Start
+            if (_configurationManager.GetCVar(CCVars.FlavorText))
+            {
+                var detailExamineComp = EntityManager.EnsureComponent<DetailExaminableComponent>(entity.Value);
+                detailExamineComp.Content = profile.FlavorText ?? "";
+
+                // Сохраняем ERPStatus независимо от наличия FlavorText
+                detailExamineComp.ERPStatus = profile.ERPStatus;
+            }
+            // SD-ERPStatus-End
         }
 
         if (loadout != null)
