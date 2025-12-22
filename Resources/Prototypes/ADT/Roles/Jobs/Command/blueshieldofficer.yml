@@ -14,7 +14,7 @@
       role: JobChiefMedicalOfficer
       time: 18000 #5 hrs
     - !type:AgeRequirement
-      requiredAge: 21
+      requiredAge: 26 # Hellix-Tweak
     - !type:SpeciesRequirement
       inverted: true
       species:
