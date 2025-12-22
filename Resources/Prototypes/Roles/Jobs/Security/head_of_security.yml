@@ -20,7 +20,7 @@
       - Vox
       - Shadekin
   # ADT RESTRICT End
-    - !type:AgeRequirement
+    - !type:AgeRequirement # Hellix-Tweak
       requiredAge: 36
   weight: 10
   startingGear: HoSGear

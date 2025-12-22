@@ -15,7 +15,7 @@
     department: Juridical
     time: 18000 # (5 hours)
 # ADT-Tweak-end
-  - !type:AgeRequirement
+  - !type:AgeRequirement # Hellix-Tweak
     requiredAge: 21
 #ADT tweak start
   - !type:SpeciesRequirement

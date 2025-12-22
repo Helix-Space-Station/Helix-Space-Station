@@ -15,7 +15,7 @@
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 36000 #10 hrs
-    - !type:AgeRequirement
+    - !type:AgeRequirement # Hellix-Tweak
       requiredAge: 32
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
