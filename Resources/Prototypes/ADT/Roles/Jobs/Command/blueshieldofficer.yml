@@ -3,7 +3,7 @@
   name: job-name-ADTBlueShieldOfficer
   description: job-description-ADTBlueShieldOfficer
   playTimeTracker: JobADTBlueShieldOfficer
-  whitelist: true
+  whitelist: true # Hellix-Tweak
   requirements:
     - !type:RoleTimeRequirement
       role: JobCaptain
