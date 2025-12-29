@@ -22,6 +22,8 @@
     rules:
     - id: Thief
       prob: 0.5
+    - id: ArmsDealer
+      prob: 0.5
 #    - id: SubWizard
 #      prob: 0.05
     # - id: Heretic # goob edit #ADT-Tweak - убрал еретиков и генокрадов из геймрула
@@ -36,6 +38,8 @@
   - type: SubGamemodes
     rules:
     - id: Thief
+      prob: 0.5
+    - id: ArmsDealer
       prob: 0.5
 
 - type: entity
@@ -105,6 +109,7 @@
   - type: NukeopsRule
   - type: RuleGrids
   - type: AntagSelection
+    agentName: nukeops-roundend-name # ADT-tweak
   - type: AntagLoadProfileRule
     speciesOverride: Human
     speciesOverrideBlacklist:
@@ -112,6 +117,12 @@
     #Once the issues are fixed the species should be removed from this list to be enabled.
     #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
     #- Vox
+  #ADT-tweak-start
+  - type: AntagObjectives
+    objectives:
+    - NukeopsDetonateObjective
+  #ADT-tweak-end
+
 
 - type: entity
   parent: BaseNukeopsRule

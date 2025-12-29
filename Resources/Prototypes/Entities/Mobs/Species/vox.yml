@@ -103,9 +103,9 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
+    - map: [ "outerClothing" ]
     - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "outerClothing" ]
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "suitstorage" ] # This is not in the default order
@@ -180,6 +180,7 @@
     tallscale: 1.05
     short: true
     shortscale: 0.95
+  - type: PriceExaminer
   #ADT Tweak end
   - type: Hands
     leftHandDisplacement:
