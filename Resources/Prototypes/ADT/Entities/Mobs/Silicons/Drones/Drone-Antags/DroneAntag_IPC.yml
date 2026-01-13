@@ -344,7 +344,7 @@
 - type: entity
   id: ADTDroneAntagIPC
   parent: ADTipcdronebase2
-  name: Солдат дрон
+  name: drone soldier
   suffix: Antag Drone IPC
   description: Вам, вероятно, не стоит стоять рядом с ним, чтобы проверить, включен ли он.
   components:

@@ -1,22 +1,22 @@
 ### Connecting dialog when you start up the game
 
-connecting-title = Space Dream
+connecting-title = Adventure Time Station
 connecting-exit = Выйти
 connecting-retry = Повторить
 connecting-reconnect = Переподключиться
 connecting-copy = Скопировать сообщение
 connecting-redial = Перезапустить
 connecting-redial-wait = Пожалуйста подождите: { TOSTRING($time, "G3") }
-connecting-in-progress = Подключаемся к серверу...
+connecting-in-progress = Подключение к серверу...
 connecting-disconnected = Отключён от сервера:
 connecting-tip = Не умирай!
 connecting-window-tip = Совет { $numberTip }
 connecting-version = версия 2.5
 connecting-fail-reason =
-    Упс! Подключиться к серверу не удалось:
+    Не удалось подключиться к серверу:
     { $reason }
 connecting-state-NotConnecting = Не подключён
-connecting-state-ResolvingHost = Определяем хост
-connecting-state-EstablishingConnection = Соединяемся
+connecting-state-ResolvingHost = Определение хоста
+connecting-state-EstablishingConnection = Установка соединения
 connecting-state-Handshake = Handshake
-connecting-state-Connected = Подключён, удачи!
+connecting-state-Connected = Подключён
