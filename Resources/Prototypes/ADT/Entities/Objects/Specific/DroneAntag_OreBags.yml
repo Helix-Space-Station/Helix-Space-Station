@@ -1,5 +1,5 @@
 - type: entity
-  name: Сумка для руды
+  name: сумка для руды
   id: OreBagAntagDrone
   parent: BaseStorageItem
   suffix: Дрон Антаг
