@@ -197,7 +197,7 @@
 - type: entity
   id: ADTDroneAntagMiner
   parent: ADTDroneAntagBase
-  name: Дрон шахтер
+  name: дрон шахтер
   suffix: Шахтер
   description: Вам, вероятно, не стоит стоять рядом с ним, чтобы проверить, включен ли он.
   components:
@@ -351,7 +351,7 @@
 - type: entity
   id: ADTDroneAntagEngineer
   parent: ADTDroneAntagBase
-  name: Дрон солдата
+  name: дрон солдат
   description: Вам, вероятно, не стоит стоять рядом с ним, чтобы проверить, включен ли он.
   suffix: Инженер
   components:
@@ -506,7 +506,7 @@
 - type: entity
   id: ADTDroneAntagCharger
   parent: ADTDroneAntagBase
-  name: Дрон солдат
+  name: дрон солдат
   description: Вам, вероятно, не стоит стоять рядом с ним, чтобы проверить, включен ли он.
   suffix: Зарядник
   components:
