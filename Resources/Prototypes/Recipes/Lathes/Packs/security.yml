@@ -58,6 +58,8 @@
   - SpeedLoaderMagnumEmpty
   - ADTSpeedLoaderMagnumLesser # ADT tweak
   - ADTSpeedLoaderMagnumLesserEmpty # ADT tweak
+  - MagazineBoxAntiMateriel # Space Dream
+  - MagazineBoxAntiMaterielBig # Space Dream
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic

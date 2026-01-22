@@ -555,3 +555,28 @@
     Lead: 150 #ADT-BFUU-Tweak-end
     Plastic: 100
     Glass: 20
+
+# Space Dream ammo
+
+- type: latheRecipe
+  id: MagazineBoxAntiMateriel
+  result: MagazineBoxAntiMateriel
+  categories:
+  - Ammo
+  completetime: 3
+  materials:
+    Steel: 1200 
+    Silver: 300 
+    Plastic: 120
+
+- type: latheRecipe
+  id: MagazineBoxAntiMaterielBig
+  result: MagazineBoxAntiMaterielBig
+  categories:
+  - Ammo
+  completetime: 3
+  materials:
+    Steel: 1600
+    Silver: 400
+    Plastic: 200
+    Gold: 50

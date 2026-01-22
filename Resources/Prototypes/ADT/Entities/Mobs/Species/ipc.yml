@@ -56,14 +56,13 @@
     - NanoTrasen
   - type: TypingIndicator
     proto: robot
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 220
-      behaviors:
-      - !type:GibBehavior { }
+  - type: Damageable # Space Dream
+    damageModifierSet: BaseMobIPC
+  - type: FuelLeakOnDamage
+    amount: 3
+    minDamage: 10
+    cooldown: 1.5
+    fuelReagent: WeldingFuel
   - type: SlowOnDamage
     speedModifierThresholds:
       40: 0.8
@@ -156,9 +155,6 @@
     short: true
     shortscale: 0.9
   - type: CanEnterCryostorage
-  - type: BloodCough
-    postingSayDamage: blood-cough-ipc
-  - type: TimeDespawnDamage
   - type: OfferItem
   - type: UserInterface
     interfaces:
@@ -172,6 +168,8 @@
         type: StrippableBoundUserInterface
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
+      enum.InstrumentUiKey.Key: # Space Dream
+        type: InstrumentBoundUserInterface
   - type: MidroundCustomization
     action: ActionIpcScreen
     selectSlotTime: 0
@@ -185,6 +183,14 @@
     defaultSkinColoring: false
   - type: AnimatedEmotes
   - type: Posing
+  - type: Actions # Space Dream
+  - type: Instrument
+    program: 0
+    allowPercussion: true
+    handheld: false
+  - type: ActivatableUI
+    key: enum.InstrumentUiKey.Key
+
 
 - type: entity
   save: false

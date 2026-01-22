@@ -315,3 +315,15 @@
   id: ManifestedSpirit
   coefficients:
     Holy: 2
+
+# Space dream reaslism IPC
+- type: damageModifierSet 
+  id: BaseMobIPC
+  coefficients:
+    Shock: 3.5
+    Cold: 0.15
+    Heat: 2.0
+    Slash: 0.25
+    Piercing: 0.3
+    Stamina: 2.0
+    Blunt: 1.5
