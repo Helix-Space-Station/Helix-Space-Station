@@ -325,5 +325,5 @@
     Heat: 2.0
     Slash: 0.25
     Piercing: 0.3
-    Stamina: 2.0
+#    Stamina: 2.0
     Blunt: 1.5
