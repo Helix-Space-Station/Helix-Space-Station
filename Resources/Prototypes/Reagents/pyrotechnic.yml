@@ -233,7 +233,7 @@
   flavor: bitter
   flavorMinimum: 0.01
   color: "#a76b1c"
-  puddlePrototype: PuddleSmear # Space Dream
+  # puddlePrototype: PuddleSmear # Space Dream
   recognizable: true
   boilingPoint: -84.7 # Acetylene. Close enough.
   meltingPoint: -80.7
