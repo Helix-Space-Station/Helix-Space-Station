@@ -1,4 +1,4 @@
-  - type: gameMap
+- type: gameMap
   id: SD_Newton
   mapName: 'Newton'
   mapPath: /Maps/SDMaps/SDStations/sd_newton.yml
