@@ -13,3 +13,19 @@
     state: icon
   - type: Item
     sprite: SD/Entities/Weapons/Warehouse/topor-myasnika.rsi
+    storedSprite:
+      state: icon
+      sprite: SD/Entities/Weapons/Warehouse/topor-myasnika.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.5
+    soundHit:
+      path: /Audio/SD/Weapons/Melee/Warehouse/hit.ogg
+    soundSwing:
+      path: /Audio/SD/Weapons/Melee/Warehouse/miss.ogg
+    damage:
+      types:
+        Slash: 12
+  - type: ThrowingAngle
+    angle: 90
+    angularVelocity: true
