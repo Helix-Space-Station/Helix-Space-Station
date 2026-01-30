@@ -90,7 +90,7 @@
       size: Ginormous
       sprite: SD/Entities/Weapons/Warehouse/Dolzhnik/noblespear.rsi
       storedSprite:
-        state: icon
+        state: spear
         sprite: SD/Entities/Weapons/Warehouse/Dolzhnik/noblespear.rsi
 
 - type: entity
