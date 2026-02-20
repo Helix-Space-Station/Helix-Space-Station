@@ -22,29 +22,6 @@
   - type: Currency
     price:
       Telecrystal: 1
-# Corvax-HiddenDesc-Start
-  - type: HiddenDescription
-    entries:
-    - label: corvax-hidden-desc-Telecrystal-syndicate
-      whitelistMind:
-        mindRoles:
-        - TraitorRole
-        - NukeopsRole
-    - label: corvax-hidden-desc-Telecrystal-cargo
-      jobRequired:
-        - SalvageSpecialist
-    - label: corvax-hidden-desc-Telecrystal-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
-        - ADTSeniorResearcher # ADT tweak
-# Corvax-HiddenDesc-End
-# Goobstation
-  - type: Tag
-    tags:
-    - Telecrystal
 
 - type: entity
   parent: Telecrystal
@@ -159,18 +136,3 @@
   - type: Store
     balance:
       Telecrystal: 99999
-
-- type: entity
-  parent: BaseUplinkRadio
-  id: BaseUplinkRadioContractor0TC
-  suffix: 0 TC
-  components:
-  - type: Store
-    categories:
-    - UplinkContractor
-    balance:
-      Telecrystal: 0
-  - type: Sprite
-    sprite: Objects/Devices/communication.rsi
-    layers:
-    - state: svo

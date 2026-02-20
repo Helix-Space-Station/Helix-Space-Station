@@ -36,6 +36,8 @@
   equipment:
     outerClothing: ClothingOuterWinterJani
 
+# Misc
+
 # SD Tweak
 - type: loadout
   id: JanitorBeltie
@@ -46,12 +48,4 @@
   id: JanitorGaloshes
   equipment:
     shoes: ClothingShoesGaloshes
-# Misc
-- type: loadout
-  id: JanitorGoldenPlunger
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorJanitorial
-  storage:
-    back:
-    - GoldenPlunger
+

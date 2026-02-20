@@ -22,6 +22,8 @@
     rules:
     - id: Thief
       prob: 0.5
+    - id: Xenoborgs
+      prob: 0.05
     - id: ArmsDealer
       prob: 0.5
 #    - id: SubWizard
@@ -39,6 +41,19 @@
     rules:
     - id: Thief
       prob: 0.5
+    - id: ArmsDealer
+      prob: 0.5
+
+- type: entity
+  parent: BaseGameRule
+  id: SubGamemodesRuleNoXenoborg
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief
+      prob: 0.5
+    - id: SubWizard
+      prob: 0.05
     - id: ArmsDealer
       prob: 0.5
 

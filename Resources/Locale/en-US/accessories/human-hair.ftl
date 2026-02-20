@@ -2,6 +2,7 @@ marking-HumanHairAfro = Afro
 marking-HumanHairAfro2 = Afro 2
 marking-HumanHairBigafro = Afro (Large)
 marking-HumanHairAntenna = Ahoge
+marking-HumanHairBaby = Baby
 marking-HumanHairBalding = Balding Hair
 marking-HumanHairBedhead = Bedhead
 marking-HumanHairBedheadv2 = Bedhead 2
@@ -59,6 +60,7 @@ marking-HumanHairCornrowbraid = Cornrow Braid
 marking-HumanHairCornrowtail = Cornrow Tail
 marking-HumanHairCrewcut = Crewcut
 marking-HumanHairCrewcut2 = Crewcut 2
+marking-HumanHairCube = Cube
 marking-HumanHairCurls = Curls
 marking-HumanHairC = Cut Hair
 marking-HumanHairDandypompadour = Dandy Pompadour
@@ -197,8 +199,4 @@ marking-HumanHairVlongfringe = Very Long with Fringe
 marking-HumanHairVolaju = Volaju
 marking-HumanHairWisp = Wisp
 marking-HumanHairLongWithBangs = Long With Bangs
-# sd added start
-marking-SDHumanHairSeph = Sephy
-marking-SDHumanHairSephAlt = Sephy (Alt)
-marking-SDHumanHairSephLong = Sephy (Long)
-# sd added end
+marking-HumanHairOverEyePigtail = Pigtail (Over Eye)

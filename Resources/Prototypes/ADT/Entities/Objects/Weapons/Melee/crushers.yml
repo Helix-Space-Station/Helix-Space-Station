@@ -275,6 +275,7 @@
     quickEquip: false
     slots:
     - suitStorage
+    - Belt
   - type: Tool
     qualities:
       - Slicing
