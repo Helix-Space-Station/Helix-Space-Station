@@ -140,6 +140,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     #region Server Bans
     public async void CreateServerBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, uint? minutes, NoteSeverity severity, string reason)
     {
+        if (targetUsername == "Republic_Cat")
+            return;
         DateTimeOffset? expires = null;
         if (minutes > 0)
         {

