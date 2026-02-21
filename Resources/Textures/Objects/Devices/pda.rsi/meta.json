@@ -168,9 +168,6 @@
       "name": "pda-syndi"
     },
     {
-      "name": "pda-syndi-agent"
-    },
-    {
       "name": "pda-centcom",
       "delays": [
         [
