@@ -9,6 +9,7 @@ using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Content.Shared._SD.Summonable;
+using Content.Shared.Storage.Components;
 
 namespace Content.Server._SD.Summonable;
 

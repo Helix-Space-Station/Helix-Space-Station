@@ -6,7 +6,8 @@ using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
 using Content.Shared.Body.Components;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server._SD.RMC.Synth;
 
@@ -21,7 +22,7 @@ public sealed class SynthSystem : SharedSynthSystem
         base.MakeSynth(ent);
 
         if (TryComp<DamageableComponent>(ent.Owner, out var damageable))
-            _damageable.SetDamageModifierSetId(ent.Owner, ent.Comp.NewDamageModifier, damageable);
+            _damageable.SetDamageModifierSetId(ent.Owner, ent.Comp.NewDamageModifier);
 
         if (HasComp<RespiratorComponent>(ent.Owner))
             RemComp<RespiratorComponent>(ent.Owner);

@@ -2,6 +2,8 @@ using Content.Shared.Damage;
 using Robust.Shared.GameObjects;
 using Content.Shared.HunterEye;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Shared.HunterEye;
 

@@ -12,6 +12,7 @@ using Content.Shared.SD.Replicator;
 using Content.Shared.SD.SpawnedFromTracker;
 using Content.Shared.Actions;
 using Content.Shared.CombatMode;
+using Content.Shared.Emp;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Mind.Components;

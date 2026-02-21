@@ -19,7 +19,7 @@
   - type: SubdermalImplant
     permanent: true
     implantAction: SD_ActionActivateBluespaceLifeline
-  - type: TriggerImplantAction
+  - type: TriggerOnActivateImplant
   - type: TeleportOnTrigger
   - type: SpawnOnTrigger
     proto: SD_BluespaceLifelineSpawnCore

@@ -11,6 +11,7 @@ using Content.Server.Chat.Managers;
 using Content.Shared.Nuke;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Hands.Components;
+using Content.Shared.Trigger;
 
 namespace Content.Server._SD.Implants;
 

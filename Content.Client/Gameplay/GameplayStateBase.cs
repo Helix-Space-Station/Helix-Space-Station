@@ -23,7 +23,8 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using YamlDotNet.Serialization.TypeInspectors;
-using Content.Shared.Damage; // sd edit
+using Content.Shared.Damage;
+using Content.Shared.Damage.Components; // sd edit
 
 namespace Content.Client.Gameplay
 {

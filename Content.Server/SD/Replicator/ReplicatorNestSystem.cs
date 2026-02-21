@@ -36,6 +36,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Linq;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Storage.Components;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
 namespace Content.Server.SD.Replicator;
@@ -57,7 +58,7 @@ public sealed class ReplicatorNestSystem : SharedReplicatorNestSystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly PinpointerSystem _pinpointer = default!;
     [Dependency] private readonly AmbientSoundSystem _ambientSound = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!; 
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly PullingSystem _pulling = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly EntityStorageSystem _entStorage = default!;

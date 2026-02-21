@@ -25,6 +25,7 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Timing;
 using Robust.Shared.Log;
 using System.Linq;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Shared.Weapons.Melee.Upgrades;
 

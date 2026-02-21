@@ -6,7 +6,7 @@
   description: A plain old lollypop. It's still in a wrapper.
   abstract: true
   components:
-  - type: Food
+  - type: Edible
   - type: Tag
     tags:
     - FoodSnack
@@ -32,9 +32,7 @@
   - type: FlavorProfile
     flavors:
     - cherry
-  - type: Food
-    trash:
-    - FoodPacketLollypopTrash
+  - type: Edible
   - type: Tag
     tags:
     - FoodSnack
@@ -1617,8 +1615,7 @@
     quickEquip: false # You want to eat it, not stick it in your mouth.
     sprite: SD/Objects/Consumable/Food/lollypop.rsi
     slots: [ mask ]
-  - type: Food
-    solution: food
+  - type: Edible
   - type: FlavorProfile
     flavors:
     - paper

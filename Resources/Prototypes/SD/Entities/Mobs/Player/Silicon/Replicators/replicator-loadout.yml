@@ -174,28 +174,36 @@
   components:
   - type: Unremoveable
 
-- type: hitscan
+- type: entity
+  parent: BasicHitscan
   id: HitscanReplicator
-  staminaDamage: 18
-  muzzleFlash:
-    sprite: SD/Mobs/Replicator/replicator_gun.rsi
-    state: muzzle_repli
-  travelFlash:
-    sprite: SD/Mobs/Replicator/replicator_gun.rsi
-    state: beam_repli
-  impactFlash:
-    sprite: SD/Mobs/Replicator/replicator_gun.rsi
-    state: impact_repli
+  components:
+  - type: HitscanStaminaDamage
+    staminaDamage: 28
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: SD/Mobs/Replicator/replicator_gun.rsi
+      state: muzzle_repli
+    travelFlash:
+      sprite: SD/Mobs/Replicator/replicator_gun.rsi
+      state: beam_repli
+    impactFlash:
+      sprite: SD/Mobs/Replicator/replicator_gun.rsi
+      state: impact_repli
 
-- type: hitscan
+- type: entity
+  parent: BasicHitscan
   id: HitscanReplicator2
-  staminaDamage: 32
-  muzzleFlash:
-    sprite: SD/Mobs/Replicator/replicator_gun.rsi
-    state: muzzle_repli2
-  travelFlash:
-    sprite: SD/Mobs/Replicator/replicator_gun.rsi
-    state: beam_repli2
-  impactFlash:
-    sprite: SD/Mobs/Replicator/replicator_gun.rsi
-    state: impact_repli2
+  components:
+  - type: HitscanStaminaDamage
+    staminaDamage: 32
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: SD/Mobs/Replicator/replicator_gun.rsi
+      state: muzzle_repli2
+    travelFlash:
+      sprite: SD/Mobs/Replicator/replicator_gun.rsi
+      state: beam_repli2
+    impactFlash:
+      sprite: SD/Mobs/Replicator/replicator_gun.rsi
+      state: impact_repli2
