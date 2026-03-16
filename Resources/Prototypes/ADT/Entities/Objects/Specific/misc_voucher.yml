@@ -44,6 +44,8 @@
   - type: MiningVoucher
     kits:
     - WeaponSaberRevBlueshield
+    - WeaponHalberdBlueshield # SD Tweak
+    - SD_WeaponMK6SmartPistolBlueshield
     typeDropPlace: ThisPlace
     typeDrop: Rocket
 
@@ -94,6 +96,7 @@
     - WeaponHoSUnika
     - WeaponHoSMultiphase
     - WeaponHoSBat
+    - SDDragonManual # SD Tweak
     typeDropPlace: ThisPlace
     typeDrop: Rocket
 
