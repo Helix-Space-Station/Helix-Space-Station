@@ -82,7 +82,7 @@
 # Shoes
 
 - type: loadout
-  id: SD_ClothingBlueshielJackBoots
+  id: SD_ClothingBlueshieldJackBoots
   equipment:
     shoes: ClothingShoesBootsJackFilled
 
