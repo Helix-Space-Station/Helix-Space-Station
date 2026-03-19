@@ -1,0 +1,28 @@
+- type: gameMapPool
+  id: SDMapPool
+  maps:
+  # - Atlas
+  # - Bagel
+  # - Box
+  # - Cog
+  # - Cluster
+  # - Core
+  # - Fland
+  # - Marathon
+  # - Meta
+  # - Oasis
+  # - Omega
+  # - Origin
+  # - Saltern
+  # - Packed
+  # - Reach
+  # - Train
+
+# SD Maps Базовые Актуальные
+
+  - SD_Sievert
+  - SD_Flicker
+  - SD_Lumen
+  - SD_Newton
+  - SD_Pascal
+  - SD_Joule

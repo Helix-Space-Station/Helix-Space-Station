@@ -147,7 +147,7 @@
   abstract: true
   components:
     - type: StationCentcomm
-      map: "/Maps/ADTMaps/ADTStations/adt_centcomm.yml" #ADT_Centcomm
+      map: "/Maps/_SDMaps/SD_Centcomm.yml" # SD Tweak
 
 - type: entity
   id: BaseStationEvacuation
