@@ -106,6 +106,13 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Resomi ]
+      # Start SD tweak
+      - !type:Oxygenate
+        factor: 8
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Aegi ]
+      # End SD tweak
       - !type:ModifyLungGas
         conditions:
         - !type:MetabolizerTypeCondition
