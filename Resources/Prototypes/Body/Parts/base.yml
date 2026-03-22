@@ -40,6 +40,20 @@
     vital: true
   - type: Input
     context: "ghost"
+  # SD-Surgery-start
+  - type: Tag
+    tags:
+      - BaseBodyPart
+      - Head
+
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUiKey.Key:
+        type: SurgeryBoundUserInterface
+  - type: Operated
+    raceGraph: HeadSurgery
+    operatedPart: true
+  # SD-Surgery-end
 
 - type: entity
   id: BaseLeftArm
@@ -50,6 +64,12 @@
   - type: BodyPart
     partType: Arm
     symmetry: Left
+  # SD-Surgery-start
+  - type: Tag
+    tags:
+      - BaseBodyPart
+      - LeftArm
+  # SD-Surgery-end
 
 - type: entity
   id: BaseRightArm
@@ -60,6 +80,12 @@
   - type: BodyPart
     partType: Arm
     symmetry: Right
+  # SD-Surgery-start
+  - type: Tag
+    tags:
+      - BaseBodyPart
+      - RightArm
+  # SD-Surgery-end
 
 - type: entity
   id: BaseLeftHand
@@ -70,6 +96,12 @@
   - type: BodyPart
     partType: Hand
     symmetry: Left
+  # SD-Surgery-start
+  - type: Tag
+    tags:
+      - BaseBodyPart
+      - LeftHand
+  # SD-Surgery-end
 
 - type: entity
   id: BaseRightHand
@@ -80,6 +112,12 @@
   - type: BodyPart
     partType: Hand
     symmetry: Right
+  # SD-Surgery-start
+  - type: Tag
+    tags:
+      - BaseBodyPart
+      - RightHand
+  # SD-Surgery-end
 
 - type: entity
   id: BaseLeftLeg
@@ -91,6 +129,12 @@
     partType: Leg
     symmetry: Left
   - type: MovementBodyPart
+  # SD-Surgery-start
+  - type: Tag
+    tags:
+      - BaseBodyPart
+      - LeftLeg
+  # SD-Surgery-end
 
 - type: entity
   id: BaseRightLeg
@@ -102,6 +146,12 @@
     partType: Leg
     symmetry: Right
   - type: MovementBodyPart
+  # SD-Surgery-start
+  - type: Tag
+    tags:
+      - BaseBodyPart
+      - RightLeg
+  # SD-Surgery-end
 
 - type: entity
   id: BaseLeftFoot
@@ -112,6 +162,12 @@
   - type: BodyPart
     partType: Foot
     symmetry: Left
+  # SD-Surgery-start
+  - type: Tag
+    tags:
+      - BaseBodyPart
+      - LeftFoot
+  # SD-Surgery-end
 
 - type: entity
   id: BaseRightFoot
@@ -122,3 +178,9 @@
   - type: BodyPart
     partType: Foot
     symmetry: Right
+  # SD-Surgery-start
+  - type: Tag
+    tags:
+      - BaseBodyPart
+      - RightFoot
+  # SD-Surgery-end

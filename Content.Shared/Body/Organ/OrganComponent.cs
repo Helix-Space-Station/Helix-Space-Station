@@ -13,4 +13,7 @@ public sealed partial class OrganComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public EntityUid? Body;
+
+    [DataField("organType")] // SD Tweak
+    public string OrganType = "default"; // SD Tweak
 }

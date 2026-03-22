@@ -1,0 +1,507 @@
+- type: entity
+  name: fix o vein
+  id: FixOVein
+  parent: BaseToolSurgery
+  description: "A device for fixing and treating damaged veins and arteries."
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Specific/Medical/Surgery/fixovein.rsi
+    state: fixovein
+  - type: Item
+    sprite: _SD/Objects/Specific/Medical/Surgery/fixovein.rsi
+  - type: Tool
+    qualities:
+    - FixOVein
+
+- type: entity
+  name: bone setter
+  id: BoneSetter
+  parent: Retractor
+  description: "A durable tool for the forced return of bones to an anatomically correct position. Patients may not appreciate the crunch, but the functionality is indisputable."
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Specific/Medical/Surgery/bone_setter.rsi
+    state: bonesetter
+  - type: Item
+    sprite: _SD/Objects/Specific/Medical/Surgery/bone_setter.rsi
+    storedRotation: 45
+  - type: Tool
+    qualities:
+    - BoneSetter
+
+- type: entity
+  name: bone gel
+  id: BoneGel
+  parent: BaseToolSurgery
+  description: "Bioactive gel that instantly holds broken bones together. Side effects include temporary itching, a slight burning sensation, and an unexplained craving for milk."
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Specific/Medical/Surgery/bone_gel.rsi
+    state: bone-gel
+  - type: Item
+    sprite: _SD/Objects/Specific/Medical/Surgery/bone_gel.rsi
+  - type: Tool
+    qualities:
+    - BoneGel
+
+- type: entity
+  name: spray bottle
+  id: SprayBottleEthanol
+  parent: SprayBottle
+  suffix: Ethanol
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+        reagents:
+        - ReagentId: Ethanol
+          Quantity: 100
+  - type: Label
+    currentLabel: ethanol
+  - type: Tag
+    tags:
+      - Spray
+
+# CoolTools
+- type: entity
+  name: bone saw
+  id: Bonesaw
+  parent: BaseToolSurgery
+  description: "A device for fixing and treating damaged veins and arteries."
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Specific/Medical/Surgery/bonesaw.rsi
+    state: bonesaw
+  - type: Item
+    sprite: _SD/Objects/Specific/Medical/Surgery/bonesaw.rsi
+  - type: Tool
+    qualities:
+    - BoneSetter
+    - Sawing
+    - BoneGel
+  - type: MeleeWeapon
+    damage:
+      groups:
+        Brute: 15
+    soundHit:
+      path: /Audio/Items/drill_hit.ogg
+  - type: SurgicalTool
+    modifier: 1.5
+
+- type: entity
+  name: hemrevein
+  id: Hemrevein
+  parent: BaseToolSurgery
+  description: "A device for fixing and treating damaged veins and arteries."
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Specific/Medical/Surgery/hemrevein.rsi
+    state: hemrevein_v
+  - type: Item
+    sprite: _SD/Objects/Specific/Medical/Surgery/hemrevein.rsi
+  - type: Tool
+    qualities:
+      - FixOVein
+    speedModifier: 1.5
+    useSound: /Audio/Items/drill_use.ogg
+  - type: MultipleTool
+    statusShowBehavior: true
+    entries:
+      - behavior: FixOVein
+        sprite:
+          sprite: _SD/Objects/Specific/Medical/Surgery/hemrevein.rsi
+          state: hemrevein_v
+        useSound:
+          path: /Audio/_SD/Medical/Surgery/retractor2.ogg
+        changeSound:
+          path: /Audio/Items/change_drill.ogg
+      - behavior: Retractor
+        sprite:
+          sprite: _SD/Objects/Specific/Medical/Surgery/hemrevein.rsi
+          state: hemrevein_r
+        useSound:
+          path: /Audio/_SD/Medical/Surgery/retractor1.ogg
+        changeSound:
+          path: /Audio/Items/change_drill.ogg
+      - behavior: Hemostat
+        sprite:
+          sprite: _SD/Objects/Specific/Medical/Surgery/hemrevein.rsi
+          state: hemrevein_h
+        useSound:
+          path: /Audio/_SD/Medical/Surgery/hemostat1.ogg
+        changeSound:
+          path: /Audio/Items/change_drill.ogg
+  - type: SurgicalTool
+    modifier: 1.5
+# Storage
+
+- type: entity
+  parent: BaseStorageItem
+  id: Surgerykit
+  name: surgery kit
+  description: "A small kit for transferring everything necessary for surgical intervention."
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Storage/surgery_case.rsi
+    state: icon
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - Wrench
+        - Bottle
+        - Spray
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - CigPack
+        - PillCanister
+        - Radio
+        - DiscreteHealthAnalyzer
+        - SurgeryTool
+        - Dropper
+    grid:
+    - 0,0,5,2
+  - type: Item
+    size: Huge
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 50
+
+- type: entity
+  parent: [ BaseStorageItem, ClothingBeltBase ]
+  id: SuperSurgerykit
+  name: big surgery kit
+  description: "A large set for transferring everything necessary for surgical intervention. It can be worn on a belt."
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: _SD/Objects/Storage/super_surgery_case.rsi
+  - type: Clothing
+    sprite: _SD/Objects/Storage/super_surgery_case.rsi
+  - type: Storage
+    maxItemSize: Normal
+    whitelist:
+      tags:
+        - Wrench
+        - Bottle
+        - Spray
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - CigPack
+        - PillCanister
+        - Radio
+        - DiscreteHealthAnalyzer
+        - SurgeryTool
+        - Dropper
+    grid:
+    - 0,0,7,3
+  - type: Item
+    size: Huge
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 50
+
+# AlwaysSteril
+
+- type: entity
+  name: fix o vein
+  parent: FixOVein
+  suffix: AlwaysSteril
+  id: FixOVeinAS
+  components:
+  - type: Sterile
+    alwaysSterile: true
+  - type: Unremoveable
+  - type: ItemSelector
+    items:
+    - ScalpelAS
+    - CauteryAS
+    - RetractorAS
+    - HemostatAS
+    - FixOVeinAS
+    - BoneSetterAS
+    - BoneGelAS
+    - SawAS
+    - DrillAS
+  - type: ActivatableUI
+    key: enum.ItemSelectorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.ItemSelectorUiKey.Key:
+        type: ItemSelectorBoundUserInterface
+  - type: Tag
+    tags:
+    - Itemborg
+    - SurgeryTool
+
+- type: entity
+  name: bone setter
+  parent: BoneSetter
+  suffix: AlwaysSteril
+  id: BoneSetterAS
+  components:
+  - type: Sterile
+    alwaysSterile: true
+  - type: Unremoveable
+  - type: ItemSelector
+    items:
+    - ScalpelAS
+    - CauteryAS
+    - RetractorAS
+    - HemostatAS
+    - FixOVeinAS
+    - BoneSetterAS
+    - BoneGelAS
+    - SawAS
+    - DrillAS
+  - type: ActivatableUI
+    key: enum.ItemSelectorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.ItemSelectorUiKey.Key:
+        type: ItemSelectorBoundUserInterface
+  - type: Tag
+    tags:
+    - Itemborg
+    - SurgeryTool
+
+- type: entity
+  name: bone gel
+  parent: BoneGel
+  suffix: AlwaysSteril
+  id: BoneGelAS
+  components:
+  - type: Sterile
+    alwaysSterile: true
+  - type: Unremoveable
+  - type: ItemSelector
+    items:
+    - ScalpelAS
+    - CauteryAS
+    - RetractorAS
+    - HemostatAS
+    - FixOVeinAS
+    - BoneSetterAS
+    - BoneGelAS
+    - SawAS
+    - DrillAS
+  - type: ActivatableUI
+    key: enum.ItemSelectorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.ItemSelectorUiKey.Key:
+        type: ItemSelectorBoundUserInterface
+  - type: Tag
+    tags:
+    - Itemborg
+    - SurgeryTool
+
+- type: entity
+  name: Scalpel
+  parent: Scalpel
+  suffix: AlwaysSteril
+  id: ScalpelAS
+  components:
+  - type: Sterile
+    alwaysSterile: true
+  - type: Unremoveable
+  - type: ItemSelector
+    items:
+    - ScalpelAS
+    - CauteryAS
+    - RetractorAS
+    - HemostatAS
+    - FixOVeinAS
+    - BoneSetterAS
+    - BoneGelAS
+    - SawAS
+    - DrillAS
+  - type: ActivatableUI
+    key: enum.ItemSelectorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.ItemSelectorUiKey.Key:
+        type: ItemSelectorBoundUserInterface
+  - type: Tag
+    tags:
+    - Itemborg
+    - SurgeryTool
+
+- type: entity
+  name: cautery
+  parent: Cautery
+  suffix: AlwaysSteril
+  id: CauteryAS
+  components:
+  - type: Sterile
+    alwaysSterile: true
+  - type: Unremoveable
+  - type: ItemSelector
+    items:
+    - ScalpelAS
+    - CauteryAS
+    - RetractorAS
+    - HemostatAS
+    - FixOVeinAS
+    - BoneSetterAS
+    - BoneGelAS
+    - SawAS
+    - DrillAS
+  - type: ActivatableUI
+    key: enum.ItemSelectorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.ItemSelectorUiKey.Key:
+        type: ItemSelectorBoundUserInterface
+  - type: Tag
+    tags:
+    - Itemborg
+    - SurgeryTool
+
+- type: entity
+  name: retractor
+  parent: Retractor
+  suffix: AlwaysSteril
+  id: RetractorAS
+  components:
+  - type: Sterile
+    alwaysSterile: true
+  - type: Unremoveable
+  - type: ItemSelector
+    items:
+    - ScalpelAS
+    - CauteryAS
+    - RetractorAS
+    - HemostatAS
+    - FixOVeinAS
+    - BoneSetterAS
+    - BoneGelAS
+    - SawAS
+    - DrillAS
+  - type: ActivatableUI
+    key: enum.ItemSelectorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.ItemSelectorUiKey.Key:
+        type: ItemSelectorBoundUserInterface
+  - type: Tag
+    tags:
+    - Itemborg
+    - SurgeryTool
+
+- type: entity
+  name: hemostat
+  parent: Hemostat
+  suffix: AlwaysSteril
+  id: HemostatAS
+  components:
+  - type: Sterile
+    alwaysSterile: true
+  - type: Unremoveable
+  - type: ItemSelector
+    items:
+    - ScalpelAS
+    - CauteryAS
+    - RetractorAS
+    - HemostatAS
+    - FixOVeinAS
+    - BoneSetterAS
+    - BoneGelAS
+    - SawAS
+    - DrillAS
+  - type: ActivatableUI
+    key: enum.ItemSelectorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.ItemSelectorUiKey.Key:
+        type: ItemSelectorBoundUserInterface
+  - type: Tag
+    tags:
+    - Itemborg
+    - SurgeryTool
+
+- type: entity
+  name: metal saw
+  parent: Saw
+  suffix: AlwaysSteril
+  id: SawAS
+  components:
+  - type: Sterile
+    alwaysSterile: true
+  - type: Unremoveable
+  - type: ItemSelector
+    items:
+    - ScalpelAS
+    - CauteryAS
+    - RetractorAS
+    - HemostatAS
+    - FixOVeinAS
+    - BoneSetterAS
+    - BoneGelAS
+    - SawAS
+    - DrillAS
+  - type: ActivatableUI
+    key: enum.ItemSelectorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.ItemSelectorUiKey.Key:
+        type: ItemSelectorBoundUserInterface
+  - type: Tag
+    tags:
+    - Itemborg
+    - SurgeryTool
+
+- type: entity
+  name: drill
+  parent: Drill
+  suffix: AlwaysSteril
+  id: DrillAS
+  components:
+  - type: Sterile
+    alwaysSterile: true
+  - type: Unremoveable
+  - type: ItemSelector
+    items:
+    - ScalpelAS
+    - CauteryAS
+    - RetractorAS
+    - HemostatAS
+    - FixOVeinAS
+    - BoneSetterAS
+    - BoneGelAS
+    - SawAS
+    - DrillAS
+  - type: ActivatableUI
+    key: enum.ItemSelectorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+      enum.ItemSelectorUiKey.Key:
+        type: ItemSelectorBoundUserInterface
+  - type: Tag
+    tags:
+    - Itemborg
+    - SurgeryTool

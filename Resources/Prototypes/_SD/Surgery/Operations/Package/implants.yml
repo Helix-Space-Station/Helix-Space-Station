@@ -1,0 +1,98 @@
+- type: surgeryPackage
+  id: TorsoImplantPackage
+  transitions:
+    - ImplantingTorsoTransition
+    - RemoveSadTromboneTransition
+    - RemoveLightImplantTransition
+    - RemoveBikeHornTransition
+    - RemoveTrackingTransition
+    - RemoveStorageTransition
+    - RemoveFreedomTransition
+    - RemoveRadioTransition
+    - RemoveUplinkTransition
+    - RemoveEmpTransition
+    - RemoveScramTransition
+    - RemoveDnaScramblerTransition
+    - RemoveChameleonControllerTransition
+    - RemoveRadioCentcommTransition
+
+- type: surgeryPackage
+  id: SlimeTorsoImplantPackage
+  transitions:
+    - SlimeImplantingTorsoTransition
+    - SlimeRemoveSadTromboneTransition
+    - SlimeRemoveLightImplantTransition
+    - SlimeRemoveBikeHornTransition
+    - SlimeRemoveTrackingTransition
+    - SlimeRemoveStorageTransition
+    - SlimeRemoveFreedomTransition
+    - SlimeRemoveRadioTransition
+    - SlimeRemoveUplinkTransition
+    - SlimeRemoveEmpTransition
+    - SlimeRemoveScramTransition
+    - SlimeRemoveDnaScramblerTransition
+    - SlimeRemoveChameleonControllerTransition
+    - SlimeRemoveRadioCentcommTransition
+
+- type: surgeryPackage
+  id: AndroidTorsoImplantPackage
+  transitions:
+    - AndroidImplantTorsoTransition
+    - AndroidRemoveSadTromboneTransition
+    - AndroidRemoveLightImplantTransition
+    - AndroidRemoveBikeHornTransition
+    - AndroidRemoveTrackingTransition
+    - AndroidRemoveStorageTransition
+    - AndroidRemoveFreedomTransition
+    - AndroidRemoveRadioTransition
+    - AndroidRemoveUplinkTransition
+    - AndroidRemoveEmpTransition
+    - AndroidRemoveScramTransition
+    - AndroidRemoveDnaScramblerTransition
+    - AndroidRemoveChameleonControllerTransition
+    - AndroidRemoveRadioCentcommTransition
+
+- type: surgeryPackage
+  id: IpcTorsoImplantPackage
+  transitions:
+    - IpcImplantTorsoTransition
+    - IpcRemoveSadTromboneTransition
+    - IpcRemoveLightImplantTransition
+    - IpcRemoveBikeHornTransition
+    - IpcRemoveTrackingTransition
+    - IpcRemoveStorageTransition
+    - IpcRemoveFreedomTransition
+    - IpcRemoveRadioTransition
+    - IpcRemoveUplinkTransition
+    - IpcRemoveEmpTransition
+    - IpcRemoveScramTransition
+    - IpcRemoveDnaScramblerTransition
+    - IpcRemoveChameleonControllerTransition
+    - IpcRemoveRadioCentcommTransition
+
+- type: surgeryPackage
+  id: HeadImplantPackage
+  transitions:
+    - ImplantingHeadTransition
+    - RemoveMindShieldTransition
+    - RemoveFakeMindShieldTransition
+
+- type: surgeryPackage
+  id: ThroatImplantPackage
+  transitions:
+    - ImplantingVocalCordsTransition
+    - RemoveDivineVocalCordsTransition
+
+- type: surgeryPackage
+  id: AndroidHeadImplantPackage
+  transitions:
+    - AndroidImplantHeadTransition
+    - AndroidRemoveMindShieldTransition
+    - AndroidRemoveFakeMindShieldTransition
+
+- type: surgeryPackage
+  id: IpcHeadImplantPackage
+  transitions:
+    - IpcImplantHeadTransition
+    - IpcRemoveMindShieldTransition
+    - IpcRemoveFakeMindShieldTransition
