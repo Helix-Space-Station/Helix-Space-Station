@@ -1,7 +1,7 @@
 <ui:RadialMenu xmlns="https://spacestation14.io"
                xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-               x:Class="Content.Client._Wega.Item.Selector.UI.ObjectSelectorWindow"
+               x:Class="Content.Client._SD.Item.Selector.UI.ObjectSelectorWindow"
                MinWidth="450"
                MinHeight="450">
 
