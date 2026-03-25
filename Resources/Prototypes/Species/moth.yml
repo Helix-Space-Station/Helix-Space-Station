@@ -71,7 +71,6 @@
     Hair:
       points: 1 # SD Tweak
       required: false
-      layer: 100 # SD Tweak
     FacialHair:
       points: 0
       required: false
