@@ -68,6 +68,7 @@
     - Dwarf
     - IPC
     - DraskSpecies # ADT-Tweak-end
+    - Aegi # SD-Tweak
   components:
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
@@ -538,6 +539,7 @@
     - Dwarf
     - IPC
     - DraskSpecies # ADT-Tweak-end
+    - Aegi # SD-Tweak
   id: CBURNAgent
   parent: EventHumanoidCentcomm
   components:
@@ -590,6 +592,7 @@
     - Dwarf
     - IPC
     - DraskSpecies # ADT-Tweak-end
+    - Aegi # SD-Tweak
   parent: EventHumanoidMindShielded
   components:
     - type: GhostRole

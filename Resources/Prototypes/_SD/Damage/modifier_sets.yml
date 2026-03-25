@@ -1,13 +1,13 @@
-# - type: damageModifierSet
-#   id: Aegi
-#   coefficients:
-#     Blunt: 1.1
-#     Piercing: 1.1
-#     Slash: 1.1
-#     Heat: 1.05
-#     Cold: 0.9
-#     Radiation: 0.7
-#     Asphyxiation: 1.2
+- type: damageModifierSet
+  id: Aegi
+  coefficients:
+    Blunt: 1.1
+    Piercing: 1.1
+    Slash: 1.1
+    Heat: 1.05
+    Cold: 0.9
+    Radiation: 0.7
+    Asphyxiation: 1.05
 
 # - type: damageModifierSet
 #   id: SD_Synth
