@@ -79,7 +79,6 @@
       points: 1
       required: true
       defaultMarkings: [ MothWingsDefault ]
-      layer: 50 # SD Tweak
 ### Start ADT Tweak
     SnoutOverlay:
       points: 1
