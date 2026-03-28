@@ -41,12 +41,13 @@
   id: MobMothSprites
   sprites:
     Head: MobMothHead
+    Tail: MobHumanoidAnyMarking # SD Tweak
+    Hair: MobHumanoidAnyMarking # SD Tweak
     Snout: MobHumanoidAnyMarking
     Chest: MobMothTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     SnoutOverlay: MobHumanoidAnyMarking # ADT Tweak
-    Tail: MobHumanoidAnyMarking
     Eyes: MobMothEyes
     LArm: MobMothLArm
     RArm: MobMothRArm
@@ -65,10 +66,10 @@
 
 - type: markingPoints
   id: MobMothMarkingLimits
-  onlyWhitelisted: true
+  onlyWhitelisted: false # SD Tweak
   points:
     Hair:
-      points: 0
+      points: 1 # SD Tweak
       required: false
     FacialHair:
       points: 0
