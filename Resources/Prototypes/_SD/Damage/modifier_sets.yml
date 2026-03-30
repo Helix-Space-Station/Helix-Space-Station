@@ -1,4 +1,4 @@
- - type: damageModifierSet
+- type: damageModifierSet
    id: Aegi
    coefficients:
      Blunt: 1.1
@@ -8,6 +8,17 @@
      Cold: 0.9
      Radiation: 0.7
      Asphyxiation: 1.05
+
+- type: damageModifierSet
+  id: Aegi
+  coefficients:
+    Blunt: 1.1
+    Piercing: 1.1
+    Slash: 1.1
+    Heat: 1.05
+    Cold: 0.9
+    Radiation: 0.7
+    Asphyxiation: 1.05
 
 # - type: damageModifierSet
 #   id: SD_Synth
@@ -24,10 +35,18 @@
 #   flatReductions:
 #     Blunt: 5
 
- - type: damageModifierSet
+- type: damageModifierSet
    id: SDBorgChassisUnderPressure  #generally means for all borgs that are being under any "pressure" what so ever.  
    coefficients:                   #(only used for mining and sec now)
-     Blunt: 0.7                    #damn
+     Blunt: 0.7
      Piercing: 0.7
      Slash: 0.7
      Heat: 0.6
+
+- type: damageModifierSet
+  id: SDBorgChassisUnderPressure  #generally means for all borgs that are being under any "pressure" what so ever.  
+  coefficients:                   #(only used for mining and sec now)
+    Blunt: 0.7
+    Piersing: 0.7
+    Slash: 0.7
+    Heat: 0.6

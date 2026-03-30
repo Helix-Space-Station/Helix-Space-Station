@@ -33857,8 +33857,6 @@ entities:
       pos: 48.5,14.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
   - uid: 1460
@@ -34340,8 +34338,6 @@ entities:
       pos: -19.5,-45.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15883
       - 717
@@ -34352,8 +34348,6 @@ entities:
       pos: -55.5,8.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 646
 - proto: AirSensorVox
@@ -113927,8 +113921,6 @@ entities:
       pos: -19.5,-44.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15883
       - 717
@@ -113939,8 +113931,6 @@ entities:
       pos: -21.5,-50.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15883
       - 717
@@ -114113,8 +114103,6 @@ entities:
       pos: 53.5,-56.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 658
   - uid: 16072
@@ -114878,8 +114866,6 @@ entities:
       pos: 62.5,-50.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 16204
     components:
     - type: Transform
@@ -115396,8 +115382,6 @@ entities:
       pos: 6.5,18.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 16293
     components:
     - type: Transform
@@ -115925,8 +115909,6 @@ entities:
       pos: 53.5,-57.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 658
 - proto: Fireplace
@@ -149510,8 +149492,6 @@ entities:
       pos: -20.5,-45.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15883
       - 717
@@ -149552,8 +149532,6 @@ entities:
     - type: AtmosPipeColor
       color: '#0055CCFF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 691
   - uid: 20842
@@ -150131,8 +150109,6 @@ entities:
       pos: 61.5,15.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -150152,8 +150128,6 @@ entities:
       pos: 61.5,18.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -150164,8 +150138,6 @@ entities:
       pos: 59.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -150176,8 +150148,6 @@ entities:
       pos: 56.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -150188,8 +150158,6 @@ entities:
       pos: 53.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -150200,8 +150168,6 @@ entities:
       pos: 50.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -150212,8 +150178,6 @@ entities:
       pos: 47.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -150225,8 +150189,6 @@ entities:
       pos: 60.5,11.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -151489,8 +151451,6 @@ entities:
       pos: -54.5,8.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 646
     - type: AtmosPipeColor
@@ -151515,8 +151475,6 @@ entities:
       pos: -56.5,8.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 646
     - type: AtmosPipeColor
@@ -151536,8 +151494,6 @@ entities:
       pos: -18.5,-45.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15883
       - 717
@@ -152126,8 +152082,6 @@ entities:
       pos: 46.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -152138,8 +152092,6 @@ entities:
       pos: 49.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -152150,8 +152102,6 @@ entities:
       pos: 52.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -152162,8 +152112,6 @@ entities:
       pos: 55.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -152174,8 +152122,6 @@ entities:
       pos: 58.5,23.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -152187,8 +152133,6 @@ entities:
       pos: 61.5,19.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -152200,8 +152144,6 @@ entities:
       pos: 61.5,16.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -152213,8 +152155,6 @@ entities:
       pos: 57.5,12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 711
     - type: AtmosPipeColor
@@ -166687,7 +166627,7 @@ entities:
       parent: 605
     - type: Paper
       content: >
-        питчеров на базе в бейсболе НОЛЬ! 
+        питчеров на базе в бейсболе НОЛЬ!
     - type: Physics
       canCollide: False
   - uid: 2962

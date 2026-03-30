@@ -49,12 +49,15 @@ using Content.Client.Corvax.TTS; // Corvax-TTS
 using Content.Client.ADT.UserInterface.Controls;
 using Content.Client.ADT.CharecterFlavor;
 using Content.Shared.ADT.CharecterFlavor;
+using Content.Shared.SD; // SD-ERP-Status
+using Content.Client.FlavorText; // SD-ERP-Status
 
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
     public sealed partial class HumanoidProfileEditor : BoxContainer
     {
+        private OptionButton _erpStatus = null!; // SD-ERP-Status
         private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
         private readonly IClientPreferencesManager _preferencesManager;
         private readonly IConfigurationManager _cfgManager;
@@ -591,6 +594,24 @@ namespace Content.Client.Lobby.UI
                 TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
                 _flavorTextEdit = _flavorText.CFlavorTextInput;
 
+                // SD-ERPStatus-Start
+                _erpStatus = _flavorText.CERPStatusOption;
+
+                // We set id for situation, if we wanna resort option list
+                _erpStatus.AddItem(Loc.GetString("humanoid-erp-status-no"), (int) EnumERPStatus.NO);
+                _erpStatus.AddItem(Loc.GetString("humanoid-erp-status-half"), (int) EnumERPStatus.HALF);
+                _erpStatus.AddItem(Loc.GetString("humanoid-erp-status-full"), (int) EnumERPStatus.FULL);
+                _erpStatus.OnItemSelected += args =>
+                {
+                    if (Profile is null)
+                        return;
+
+                    _erpStatus.SelectId(args.Id);
+                    Profile = Profile.WithERPStatus((EnumERPStatus) args.Id);
+                    IsDirty = true;
+                };
+                // SD-ERPStatus-End
+
                 // ADT-tweak-start
                 _flavorText.OnOOCNotesChanged += OnOOCNotesChange;
                 _flavorText.OnHeadshotUrlChanged += OnHeadshotUrlChange;
@@ -1000,6 +1021,7 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateFlavorTextEdit();
+            UpdateERPStatus(); // SD-ERP-Status
             UpdateSexControls();
             UpdateGenderControls();
             UpdateSkinColor();
@@ -1630,6 +1652,15 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        // SD-ERPStatus-Start
+        private void UpdateERPStatus()
+        {
+            if (_erpStatus != null)
+            {
+                _erpStatus.SelectId((int) (Profile?.ERPStatus ?? EnumERPStatus.NO));
+            }
+        }
+        // SD-ERPStatus-End
         private void UpdateAgeEdit()
         {
             AgeEdit.Text = Profile?.Age.ToString() ?? "";
