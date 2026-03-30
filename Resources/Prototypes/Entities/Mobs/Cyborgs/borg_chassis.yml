@@ -57,10 +57,6 @@
   - type: BorgSwitchableSubtype
     borgSubtype: default_mining
   #End ADT Tweak
-  #SD-REBALANCE-Start
-  - type: Damageable
-    damageModifierSet: SDBorgChassisUnderPressure
-  #SD-REBALANCE-End
 
 - type: entity
   id: BorgChassisEngineer

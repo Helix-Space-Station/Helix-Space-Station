@@ -23,11 +23,3 @@
 #     Poison: 0
 #   flatReductions:
 #     Blunt: 5
-
-- type: damageModifierSet
-  id: SDBorgChassisUnderPressure  #generally means for all borgs that are being under any "pressure" what so ever.  
-  coefficients:                   #(only used for mining and sec now)
-    Blunt: 0.7
-    Piersing: 0.7
-    Slash: 0.7
-    Heat: 0.6
