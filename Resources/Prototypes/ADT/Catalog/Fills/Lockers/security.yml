@@ -79,4 +79,5 @@
       - id: ADTBookSRPsec
       - id: ADTBookSRPmed
       - id: ADTBookPCDsec
+      - id: BrigmedHypo
 

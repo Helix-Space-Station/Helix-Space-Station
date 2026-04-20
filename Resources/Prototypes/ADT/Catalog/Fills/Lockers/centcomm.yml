@@ -48,6 +48,7 @@
     - id: ADTClothingUniformJumpskirtTurtleneckBlueshield
     - id: ADTClothingUniformJumpsuitTurtleneckBlueshield
     - id: ADTClothingNeckCloakSecondBlueshield
+    - id: BlueShieldHypo # SD Tweak
     # - id: ADTCqcManualWeak
 
 # Centcom Consultant
@@ -58,7 +59,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: ADTClothingUniformJumpskirtCCCFormal 
+    - id: ADTClothingUniformJumpskirtCCCFormal
     - id: ADTClothingUniformJumpsuitCCCFormal
     - id: ADTClothingUniformJumpskirtCCC
     - id: ADTClothingUniformJumpsuitConsultantCentcom
@@ -84,7 +85,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: ADTClothingUniformJumpskirtCCCFormal 
+    - id: ADTClothingUniformJumpskirtCCCFormal
     - id: ADTClothingUniformJumpsuitCCCFormal
     - id: ADTClothingUniformJumpskirtCCC
     - id: ADTClothingUniformJumpsuitConsultantCentcom
