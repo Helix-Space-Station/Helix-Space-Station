@@ -6,61 +6,80 @@ using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.Atmos;
-using Content.Shared.Body.Components;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Medical.Cryogenics;
-using Content.Shared.MedicalScanner;
-using Content.Shared.Temperature.Components;
-using Content.Shared.UserInterface;
-using Robust.Shared.Containers;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.FixedPoint;
+using Robust.Shared.Timing;
+using Robust.Shared.Utility;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using System.Linq;
 
 namespace Content.Server.Medical;
 
 public sealed partial class CryoPodSystem : SharedCryoPodSystem
 {
     [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
+    [Dependency] private readonly IGameTiming _cryoTiming = default!;
+    [Dependency] private readonly SharedUserInterfaceSystem _cryoUi = default!;
     [Dependency] private readonly GasCanisterSystem _gasCanisterSystem = default!;
+    [Dependency] private readonly GasAnalyzerSystem _gasAnalyzerSystem = default!;
+    [Dependency] private readonly HealthAnalyzerSystem _healthAnalyzerSystem = default!;
     [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
+
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CryoPodComponent, AfterActivatableUIOpenEvent>(OnActivateUI);
         SubscribeLocalEvent<CryoPodComponent, AtmosDeviceUpdateEvent>(OnCryoPodUpdateAtmosphere);
         SubscribeLocalEvent<CryoPodComponent, GasAnalyzerScanEvent>(OnGasAnalyzed);
-        SubscribeLocalEvent<CryoPodComponent, EntRemovedFromContainerMessage>(OnEjected);
     }
 
-    private void OnActivateUI(Entity<CryoPodComponent> entity, ref AfterActivatableUIOpenEvent args)
+    public override void Update(float frameTime)
     {
-        if (!entity.Comp.BodyContainer.ContainedEntity.HasValue)
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<ActiveCryoPodComponent, CryoPodComponent>();
+
+        while (query.MoveNext(out var uid, out _, out var cryoPod))
+        {
+            if (_cryoTiming.CurTime < cryoPod.NextUiUpdateTime)
+                continue;
+
+            cryoPod.NextUiUpdateTime += cryoPod.UiUpdateInterval;
+            Dirty(uid, cryoPod);
+            UpdateUi((uid, cryoPod));
+        }
+    }
+
+    protected override void UpdateUi(Entity<CryoPodComponent> entity)
+    {
+        if (!_cryoUi.IsUiOpen(entity.Owner, CryoPodUiKey.Key)
+            || !TryComp(entity, out CryoPodAirComponent? air))
             return;
 
-        TryComp<TemperatureComponent>(entity.Comp.BodyContainer.ContainedEntity, out var temp);
-        TryComp<BloodstreamComponent>(entity.Comp.BodyContainer.ContainedEntity, out var bloodstream);
+        var patient = entity.Comp.BodyContainer.ContainedEntity;
+        var gasMix = _gasAnalyzerSystem.GenerateGasMixEntry("Cryo pod", air.Air);
+        var (beakerCapacity, beaker) = GetBeakerInfo(entity);
+        var injecting = GetInjectingReagents(entity);
+        var health = _healthAnalyzerSystem.GetHealthAnalyzerUiState(patient);
+        health.ScanMode = true;
 
-        if (TryComp<HealthAnalyzerComponent>(entity, out var healthAnalyzer))
-        {
-            healthAnalyzer.ScannedEntity = entity.Comp.BodyContainer.ContainedEntity;
-        }
+        // SpaceDream edit
+        var hasDamage = patient.HasValue
+                        && TryComp<DamageableComponent>(patient.Value, out var damageable)
+                        && damageable.TotalDamage > FixedPoint2.Zero;
 
-        // TODO: This should be a state my dude
-        _uiSystem.ServerSendUiMessage(
+        _cryoUi.ServerSendUiMessage(
             entity.Owner,
-            HealthAnalyzerUiKey.Key,
-            new HealthAnalyzerScannedUserMessage(GetNetEntity(entity.Comp.BodyContainer.ContainedEntity),
-            temp?.CurrentTemperature ?? 0,
-            (bloodstream != null && _solutionContainerSystem.ResolveSolution(entity.Comp.BodyContainer.ContainedEntity.Value,
-                bloodstream.BloodSolutionName, ref bloodstream.BloodSolution, out var bloodSolution))
-                ? bloodSolution.FillFraction
-                : 0,
-            null,
-            null,
-            null
-        ));
+            CryoPodUiKey.Key,
+            new CryoPodUserMessage(gasMix, health, beakerCapacity, beaker, injecting, hasDamage: hasDamage)
+        );
     }
 
     private void OnCryoPodUpdateAtmosphere(Entity<CryoPodComponent> entity, ref AtmosDeviceUpdateEvent args)
@@ -96,15 +115,29 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
             args.GasMixtures.Add((entity.Comp.PortName, portAirLocal));
         }
     }
-
-    private void OnEjected(Entity<CryoPodComponent> cryoPod, ref EntRemovedFromContainerMessage args)
+    // SpaceDream start
+    private (FixedPoint2? capacity, List<ReagentQuantity>? reagents) GetBeakerInfo(Entity<CryoPodComponent> entity)
     {
-        if (TryComp<HealthAnalyzerComponent>(cryoPod.Owner, out var healthAnalyzer))
-        {
-            healthAnalyzer.ScannedEntity = null;
-        }
+        var beakerUid = _itemSlots.GetItemOrNull(entity.Owner, entity.Comp.SolutionContainerName);
+        if (beakerUid == null)
+            return (null, null);
 
-        // if body is ejected - no need to display health-analyzer
-        _uiSystem.CloseUi(cryoPod.Owner, HealthAnalyzerUiKey.Key);
+        if (!_solutionContainer.TryGetFitsInDispenser(beakerUid.Value, out _, out var solution))
+            return (null, null);
+
+        return (solution.MaxVolume, solution.Contents.ToList());
     }
+
+    private List<ReagentQuantity>? GetInjectingReagents(Entity<CryoPodComponent> entity)
+    {
+        if (!_solutionContainer.TryGetSolution(
+                entity.Owner,
+                CryoPodComponent.InjectionBufferSolutionName,
+                out _,
+                out var buffer))
+            return new List<ReagentQuantity>();
+
+        return buffer.Contents.ToList();
+    }
+    // SpaceDream end
 }

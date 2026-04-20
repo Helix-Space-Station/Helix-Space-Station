@@ -13,6 +13,8 @@ namespace Content.Server.Medical.Components;
 [Access(typeof(HealthAnalyzerSystem), typeof(CryoPodSystem))]
 public sealed partial class HealthAnalyzerComponent : Component
 {
+    [DataField]
+    public bool IsAnalyzerActive;
     /// <summary>
     /// When should the next update be sent for the patient
     /// </summary>

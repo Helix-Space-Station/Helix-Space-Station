@@ -76,9 +76,9 @@ public sealed partial class GasAnalyzerComponent : Component
     {
         public readonly string Name;
         public readonly float Amount;
-        public readonly string Color;
+        public readonly float Color;
 
-        public GasEntry(string name, float amount, string color)
+        public GasEntry(string name, float amount, float color)
         {
             Name = name;
             Amount = amount;
