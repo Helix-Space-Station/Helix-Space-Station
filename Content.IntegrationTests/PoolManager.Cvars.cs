@@ -1,5 +1,6 @@
 #nullable enable
 using Content.Shared.CCVar;
+using Content.Shared.ADT.CCVar;
 
 namespace Content.IntegrationTests;
 
@@ -34,6 +35,10 @@ public static partial class PoolManager
         (CCVars.AutosaveEnabled.Name, "false"),
         (CCVars.InteractionRateLimitCount.Name, "9999999"),
         (CCVars.InteractionRateLimitPeriod.Name, "0.1"),
+        (ADTCCVars.GhostbarEnabled.Name, "false"), // ADT-Tweak
+        (ADTCCVars.PlanetSpawnerEnabled.Name, "false"), // ADT-Tweak
+        (ADTCCVars.BiomeGenerationEnabled.Name, "false"), // ADT-Tweak
+        (ADTCCVars.OverpressurePipeDamageEnabled.Name, "false"), // ADT-Tweak: отключаем урон трубам от давления в тестах
         // (CCVars.MovementMobPushing.Name, "false"), // ADT-Tweak
     };
 }

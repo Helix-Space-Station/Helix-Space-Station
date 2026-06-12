@@ -76,6 +76,7 @@
   - ADTBlueshieldNeck
   - ADTBlueshieldEars # ADT tweak
   - ADTBlueshieldBack
+  - SD_Blueshield_Shoes
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
@@ -258,6 +259,7 @@
   - Glasses
   - ADTBarberJumpsuit
   - ADTBarberOtherClothing
+  - ADTBarberShoes
   # ADT underwear tweak start
   - ADTTop
   - ADTBottom

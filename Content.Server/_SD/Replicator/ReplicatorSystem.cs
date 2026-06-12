@@ -3,7 +3,6 @@
 // // the original Bingle PR can be found here: https://github.com/Goob-Station/Goob-Station/pull/1519
 
 // using Content.Server.Actions;
-// using Content.Server.Emp;
 // using Content.Server.Ghost.Roles.Events;
 // using Content.Server.Pinpointer;
 // using Content.Server.Popups;
@@ -49,7 +48,7 @@
 //         SubscribeLocalEvent<ReplicatorComponent, ToggleCombatActionEvent>(OnCombatToggle);
 //         SubscribeLocalEvent<ReplicatorComponent, GhostRoleSpawnerUsedEvent>(OnGhostRoleSpawnerUsed);
 //         SubscribeLocalEvent<ReplicatorComponent, ReplicatorSpawnNestActionEvent>(OnSpawnNestAction);
-//         SubscribeLocalEvent<ReplicatorComponent, EmpPulseEvent>(OnEmpPulse);
+//         // SubscribeLocalEvent<ReplicatorComponent, EmpPulseEvent>(OnEmpPulse); // EmpPulseEvent не существует
 //     }
 
 //     private void OnInit(EntityUid uid, ReplicatorComponent component, MapInitEvent args)
@@ -57,18 +56,15 @@
 //         if (component.HasSpawnedNest)
 //             return;
 
-//         if (component.Queen) // if you're the queen, which you'll only be if you're the first one spawned,
+//         if (component.Queen)
 //         {
-
 //             _actions.AddAction(uid, component.SpawnNewNestAction);
-
 //             component.HasSpawnedNest = true;
 //         }
 //     }
 
 //     private void OnMindRemoved(Entity<ReplicatorComponent> ent, ref MindRemovedMessage args)
 //     {
-//         // remove all the actions when the mind is removed.
 //         foreach (var action in ent.Comp.Actions)
 //         {
 //             QueueDel(action);
@@ -86,16 +82,12 @@
 //         if (!coords.IsValid(EntityManager) || xform.MapID == MapId.Nullspace)
 //             return;
 
-//         // spawn a nest, then make sure it has ReplicatorNestComponent
 //         var myNest = Spawn("ReplicatorNest", xform.Coordinates);
 //         var myNestComp = EnsureComp<ReplicatorNestComponent>(myNest);
 
-//         // add ourselves to the list of related replicators if the nest hasn't been destroyed (and therefore there are no orphaned replicators)
 //         if (ent.Comp.RelatedReplicators.Count <= 0 || ent.Comp.Queen && !ent.Comp.RelatedReplicators.Contains(ent))
 //             ent.Comp.RelatedReplicators.Add(ent);
 
-//         // then set that nest's spawned minions to our saved list of related replicators.
-//         // while we're in here, we might as well update all their pinpointers.
 //         HashSet<EntityUid> newMinions = [];
 //         HashSet<(EntityUid, ReplicatorComponent)> livingReplicators = [];
 //         var query = EntityQueryEnumerator<ReplicatorComponent>();
@@ -109,24 +101,17 @@
 
 //             if (!_inventory.TryGetSlotEntity(uid, "pocket1", out var pocket1) || !TryComp<PinpointerComponent>(pocket1, out var pinpointer))
 //                 continue;
-//             // set the target to the nest
 //             _pinpointer.SetTarget(pocket1.Value, myNest, pinpointer);
-
 //             comp.MyNest = myNest;
 //         }
 //         myNestComp.SpawnedMinions = newMinions;
-//         // make sure the nest knows who we are, and vice versa.
 //         myNestComp.SpawnedMinions.Add(ent);
 //         ent.Comp.MyNest = myNest;
-//         // and we don't need the RelatedReplicators list anymore, so,
 //         ent.Comp.RelatedReplicators.Clear();
-
-//         // remove queen status from this replicator
 //         ent.Comp.Queen = false;
 
 //         _replicatorNest.ForceUpgrade(ent, ent.Comp.FirstStage);
 
-//         // then we need to remove the action, to ensure it can't be used infinitely.
 //         QueueDel(args.Action);
 //     }
 
@@ -134,25 +119,19 @@
 //     {
 //         if (!TryComp<SpawnedFromTrackerComponent>(args.Spawner, out var tracker) || !TryComp<ReplicatorNestComponent>(tracker.SpawnedFrom, out var nestComp))
 //             return;
-//         // add the spawned replicator to the nest's list when someone takes the ghostrole.
 //         nestComp.SpawnedMinions.Add(ent);
-//         // then remove the spawner from the nest's list of unclaimed spawners.
 //         nestComp.UnclaimedSpawners.Remove(args.Spawner);
-
-//         // tell the new fella who they momma is
 //         ent.Comp.MyNest = tracker.SpawnedFrom;
 //     }
 
 //     private void OnAttackAttempt(Entity<ReplicatorComponent> ent, ref AttackAttemptEvent args)
 //     {
-//         // Can't attack your friends.
 //         if (HasComp<ReplicatorComponent>(args.Target))
 //         {
 //             _popup.PopupEntity(Loc.GetString("replicator-on-replicator-attack-fail"), ent, ent, PopupType.MediumCaution);
 //             args.Cancel();
 //         }
 
-//         // Can't attack the nest.
 //         if (HasComp<ReplicatorNestComponent>(args.Target))
 //         {
 //             _popup.PopupEntity(Loc.GetString("replicator-on-nest-attack-fail"), ent, ent, PopupType.MediumCaution);
@@ -164,15 +143,13 @@
 //     {
 //         if (!TryComp<CombatModeComponent>(ent, out var combat))
 //             return;
-
-//         // visual indicator that the replicator is aggressive.
 //         _appearance.SetData(ent, ReplicatorVisuals.Combat, combat.IsInCombatMode);
 //     }
 
-//     private void OnEmpPulse(Entity<ReplicatorComponent> ent, ref EmpPulseEvent args)
-//     {
-//         args.Affected = true;
-//         args.Disabled = true;
-//         _stun.TryUpdateParalyzeDuration(ent, ent.Comp.EmpStunTime);
-//     }
+//     // private void OnEmpPulse(Entity<ReplicatorComponent> ent, ref EmpPulseEvent args)
+//     // {
+//     //     args.Affected = true;
+//     //     args.Disabled = true;
+//     //     _stun.TryUpdateParalyzeDuration(ent, ent.Comp.EmpStunTime);
+//     // }
 // }

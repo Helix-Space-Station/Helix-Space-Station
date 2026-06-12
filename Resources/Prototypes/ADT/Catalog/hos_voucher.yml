@@ -27,3 +27,24 @@
     state: bat_on
   content:
   - ADTTacticBat
+
+  #SD Tweak start
+- type: thiefBackpackSet
+  id: SDDragonManual
+  name: hos-voucher-dragon-name
+  description: hos-voucher-dragon-description
+  sprite:
+    sprite: _SD/Objects/Specific/martial_arts.rsi
+    state: dragon
+  content:
+  - SDDragonManual
+
+- type: thiefBackpackSet
+  id: SD_WeaponMK6SmartPistolBlueshield
+  name: blueshield-voucher-smartpistol-name
+  description: blueshield-voucher-smartpistol-description
+  sprite:
+    sprite: _SD/Objects/Weapons/Guns/smartgun.rsi
+    state: icon
+  content:
+  - SD_BaseWeaponCaseNTBS2

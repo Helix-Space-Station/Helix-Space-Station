@@ -90,20 +90,13 @@
 
 //             var nestComp = falling.FallingTarget.Comp;
 
-
-//             //if (!nestComp.HasAnnounced && nestComp.CurrentLevel >= nestComp.AnnounceAtLevel)
-//             //{
-//             //    nestComp.HasAnnounced = true;
-//             //    _announcer.SendAnnouncement("announce", Filter.Broadcast(), nestComp.Announcement, colorOverride: Color.Red);
-//             //}
-
-//             // delete entities that have anything on the blacklist, OR don't have anything on the whitelist AND don't have a mind.
-//             if (_whitelist.IsBlacklistPass(nestComp.PreservationBlacklist, uid) || !_whitelist.IsWhitelistPass(nestComp.PreservationWhitelist, uid)
-//                 && !TryComp<MindContainerComponent>(uid, out var mind) | (mind != null && !mind!.HasMind))
+//             if (_whitelist.IsBlacklistPass(nestComp.PreservationBlacklist, uid) ||
+//                 (!_whitelist.IsWhitelistPass(nestComp.PreservationWhitelist, uid) &&
+//                  (!TryComp<MindContainerComponent>(uid, out var mind) || (mind != null && !mind.HasMind))))
 //                 toDel.Add(uid);
 
 //             _containerSystem.Insert(uid, falling.FallingTarget.Comp.Hole);
-//             EnsureComp<StunnedComponent>(uid); // used stunned to prevent any funny being done inside the pit
+//             EnsureComp<StunnedComponent>(uid);
 //             RemCompDeferred(uid, falling);
 //         }
 
@@ -142,11 +135,9 @@
 
 //     private void OnStepTriggered(Entity<ReplicatorNestComponent> ent, ref StepTriggeredOffEvent args)
 //     {
-//         // dont accept if they are already falling
 //         if (HasComp<ReplicatorNestFallingComponent>(args.Tripper))
 //             return;
 
-//         // *reject* if blacklisted
 //         if (_whitelist.IsBlacklistPass(ent.Comp.Blacklist, args.Tripper))
 //         {
 //             if (TryComp<PullableComponent>(args.Tripper, out var pullable) && pullable.BeingPulled)
@@ -163,22 +154,14 @@
 
 //         var isReplicator = HasComp<ReplicatorComponent>(args.Tripper);
 
-//         // Allow dead replicators regardless of current level.
 //         if (TryComp<MobStateComponent>(args.Tripper, out var mobState) && isReplicator && _mobState.IsDead(args.Tripper))
 //         {
 //             _sharedNest.StartFalling(ent, args.Tripper);
 //             return;
 //         }
 
-//         // Don't allow living beings. If you want those sweet bonus points, you have to kill.
 //         if (mobState != null && _mobState.IsAlive(args.Tripper))
 //             return;
-
-//         // if the ent is a container, all its contents go in the hole
-//         if (TryComp<EntityStorageComponent>(args.Tripper, out var entStorage))
-//         {
-//             _entStorage.EmptyContents(args.Tripper, entStorage);
-//         }
 
 //         if (TryComp<StrapComponent>(args.Tripper, out var strapComp) && strapComp.BuckledEntities.Count > 0)
 //         {
@@ -206,7 +189,6 @@
 
 //     private void HandleDestruction(Entity<ReplicatorNestComponent> ent)
 //     {
-//         // turn off the ambient sound on the points storage entity.
 //         if (TryComp<AmbientSoundComponent>(ent.Comp.PointsStorage, out var ambientComp))
 //             _ambientSound.SetAmbience(ent.Comp.PointsStorage, false, ambientComp);
 
@@ -219,14 +201,12 @@
 //             }
 //         }
 
-//         // delete all unclaimed spawners
-//         foreach (var spawner in ent.Comp.UnclaimedSpawners)
+//         foreach (var spawner in ent.Comp.UnclaimedSpawners.ToList())
 //         {
 //             ent.Comp.UnclaimedSpawners.Remove(spawner);
 //             QueueDel(spawner);
 //         }
 
-//         // remove the falling component from anyone currently falling into this nest
 //         var query = EntityQueryEnumerator<ReplicatorNestFallingComponent>();
 //         while (query.MoveNext(out var uid, out var comp))
 //         {
@@ -234,7 +214,6 @@
 //                 RemCompDeferred<ReplicatorNestFallingComponent>(uid);
 //         }
 
-//         // Figure out who the queen is & which replicators belonging to this nest are still alive.
 //         EntityUid? queen = null;
 //         HashSet<Entity<ReplicatorComponent>> livingReplicators = [];
 //         var repQuery = EntityQueryEnumerator<ReplicatorComponent>();
@@ -253,19 +232,15 @@
 //             livingReplicators.Add((uid, comp));
 //         }
 
-//         // if there are living replicators, select one and give the action to create a new nest.
 //         if (livingReplicators.Count > 0)
 //         {
-//             // if queen isn't null, assign it to queenNotNull. if it is, pick a random EntityUid from the list and assign it to queenNotNull
-//             if (queen is not { } queenNotNull)
-//                 queenNotNull = _random.Pick(livingReplicators);
+//             EntityUid queenNotNull = queen ?? _random.Pick(livingReplicators.Select(e => e.Owner).ToList());
 
 //             var comp = EnsureComp<ReplicatorComponent>(queenNotNull);
 //             comp.Queen = true;
-//             livingReplicators.Add((queenNotNull, comp));
-//             comp.RelatedReplicators = livingReplicators; // make sure we know who belongs to our nest
+//             comp.RelatedReplicators = livingReplicators;
 
-//             var upgradedQueen = ForceUpgrade((queenNotNull, comp), comp.FinalStage);
+//             var upgradedQueen = ForceUpgrade((queenNotNull, comp), "MobReplicatorQueen");
 //             if (!TryComp<ReplicatorComponent>(upgradedQueen, out var upgradedComp))
 //                 return;
 
@@ -279,10 +254,9 @@
 //             livingReplicators.Add((upgradedQueenNotNull, upgradedQueenReplicatorComp));
 
 //             if (!mindContainer.HasMind)
-//                 _actions.AddAction((EntityUid)upgradedQueenNotNull, ent.Comp.SpawnNewNestAction);
+//                 _actions.AddAction(upgradedQueenNotNull, ent.Comp.SpawnNewNestAction);
 //             else
-//                 _actionContainer.AddAction((EntityUid)mind, upgradedComp.SpawnNewNestAction);
-
+//                 _actionContainer.AddAction(mind, upgradedComp.SpawnNewNestAction);
 //         }
 //     }
 
@@ -290,7 +264,6 @@
 //     {
 //         List<Entity<ReplicatorNestPointsStorageComponent>> nests = [];
 
-//         // get all the nests that have existed this round in a list
 //         var query = AllEntityQuery<ReplicatorNestPointsStorageComponent>();
 //         while (query.MoveNext(out var uid, out var comp))
 //             nests.Add((uid, comp));
@@ -298,7 +271,6 @@
 //         if (nests.Count == 0)
 //             return;
 
-//         // linebreak
 //         args.AddLine("");
 
 //         var totalPoints = 0;
@@ -306,7 +278,6 @@
 //         HashSet<int> levels = [];
 //         var locationsList = "";
 
-//         // generate a summary of locations, levels, points, and total spawned replicators across all nests
 //         var i = 0;
 //         foreach (var ent in nests)
 //         {
@@ -324,18 +295,15 @@
 //             else if (i != nests.Count)
 //                 locationsList = string.Concat(locationsList, "[color=#d70aa0]", location, "[/color], ");
 //             else
-//                 locationsList = string.Concat(locationsList, $"[/color]and [color=#d70aa0]{location}[/color].");
+//                 locationsList = string.Concat(locationsList, $"and [color=#d70aa0]{location}[/color].");
 
-//             totalPoints += pointsStorage.TotalPoints / 10; // dividing by ten gives us a slightly more manageable number + keeps it consistent with pre-stackcount point calculation.
-
+//             totalPoints += pointsStorage.TotalPoints / 10;
 //             totalSpawned += pointsStorage.TotalReplicators;
-
 //             levels.Add(pointsStorage.Level);
 //         }
 
 //         var highestLevel = levels.Max();
 
-//         // then push that summary.
 //         args.AddLine(Loc.GetString("replicator-nest-end-of-round", ("location", locationsList), ("level", highestLevel), ("points", totalPoints), ("replicators", totalSpawned)));
 //         args.AddLine("");
 //     }

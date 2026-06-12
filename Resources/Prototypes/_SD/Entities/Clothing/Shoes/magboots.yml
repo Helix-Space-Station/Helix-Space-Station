@@ -29,7 +29,9 @@
   components:
   - type: Action
     icon: { sprite: /Textures/_SD/Clothing/Shoes/Boots/atmos_magboots.rsi, state: icon }
-    iconOn: /Textures/_SD/Clothing/Shoes/Boots/atmos_magboots.rsi/icon-on.png
+    iconOn:
+      sprite: /Textures/_SD/Clothing/Shoes/Boots/atmos_magboots.rsi
+      state: icon-on
 
 - type: entity
   parent: ClothingShoesBootsMag
@@ -61,4 +63,6 @@
   components:
   - type: Action
     icon: { sprite: /Textures/_SD/Clothing/Shoes/Boots/deathsquad.rsi, state: icon }
-    iconOn: /Textures/_SD/Clothing/Shoes/Boots/deathsquad.rsi
+    iconOn:
+      sprite: /Textures/_SD/Clothing/Shoes/Boots/deathsquad.rsi
+      state: icon-on

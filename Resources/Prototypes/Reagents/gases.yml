@@ -62,6 +62,12 @@
         - !type:MetabolizerTypeCondition
           type: [ Resomi ]
       # End ADT tweak
+      # Start SD tweak
+      - !type:Oxygenate
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Aegi ]
+      # End SD tweak
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:

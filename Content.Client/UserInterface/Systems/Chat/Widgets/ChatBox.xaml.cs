@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Shared.Chat;
 using Content.Shared.Input;
@@ -11,7 +12,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Input;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
-using Robust.Shared.Maths;
 using static Robust.Client.UserInterface.Controls.LineEdit;
 
 namespace Content.Client.UserInterface.Systems.Chat.Widgets;
@@ -56,7 +56,19 @@ public partial class ChatBox : UIWidget
 
     private void OnMessageAdded(ChatMessage msg)
     {
+        // Start SD AntiGhost chat
         _sawmill.Debug($"{msg.Channel}: {msg.Message}");
+        if (msg.Channel == ChatChannel.AntiGhost)
+        {
+            if (msg is { Read: false, AudioPath: { } })
+                _entManager.System<AudioSystem>().PlayGlobal(msg.AudioPath, Filter.Local(), false, AudioParams.Default.WithVolume(msg.AudioVolume));
+
+            msg.Read = true;
+            var agColor = msg.MessageColorOverride ?? Color.FromHex("#aa00ff");
+            AddLine(msg.WrappedMessage, agColor);
+            return;
+        }
+        // End SD AntiGhost chat
         if (!ChatInput.FilterButton.Popup.IsActive(msg.Channel))
         {
             return;
@@ -84,7 +96,15 @@ public partial class ChatBox : UIWidget
 
     public void Repopulate()
     {
-        Contents.Clear();
+        // ADT-Tweak start
+        foreach (var child in Contents.Children.Cast<Control>().ToArray())
+        {
+            if (child.Name != "_v_scroll")
+            {
+                Contents.RemoveChild(child);
+            }
+        }
+        // ADT-Tweak end
 
         foreach (var message in _controller.History)
         {
@@ -94,7 +114,15 @@ public partial class ChatBox : UIWidget
 
     private void OnChannelFilter(ChatChannel channel, bool active)
     {
-        Contents.Clear();
+        // ADT-Tweak start
+        foreach (var child in Contents.Children.Cast<Control>().ToArray())
+        {
+            if (child.Name != "_v_scroll")
+            {
+                Contents.RemoveChild(child);
+            }
+        }
+        // ADT-Tweak end
 
         foreach (var message in _controller.History)
         {
@@ -116,7 +144,7 @@ public partial class ChatBox : UIWidget
     {
         var formatted = new FormattedMessage(3);
         formatted.PushColor(color);
-        formatted.AddMarkupOrThrow(message);
+        formatted.AddMarkupPermissive(message); // ADT-Tweak
         formatted.Pop();
         Contents.AddMessage(formatted);
     }

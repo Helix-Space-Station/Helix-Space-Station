@@ -30,6 +30,7 @@
     - UrsusSpecies
     - VulpkaninSpecies
     #ADT_Species End
+    - Aegi # SD-Tweak
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
@@ -103,6 +104,7 @@
     - Shadekin
     - UrsusSpecies
     # ADT-Tweak end
+    - Aegi # SD-Tweak
 
 
 - type: loadoutEffectGroup

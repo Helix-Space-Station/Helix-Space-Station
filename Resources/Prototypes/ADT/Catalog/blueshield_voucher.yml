@@ -7,3 +7,13 @@
     state: base
   content:
   - ADTBaseWeaponCaseNTBS
+
+- type: thiefBackpackSet
+  id: WeaponHalberdBlueshield # SD Tweak - add BSO halberd
+  name: blueshield-voucher-halberd-name
+  description: blueshield-voucher-halberd-description
+  sprite:
+    sprite: _SD/Objects/Weapons/Melee/halberd.rsi
+    state: icon
+  content:
+  - SD_BSOHalberd
