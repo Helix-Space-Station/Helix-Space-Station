@@ -30,6 +30,12 @@ public sealed partial class NewsReaderUi : UIFragment
         {
             SendNewsReaderMessage(NewsReaderUiAction.NotificationSwitch, userInterface);
         };
+        _fragment.OnPostCommentPressed += (text) =>
+        {
+            var commentMessage = new NewsReaderPostCommentMessage(text);
+            var message = new CartridgeUiMessage(commentMessage);
+            userInterface.SendMessage(message);
+        };
     }
 
     public override void UpdateState(BoundUserInterfaceState state)

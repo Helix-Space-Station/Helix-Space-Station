@@ -6,6 +6,15 @@ public abstract class SharedNewsSystem : EntitySystem
 {
     public const int MaxTitleLength = 25;
     public const int MaxContentLength = 10000; /// ADT-Tweak
+    public const int MaxCommentLength = 512;
+}
+
+[Serializable, NetSerializable]
+public struct NewsComment
+{
+    public string Author;
+    public string Content;
+    public TimeSpan Timestamp;
 }
 
 [Serializable, NetSerializable]
@@ -25,6 +34,8 @@ public struct NewsArticle
 
     [ViewVariables]
     public TimeSpan ShareTime;
+
+    public List<NewsComment>? Comments;
 }
 
 [ByRefEvent]

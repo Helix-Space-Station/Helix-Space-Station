@@ -9,6 +9,7 @@ using Content.Server.Popups;
 using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.PDA;
 using Content.Shared.CCVar;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Content.Shared.CartridgeLoader;
@@ -80,6 +81,7 @@ public sealed class NewsSystem : SharedNewsSystem
         Subs.BuiEvents<NewsWriterComponent>(NewsWriterUiKey.Key, subs =>
         {
             subs.Event<NewsWriterDeleteMessage>(OnWriteUiDeleteMessage);
+            subs.Event<NewsWriterDeleteCommentMessage>(OnWriteUiDeleteCommentMessage);
             subs.Event<NewsWriterArticlesRequestMessage>(OnRequestArticlesUiMessage);
             subs.Event<NewsWriterPublishMessage>(OnWriteUiPublishMessage);
             subs.Event<NewsWriterSaveDraftMessage>(OnNewsWriterDraftUpdatedMessage);
@@ -150,6 +152,40 @@ public sealed class NewsSystem : SharedNewsSystem
         {
             RaiseLocalEvent(readerUid, ref args);
         }
+
+        UpdateWriterDevices();
+    }
+
+    private void OnWriteUiDeleteCommentMessage(Entity<NewsWriterComponent> ent, ref NewsWriterDeleteCommentMessage msg)
+    {
+        if (!TryGetArticles(ent, out var articles))
+            return;
+
+        if (msg.ArticleNum < 0 || msg.ArticleNum >= articles.Count)
+            return;
+
+        var article = articles[msg.ArticleNum];
+        if (article.Comments == null || msg.CommentIndex < 0 || msg.CommentIndex >= article.Comments.Count)
+            return;
+
+        if (!CanUse(msg.Actor, ent.Owner))
+        {
+            _popup.PopupEntity(Loc.GetString("news-write-no-access-popup"), ent, PopupType.SmallCaution);
+            _audio.PlayPvs(ent.Comp.NoAccessSound, ent);
+            return;
+        }
+
+        var comment = article.Comments[msg.CommentIndex];
+        _adminLogger.Add(LogType.Chat, LogImpact.Low,
+            $"{ToPrettyString(msg.Actor):actor} deleted comment by {comment.Author} on article '{article.Title}': {comment.Content}");
+
+        article.Comments.RemoveAt(msg.CommentIndex);
+        _audio.PlayPvs(ent.Comp.ConfirmSound, ent);
+
+        var args = new NewsArticleDeletedEvent();
+        var query = EntityQueryEnumerator<NewsReaderCartridgeComponent>();
+        while (query.MoveNext(out var readerUid, out _))
+            RaiseLocalEvent(readerUid, ref args);
 
         UpdateWriterDevices();
     }
@@ -281,23 +317,79 @@ public sealed class NewsSystem : SharedNewsSystem
 
     private void OnReaderUiMessage(Entity<NewsReaderCartridgeComponent> ent, ref CartridgeMessageEvent args)
     {
-        if (args is not NewsReaderUiMessageEvent message)
-            return;
-
-        switch (message.Action)
+        switch (args)
         {
-            case NewsReaderUiAction.Next:
-                NewsReaderLeafArticle(ent, 1);
+            case NewsReaderUiMessageEvent message:
+                switch (message.Action)
+                {
+                    case NewsReaderUiAction.Next:
+                        NewsReaderLeafArticle(ent, 1);
+                        break;
+                    case NewsReaderUiAction.Prev:
+                        NewsReaderLeafArticle(ent, -1);
+                        break;
+                    case NewsReaderUiAction.NotificationSwitch:
+                        ent.Comp.NotificationOn = !ent.Comp.NotificationOn;
+                        break;
+                }
                 break;
-            case NewsReaderUiAction.Prev:
-                NewsReaderLeafArticle(ent, -1);
+            case NewsReaderPostCommentMessage commentMsg:
+                OnPostComment(ent, args.Actor, commentMsg.CommentText);
                 break;
-            case NewsReaderUiAction.NotificationSwitch:
-                ent.Comp.NotificationOn = !ent.Comp.NotificationOn;
-                break;
+            default:
+                return;
         }
 
         UpdateReaderUi(ent, GetEntity(args.LoaderUid));
+    }
+
+    private void OnPostComment(Entity<NewsReaderCartridgeComponent> ent, EntityUid actor, string commentText)
+    {
+        if (!TryGetArticles(ent, out var articles) || articles.Count == 0)
+            return;
+
+        commentText = commentText.Trim();
+        if (string.IsNullOrEmpty(commentText))
+            return;
+
+        if (commentText.Length > MaxCommentLength)
+            commentText = commentText[..MaxCommentLength];
+
+        // Require an ID card in the PDA — no card, no comment (same as NanoChat)
+        var loaderUid = Comp<CartridgeComponent>(ent).LoaderUid;
+        if (loaderUid == null
+            || !TryComp<PdaComponent>(loaderUid.Value, out var pda)
+            || pda.ContainedId == null
+            || !TryComp<IdCardComponent>(pda.ContainedId.Value, out var idCard)
+            || idCard.FullName == null)
+            return;
+
+        var authorName = idCard.FullName;
+
+        var articleIndex = ent.Comp.ArticleNumber;
+        if (articleIndex >= articles.Count)
+            return;
+
+        var article = articles[articleIndex];
+        var comments = article.Comments ?? new List<NewsComment>();
+        article.Comments = comments;
+        articles[articleIndex] = article;
+        comments.Add(new NewsComment
+        {
+            Author = authorName,
+            Content = commentText,
+            Timestamp = _ticker.RoundDuration()
+        });
+
+        _adminLogger.Add(LogType.Chat, LogImpact.Low,
+            $"{ToPrettyString(actor):actor} posted comment on article '{article.Title}': {commentText}");
+
+        var deletedArgs = new NewsArticleDeletedEvent();
+        var query = EntityQueryEnumerator<NewsReaderCartridgeComponent>();
+        while (query.MoveNext(out var readerUid, out _))
+            RaiseLocalEvent(readerUid, ref deletedArgs);
+
+        UpdateWriterDevices();
     }
 
     private void OnReaderUiReady(Entity<NewsReaderCartridgeComponent> ent, ref CartridgeUiReadyEvent args)

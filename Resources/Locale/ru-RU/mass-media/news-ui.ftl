@@ -41,3 +41,9 @@ news-write-ui-richtext-tooltip =
     { "[bullet/]bullet[/color]" }
 news-pda-notification-header = Новая новостная статья
 news-publish-admin-announcement = { $actor } опубликовал(а) новостную статью { $title } за авторством { $author }
+
+news-comments-header = Комментарии
+news-comments-empty = Комментариев пока нет
+news-comment-placeholder = Написать комментарий...
+news-comment-post-button = Отправить
+news-comment-delete-button = Удалить

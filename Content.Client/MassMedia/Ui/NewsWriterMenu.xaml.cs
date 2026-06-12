@@ -16,6 +16,7 @@ public sealed partial class NewsWriterMenu : FancyWindow
     private TimeSpan? _nextPublish;
 
     public event Action<int>? DeleteButtonPressed;
+    public event Action<int, int>? DeleteCommentButtonPressed;
 
     public event Action? CreateButtonPressed;
 
@@ -51,6 +52,8 @@ public sealed partial class NewsWriterMenu : FancyWindow
                 ArtcileNumber = i
             };
             control.OnDeletePressed += () => DeleteButtonPressed?.Invoke(control.ArtcileNumber);
+            control.OnDeleteCommentPressed += (commentIndex) => DeleteCommentButtonPressed?.Invoke(control.ArtcileNumber, commentIndex);
+            control.SetComments(article.Comments);
 
             ArticlesContainer.AddChild(control);
         }

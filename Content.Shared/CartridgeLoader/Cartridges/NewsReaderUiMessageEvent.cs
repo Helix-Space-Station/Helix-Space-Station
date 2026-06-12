@@ -14,6 +14,17 @@ public sealed class NewsReaderUiMessageEvent : CartridgeMessageEvent
 }
 
 [Serializable, NetSerializable]
+public sealed class NewsReaderPostCommentMessage : CartridgeMessageEvent
+{
+    public readonly string CommentText;
+
+    public NewsReaderPostCommentMessage(string commentText)
+    {
+        CommentText = commentText;
+    }
+}
+
+[Serializable, NetSerializable]
 public enum NewsReaderUiAction
 {
     Next,

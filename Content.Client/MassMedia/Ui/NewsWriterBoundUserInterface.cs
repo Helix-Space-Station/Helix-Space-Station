@@ -26,6 +26,7 @@ public sealed class NewsWriterBoundUserInterface : BoundUserInterface
 
         _menu.ArticleEditorPanel.PublishButtonPressed += OnPublishButtonPressed;
         _menu.DeleteButtonPressed += OnDeleteButtonPressed;
+        _menu.DeleteCommentButtonPressed += OnDeleteCommentButtonPressed;
 
         _menu.CreateButtonPressed += OnCreateButtonPressed;
         _menu.ArticleEditorPanel.ArticleDraftUpdated += OnArticleDraftUpdated;
@@ -71,6 +72,14 @@ public sealed class NewsWriterBoundUserInterface : BoundUserInterface
             return;
 
         SendMessage(new NewsWriterDeleteMessage(articleNum));
+    }
+
+    private void OnDeleteCommentButtonPressed(int articleNum, int commentIndex)
+    {
+        if (_menu == null)
+            return;
+
+        SendMessage(new NewsWriterDeleteCommentMessage(articleNum, commentIndex));
     }
 
     private void OnCreateButtonPressed()

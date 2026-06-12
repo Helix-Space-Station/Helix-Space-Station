@@ -75,3 +75,16 @@ public sealed class NewsWriterSaveDraftMessage : BoundUserInterfaceMessage
 public sealed class NewsWriterRequestDraftMessage : BoundUserInterfaceMessage
 {
 }
+
+[Serializable, NetSerializable]
+public sealed class NewsWriterDeleteCommentMessage : BoundUserInterfaceMessage
+{
+    public readonly int ArticleNum;
+    public readonly int CommentIndex;
+
+    public NewsWriterDeleteCommentMessage(int articleNum, int commentIndex)
+    {
+        ArticleNum = articleNum;
+        CommentIndex = commentIndex;
+    }
+}
