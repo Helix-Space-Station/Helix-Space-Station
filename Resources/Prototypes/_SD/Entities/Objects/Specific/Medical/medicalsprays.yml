@@ -2,17 +2,19 @@
   name: styptic powder spray bottle
   id: SprayBottleStypticPowder
   suffix: Filled, Styptic powder
-  parent: SprayBottle
+  parent: SprayBottleBase
   components:
   - type: Sprite
     sprite: _SD/Objects/Medical/Stypticspray.rsi
     state: icon
+  - type: Item
+    sprite: _SD/Objects/Medical/Stypticspray.rsi
   - type: Tag
     tags:
     - Spray
   - type: SolutionContainerManager
     solutions:
-      spray:
+      drink:
         maxVol: 100
         reagents:
         - ReagentId: ADTStypticPowder
@@ -22,17 +24,19 @@
   name: silver sulfadiazine spray bottle
   id: SprayBottleSilverSulfadiazine
   suffix: Filled, Silver sulfadiazine
-  parent: SprayBottle
+  parent: SprayBottleBase
   components:
   - type: Sprite
     sprite: _SD/Objects/Medical/Silverspray.rsi
     state: icon
+  - type: Item
+    sprite: _SD/Objects/Medical/Silverspray.rsi
   - type: Tag
     tags:
     - Spray
   - type: SolutionContainerManager
     solutions:
-      spray:
+      drink:
         maxVol: 100
         reagents:
         - ReagentId: ADTSilverSulfadiazine
