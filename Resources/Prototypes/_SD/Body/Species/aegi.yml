@@ -1,0 +1,106 @@
+- type: markingsGroup
+  parent: Human
+  id: Aegi
+  limits:
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ HumanLongEars ]
+
+- type: entity
+  parent: AppearanceHuman
+  id: AppearanceAegi
+  categories: [ HideSpawnMenu ]
+  name: aegi appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganAegiTorso
+      Head: OrganHumanHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganAegiEars
+      Lungs: OrganAegiLungs
+      Heart: OrganAegiHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Aegi
+  - type: ScaleVisuals
+    scale: 1, 1.1
+
+- type: entity
+  save: false
+  name: Base aegi
+  parent:
+  - AppearanceAegi
+  - BaseSpeciesMobOrganic
+  id: BaseMobAegi
+  abstract: true
+  components:
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 1.5
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
+  - type: Damageable
+    damageModifierSet: Aegi
+  - type: Injurable
+    damageContainer: Biological
+  - type: Stamina
+    baseCritThreshold: 110
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 1.25
+    weightlessFriction: 1
+    weightlessModifier: 1.15
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 330
+    coldDamageThreshold: 250
+    coldDamage:
+      types:
+        Cold: 0.03
+    heatDamage:
+      types:
+        Heat: 1.2
+  - type: LanguageSpeaker
+    languages:
+      GalacticCommon: Speak
+      Sindarin: Speak
+  - type: SizeAttributeWhitelist
+    tall: true
+    tallscale: 1.15
+    short: true
+    shortscale: 0.85
+
+- type: entity
+  parent: BaseMobAegi
+  id: MobAegi
+  name: Urist McAegi
+  components:
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5

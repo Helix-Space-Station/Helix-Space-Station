@@ -1,6 +1,7 @@
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.EntityConditions;
 using Content.Shared.FixedPoint;
 using Content.Shared.Localizations;
@@ -75,14 +76,14 @@ public sealed partial class TypedDamageThresholdSystem :
     EntityConditionSystem<DamageableComponent, TypedDamageThreshold>
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     protected override void Condition(
         Entity<DamageableComponent> ent,
         ref EntityConditionEvent<TypedDamageThreshold> args)
     {
         var condition = args.Condition;
-        var damage = ent.Comp;
+        var allDamage = _damageable.GetAllDamage((ent.Owner, (DamageableComponent?)ent.Comp));
 
         var comparison = new DamageSpecifier(condition.Damage);
         foreach (var group in _proto.EnumeratePrototypes<DamageGroupPrototype>())
@@ -96,7 +97,7 @@ public sealed partial class TypedDamageThresholdSystem :
             if (requestedGroup == FixedPoint2.Zero)
                 continue;
 
-            if (damage.Damage.TryGetDamageInGroup(group, out var total) && total >= requestedGroup)
+            if (allDamage.TryGetDamageInGroup(group, out var total) && total >= requestedGroup)
             {
                 args.Result = !condition.Inverted;
                 return;
@@ -114,7 +115,7 @@ public sealed partial class TypedDamageThresholdSystem :
             comparison.ClampMin(0);
             comparison.TrimZeros();
         }
-        comparison.ExclusiveAdd(-damage.Damage);
+        comparison.ExclusiveAdd(-allDamage);
         comparison = -comparison;
         args.Result = comparison.AnyPositive() ^ condition.Inverted;
     }

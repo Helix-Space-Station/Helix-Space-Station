@@ -38,7 +38,7 @@ public sealed partial class UniqueBloodstreamChemThresholdSystem :
     {
         var condition = args.Condition;
 
-        if (_solution.ResolveSolution(ent.Owner, ent.Comp.ChemicalSolutionName, ref ent.Comp.ChemicalSolution, out var chemSolution))
+        if (_solution.ResolveSolution(ent.Owner, ent.Comp.MetabolitesSolutionName, ref ent.Comp.MetabolitesSolution, out var chemSolution))
         {
             var count = chemSolution.Contents.Count;
             var result = count > condition.Min && count < condition.Max;

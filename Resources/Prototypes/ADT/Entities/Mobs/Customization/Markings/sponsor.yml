@@ -1,8 +1,7 @@
 - type: marking
   id: ADTAlldurak
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: durak
@@ -10,8 +9,7 @@
 - type: marking
   id: ADTAllhorn1
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: horn1
@@ -19,8 +17,7 @@
 - type: marking
   id: ADTAllhorn2
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: horn2
@@ -28,8 +25,7 @@
 - type: marking
   id: ADTAllhorn3
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: horn3
@@ -37,8 +33,7 @@
 - type: marking
   id: ADTAllhorn4
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: horn4
@@ -46,8 +41,7 @@
 - type: marking
   id: ADTAllhorn5
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: horn5
@@ -55,8 +49,7 @@
 - type: marking
   id: ADTAllhorn6
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: horn6
@@ -64,8 +57,7 @@
 - type: marking
   id: ADTAlllord
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: lord
@@ -73,8 +65,7 @@
 - type: marking
   id: ADTAlloldpain
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: oldpain
@@ -82,8 +73,7 @@
 - type: marking
   id: ADTAlltavrhorn
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: tavrhorn
@@ -91,8 +81,7 @@
 - type: marking
   id: ADTAlltelehorn
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: telehorn
@@ -100,8 +89,7 @@
 - type: marking
   id: ADTAllvampirehorn
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  # sponsorOnly: true
+
   sprites:
     - sprite: ADT/Mobs/Customization/Sponsor/horns.rsi
       state: vampirehorn

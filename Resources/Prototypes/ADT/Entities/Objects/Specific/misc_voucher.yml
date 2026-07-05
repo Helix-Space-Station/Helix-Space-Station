@@ -46,6 +46,8 @@
     - WeaponSaberRevBlueshield
     - WeaponHalberdBlueshield # SD Tweak
     - SD_WeaponMK6SmartPistolBlueshield
+    - WeaponDrozdBlueshield
+    - WeaponTonfaBlueshield
     typeDropPlace: ThisPlace
     typeDrop: Rocket
 
