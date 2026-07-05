@@ -908,21 +908,3 @@
     head: ClothingHeadHatOutlawHat
     eyes: ClothingEyesGlassesOutlawGlasses
     mask: ClothingMaskItalianMoustache
-
-- type: entity
-  name: ADTEvilBot-name
-  parent: ADTDroneAntagIPC
-  id: ADTMobEvilBot
-  components:
-  - type: Loadout
-    prototypes: [ADTRoleMobEvilBotGear]
-  - type: TTS
-    voice: sentrybot
-
-
-- type: startingGear
-  id: ADTRoleMobEvilBotGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitColorWhite
-    gloves: ClothingHandsGlovesColorWhite
-    outerClothing: ADTOuterClothingCoatsCrazyScientist

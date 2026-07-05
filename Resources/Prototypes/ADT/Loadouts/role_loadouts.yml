@@ -181,6 +181,7 @@
   - Inventory # Corvax-Loadouts
   - GroupTankHarness
   - SecurityHead
+  - SecurityOfficerGlassesADT
   - SecurityOfficerNeckADT # ADT-Loadouts
   - SeniorOfficerJumpsuit # ADT-Tweak-senior
   - ADTSeniorOfficerOuterClothing # ADT-Tweak-senior
@@ -230,6 +231,7 @@
   - Inventory # Corvax-Loadouts
   - GroupTankHarness
   - ADTCorrectionsOfficerHead
+  - SecurityOfficerGlassesADT
   - SecurityOfficerNeckADT # ADT-Loadouts
   - ADTCorrectionsOfficerJumpsuit
   - ADTCorrectionsOfficerOuterClothing
