@@ -15,7 +15,7 @@
           damage:
             types:
               Blunt: 16
-              armorPenetration: 0.5
+            armorPenetration: 0.5
         - type: ComboCounter
           maxCombo: 4
         - type: Combo
@@ -80,7 +80,7 @@
                     damage:
                       types:
                         Blunt: 50
-                        armorPenetration: 1.0
+                      armorPenetration: 1.0
                   - !type:ComboStopTargetGrabEffect
                   - !type:ComboTrowTargetEffect
                   - !type:ComboStunEffect

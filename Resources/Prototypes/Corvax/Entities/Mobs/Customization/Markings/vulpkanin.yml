@@ -1,7 +1,7 @@
 - type: marking
   id: PawSocks
   bodyPart: RFoot #highest possible layer
-  groupWhitelist: [CorvaxVulpkanin, Vulpkanin]
+  groupWhitelist: [Vulpkanin]
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: pawsocks
@@ -9,7 +9,7 @@
 - type: marking
   id: FoxTail
   bodyPart: Tail
-  groupWhitelist: [CorvaxVulpkanin, Vulpkanin]
+  groupWhitelist: [Vulpkanin]
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_tail
@@ -19,7 +19,7 @@
 - type: marking
   id: FoxEar
   bodyPart: HeadTop
-  groupWhitelist: [CorvaxVulpkanin, Vulpkanin]
+  groupWhitelist: [Vulpkanin]
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_ear
@@ -29,7 +29,7 @@
 - type: marking
   id: WolfTail
   bodyPart: Tail
-  groupWhitelist: [CorvaxVulpkanin, Vulpkanin]
+  groupWhitelist: [Vulpkanin]
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: wolf_tail
@@ -39,7 +39,7 @@
 - type: marking
   id: FoxBelly
   bodyPart: Chest
-  groupWhitelist: [CorvaxVulpkanin, Vulpkanin]
+  groupWhitelist: [Vulpkanin]
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_belly-torso
@@ -47,7 +47,7 @@
 - type: marking
   id: FoxSnout
   bodyPart: Snout
-  groupWhitelist: [CorvaxVulpkanin, Vulpkanin]
+  groupWhitelist: [Vulpkanin]
   sprites:
     - sprite: Corvax/Mobs/Customization/vulpkanin.rsi
       state: vulp_face

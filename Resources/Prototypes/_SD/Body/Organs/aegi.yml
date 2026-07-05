@@ -34,13 +34,7 @@
   components:
   - type: Metabolizer
     updateInterval: 1.75
-    removeEmpty: true
-    solutionOnBody: false
-    solution: "Lung"
     metabolizerTypes: [ Aegi ]
-    groups:
-    - id: Gas
-      rateModifier: 200.0
 
 - type: entity
   parent: [ OrganAegiMetabolizer, OrganHumanHeart ]
@@ -50,7 +44,3 @@
     updateInterval: 1.5
     maxReagents: 3
     metabolizerTypes: [ Aegi ]
-    groups:
-    - id: Medicine
-    - id: Poison
-    - id: Narcotic

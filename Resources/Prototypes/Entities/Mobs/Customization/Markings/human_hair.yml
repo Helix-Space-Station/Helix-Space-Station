@@ -1,14 +1,14 @@
 - type: marking
   id: HumanHairAfro
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: afro
 - type: marking
   id: HumanHairAfro2
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: afro2
@@ -417,7 +417,7 @@
 - type: marking
   id: HumanHairDrillruru
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: drillruru
@@ -604,21 +604,21 @@
 - type: marking
   id: HumanHairLong
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: long
 - type: marking
   id: HumanHairLong2
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: long2
 - type: marking
   id: HumanHairLong3
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: long3
@@ -667,7 +667,7 @@
 - type: marking
   id: HumanHairMessy
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: messy
@@ -680,14 +680,14 @@
 - type: marking
   id: HumanHairMohawk
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: d
 - type: marking
   id: HumanHairNitori
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: nitori
@@ -700,7 +700,7 @@
 - type: marking
   id: HumanHairUnshavenMohawk
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: unshaven_mohawk
@@ -713,7 +713,7 @@
 - type: marking
   id: HumanHairOdango
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: odango
@@ -780,14 +780,14 @@
 - type: marking
   id: HumanHairPompadour
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: pompadour
 - type: marking
   id: HumanHairBigpompadour
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid]
   sprites:
     - sprite: Mobs/Customization/human_hair.rsi
       state: bigpompadour

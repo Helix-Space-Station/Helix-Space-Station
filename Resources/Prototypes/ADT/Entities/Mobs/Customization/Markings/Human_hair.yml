@@ -169,7 +169,7 @@
 - type: marking
   id: ADTHumanHairGatheredlow
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, SlimePerson, Felinid, Vulpkanin, Demon, Slime]
+  groupWhitelist: [Human, Aegi, Slime, Felinid, Vulpkanin, Demon, Slime]
   sprites:
     - sprite: ADT/Mobs/Customization/Frontier/human_hair.rsi
       state: gatheredlow
@@ -177,7 +177,7 @@
 - type: marking
   id: ADTHumanHairLowpigtails
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, SlimePerson, Felinid, Vulpkanin, Demon, Slime]
+  groupWhitelist: [Human, Aegi, Slime, Felinid, Vulpkanin, Demon, Slime]
   sprites:
     - sprite: ADT/Mobs/Customization/Frontier/human_hair.rsi
       state: lowpigtails
@@ -185,7 +185,7 @@
 - type: marking
   id: ADTHumanHairFrenchBraid
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, SlimePerson, Felinid, Vulpkanin, Demon, Slime]
+  groupWhitelist: [Human, Aegi, Slime, Felinid, Vulpkanin, Demon, Slime]
   sprites:
     - sprite: ADT/Mobs/Customization/Frontier/human_hair.rsi
       state: frenchbraid
@@ -311,7 +311,7 @@
 - type: marking
   id: ADTHumanHairLongPompadour
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies, Novakid]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid, Novakid]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: longPompadour
@@ -340,7 +340,7 @@
 - type: marking
   id: ADTHumanHairPlateau
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies, Novakid]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid, Novakid]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: plateau
@@ -355,7 +355,7 @@
 - type: marking
   id: ADTHumanHairSaggedMohawk
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies, Novakid]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid, Novakid]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: saggedMohawk
@@ -363,7 +363,7 @@
 - type: marking
   id: ADTHumanHairSharpMohawk
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies, Novakid]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid, Novakid]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: sharpMohawk
@@ -406,7 +406,7 @@
 - type: marking
   id: ADTHumanHairStar
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies, Novakid]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid, Novakid]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: star
@@ -414,7 +414,7 @@
 - type: marking
   id: ADTHumanHairStarFro
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies, Novakid]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid, Novakid]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: starFro
@@ -429,7 +429,7 @@
 - type: marking
   id: ADTHumanHairUnkemptScientist
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, NovakidSpecies, Novakid]
+  groupWhitelist: [Human, Aegi, Felinid, Novakid, Novakid]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: unkemptScientist
@@ -453,7 +453,7 @@
 - type: marking
   id: ADTHumanHairLady
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, Demon]
+  groupWhitelist: [Human, Aegi, Felinid, Demon]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: lady
@@ -461,7 +461,7 @@
 - type: marking
   id: ADTHumanHairLongHairFringe
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, Demon]
+  groupWhitelist: [Human, Aegi, Felinid, Demon]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: longhairfringe
@@ -469,7 +469,7 @@
 - type: marking
   id: ADTHumanHairSheaf
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, Demon]
+  groupWhitelist: [Human, Aegi, Felinid, Demon]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: sheaf
@@ -477,7 +477,7 @@
 - type: marking
   id: ADTHumanHairShortTail
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, Demon]
+  groupWhitelist: [Human, Aegi, Felinid, Demon]
   sprites:
     - sprite: ADT/Mobs/Customization/Hair/hair.rsi
       state: shorttail
@@ -485,7 +485,7 @@
 - type: marking
   id: ADTHumanZeroHairstyle
   bodyPart: Hair
-  groupWhitelist: [Human, Aegi, Dwarf, Felinid, Demon]
+  groupWhitelist: [Human, Aegi, Felinid, Demon]
   sprites:
   - sprite: ADT/Mobs/Customization/Human/custom.rsi
     state: zero_hairstyle

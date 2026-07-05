@@ -453,7 +453,7 @@
 - type: marking
   id: Head7
   bodyPart: Head
-  groupWhitelist: [TajaranSpecies, Tajaran]
+  groupWhitelist: [Tajaran, Tajaran]
   sprites:
     - sprite: ADT/Mobs/Customization/Tajaran/tajaran_head.rsi
       state: patch_SPONSOR_ONLY
@@ -479,7 +479,7 @@
 #   id: HeadEyesStripes
 #   bodyPart: Head
 #   markingCategory: Head
-#   speciesRestriction: [TajaranSpecies]
+#   speciesRestriction: [Tajaran]
 #   sprites:
 #     - sprite: ADT/Mobs/Customization/Tajaran/tajaran_head.rsi #Спрайты от moroz_3
 #       state: eye_stripes_head

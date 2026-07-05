@@ -1,8 +1,7 @@
 - type: marking
   id: IPC_Beholder
   bodyPart: HeadTop
-  speciesRestriction: [IPC]
-  markingCategory: HeadTop
+  groupWhitelist: [Ipc]
   coloring:
     default:
       type:
@@ -15,8 +14,7 @@
 - type: marking
   id: IPC_Terminator
   bodyPart: HeadTop
-  speciesRestriction: [IPC]
-  markingCategory: HeadTop
+  groupWhitelist: [Ipc]
   sponsorOnly: false
   coloring:
     default:
@@ -30,8 +28,7 @@
 - type: marking
   id: IPC_Iron_jaw
   bodyPart: HeadTop
-  speciesRestriction: [IPC]
-  markingCategory: HeadTop
+  groupWhitelist: [Ipc]
   coloring:
     default:
       type:

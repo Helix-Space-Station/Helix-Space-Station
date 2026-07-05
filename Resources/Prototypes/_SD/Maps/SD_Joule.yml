@@ -18,10 +18,8 @@
         #   path: /Maps/ADTMaps/Shuttles/adt_cargo.yml
         - type: StationJobs
           availableJobs:
-            Boxer: [ 2, 2 ]
             CargoTechnician: [ 4, 4 ]
             Passenger: [ -1, -1 ]
-            Zookeeper: [ 1, 1 ]
             Bartender: [ 1, 1 ]
             Botanist: [ 3, 4 ]
             Chef: [ 1, 2 ]

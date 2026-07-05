@@ -45,7 +45,7 @@
     mechToPilotDamageMultiplier: 0.0 #Боец в тяжелом мехе не должен получать урон пока сам мех - жив
     pilotWhitelist:
       components:
-        - HumanoidAppearance
+        - HumanoidProfile
     equipmentWhitelist:
       tags:
       - ADTMechEquipmentGeneral
@@ -133,7 +133,7 @@
     mechToPilotDamageMultiplier: 0.0 #Боец в тяжелом мехе не должен получать урон пока сам мех - жив
     pilotWhitelist:
       components:
-        - HumanoidAppearance
+        - HumanoidProfile
     equipmentWhitelist:
       tags:
       - ADTMechEquipmentGeneral
@@ -221,7 +221,7 @@
     mechToPilotDamageMultiplier: 0.0 #Боец в тяжелом мехе не должен получать урон пока сам мех - жив
     pilotWhitelist:
       components:
-        - HumanoidAppearance
+        - HumanoidProfile
     equipmentWhitelist:
       tags:
       - ADTMechEquipmentGeneral

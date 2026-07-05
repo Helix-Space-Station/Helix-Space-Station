@@ -68,16 +68,17 @@
   - type: Injurable
     damageContainer: Biological
   - type: Stamina
-    critThreshold: 110
+    baseCritThreshold: 110
   - type: MovementSpeedModifier
     weightlessAcceleration: 1.25
     weightlessFriction: 1
     weightlessModifier: 1.15
   - type: Temperature
-    heatDamageThreshold: 330
-    coldDamageThreshold: 250
     currentTemperature: 310.15
     specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 330
+    coldDamageThreshold: 250
     coldDamage:
       types:
         Cold: 0.03
