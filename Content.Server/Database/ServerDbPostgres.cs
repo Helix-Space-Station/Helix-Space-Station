@@ -152,8 +152,9 @@ namespace Content.Server.Database
 
             if (hwId != null && hwId.Value.Length > 0)
             {
+                var hwIdBytes = hwId.Value.ToArray();
                 selectorQueries.Add(db.DbContext.BanHwid.Where(bh =>
-                    bh.HWId!.Type == HwidType.Legacy && bh.HWId!.Hwid.SequenceEqual(hwId.Value.ToArray())
+                    bh.HWId!.Type == HwidType.Legacy && bh.HWId!.Hwid == hwIdBytes // SD-Edit
                 ));
             }
 
@@ -161,9 +162,10 @@ namespace Content.Server.Database
             {
                 foreach (var modernHwid in modernHWIds)
                 {
+                    var modernHwidBytes = modernHwid.ToArray(); // SD-Edit
                     selectorQueries.Add(db.DbContext.BanHwid
                         .Where(b => b.HWId!.Type == HwidType.Modern
-                                    && b.HWId!.Hwid.SequenceEqual(modernHwid.ToArray())));
+                                    && b.HWId!.Hwid == modernHwidBytes)); // SD-Edit
                 }
             }
 

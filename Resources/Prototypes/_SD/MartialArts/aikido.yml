@@ -1,0 +1,57 @@
+- type: martialArt
+  id: CosmicAikido
+  martialArtsForm: CosmicAikido
+  roundstartCombos: CosmicAikidoMoves
+  baseDamageModifier: 1
+
+- type: comboList
+  id: CosmicAikidoMoves
+  combos:
+  - AikidoOpenPalmCombo
+  - AikidoHighKickCombo
+  - AikidoLowKickCombo
+
+- type: combo
+  id: AikidoOpenPalmCombo
+  name: aikido-combo-open-palm
+  martialArtsForm: CosmicAikido
+  attacks:
+  - Harm
+  - Harm
+  - Harm
+  - Harm
+  event: !type:AikidoOpenPalmComboPerformedEvent
+  extraDamage: 6
+  damageType: Blunt
+  staminaDamage: 20
+
+- type: combo
+  id: AikidoHighKickCombo
+  name: aikido-combo-high-kick
+  martialArtsForm: CosmicAikido
+  attacks:
+  - Disarm
+  - Disarm
+  - Disarm
+  - Disarm
+  event: !type:AikidoHighKickComboPerformedEvent
+  extraDamage: 5
+  damageType: Blunt
+  staminaDamage: 35
+  paralyzeTime: 1
+  dropItems: false
+  thrownSpeed: 5
+
+- type: combo
+  id: AikidoLowKickCombo
+  name: aikido-combo-low-kick
+  martialArtsForm: CosmicAikido
+  attacks:
+  - Harm
+  - Disarm
+  - Harm
+  - Grab
+  event: !type:AikidoLowKickComboPerformedEvent
+  staminaDamage: 70
+  paralyzeTime: 1
+  dropItems: true
