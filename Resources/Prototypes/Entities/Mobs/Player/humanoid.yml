@@ -82,6 +82,7 @@
     - type: Loadout
       prototypes: [ DeathSquadGear ]
       roleLoadout: [ RoleSurvivalEVA ]
+    - type: GrantHellRip
     - type: RandomMetadata
       nameSegments:
       - NamesFirstDeadSquad
