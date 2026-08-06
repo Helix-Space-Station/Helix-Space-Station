@@ -7,7 +7,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Commands;
 
-[AdminCommand(AdminFlags.Adminchat)] //ADT tweak
+[AnyCommand] //Space Dream tweak
 
 public sealed class AdminWhoCommand : LocalizedCommands
 {
