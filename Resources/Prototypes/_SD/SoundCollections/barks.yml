@@ -1,0 +1,61 @@
+- type: soundCollection
+  id: AceAttorney
+  files:
+  - /Audio/_SD/Voice/Barks/AceAttorney/aa_blip.ogg
+  - /Audio/_SD/Voice/Barks/AceAttorney/aa_blip_typewriter.ogg
+  - /Audio/_SD/Voice/Barks/AceAttorney/aa_dd_blip.ogg
+  - /Audio/_SD/Voice/Barks/AceAttorney/aa_tgaa_blip.ogg
+
+- type: soundCollection
+  id: KazooieBird
+  files:
+  - /Audio/_SD/Voice/Barks/Kazooie/birdwhistle.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/birdwhistle2.ogg
+
+- type: soundCollection
+  id: KazooieCaw
+  files:
+  - /Audio/_SD/Voice/Barks/Kazooie/caw.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/caw2.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/caw3.ogg
+
+- type: soundCollection
+  id: KazooieEhh
+  files:
+  - /Audio/_SD/Voice/Barks/Kazooie/ehh.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/ehh2.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/ehh3.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/ehh4.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/ehh5.ogg
+
+- type: soundCollection
+  id: KazooieFaucet
+  files:
+  - /Audio/_SD/Voice/Barks/Kazooie/faucet.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/faucet2.ogg
+
+- type: soundCollection
+  id: KazooieGrowl
+  files:
+  - /Audio/_SD/Voice/Barks/Kazooie/growl.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/growl2.ogg
+
+- type: soundCollection
+  id: KazooieMoan
+  files:
+  - /Audio/_SD/Voice/Barks/Kazooie/moan1.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/moan2.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/moan3.ogg
+
+- type: soundCollection
+  id: KazooieRaah
+  files:
+  - /Audio/_SD/Voice/Barks/Kazooie/raah1.ogg
+  - /Audio/_SD/Voice/Barks/Kazooie/raah2.ogg
+
+- type: soundCollection
+  id: UndertaleMonster
+  files:
+  - /Audio/_SD/Voice/Barks/Undertale/voice_monster1.ogg
+  - /Audio/_SD/Voice/Barks/Undertale/voice_monster2.ogg
+
