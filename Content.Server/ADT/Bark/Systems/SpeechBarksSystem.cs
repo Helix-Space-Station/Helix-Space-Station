@@ -10,6 +10,8 @@ using Robust.Shared.Audio.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Speech; // TSF edit
 using Content.Shared.Inventory; // TSF edit
+using Content.Server.Examine;
+using Content.Shared.Ghost;
 
 namespace Content.Server.ADT.SpeechBarks;
 
@@ -22,6 +24,7 @@ public sealed class SpeechBarksSystem : EntitySystem
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; // TSF edit
     [Dependency] private readonly SharedAudioSystem _audio = default!; // TSF edit
+    [Dependency] private readonly ExamineSystem _examineSystem = default!;
     private bool _isEnabled = false;
 
     public override void Initialize()
@@ -86,6 +89,9 @@ public sealed class SpeechBarksSystem : EntitySystem
         foreach (var ent in _lookup.GetEntitiesInRange(Transform(uid).Coordinates, 10f))
         {
             if (!_mind.TryGetMind(ent, out _, out var mind) || mind.UserId == null || !_player.TryGetSessionById(mind.UserId, out var session))
+                continue;
+
+            if (!HasComp<GhostHearingComponent>(ent) && !_examineSystem.InRangeUnOccluded(ent, uid, 10f))
                 continue;
 
             RaiseNetworkEvent(new PlaySpeechBarksEvent(

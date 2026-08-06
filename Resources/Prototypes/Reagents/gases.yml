@@ -52,15 +52,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Drask ]
-      - !type:Oxygenate
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Novakid ]
-      - !type:Oxygenate
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Resomi ]
+          type: [ Drask, Resomi, Novakid ]
       # End ADT tweak
       # Start SD tweak
       - !type:Oxygenate

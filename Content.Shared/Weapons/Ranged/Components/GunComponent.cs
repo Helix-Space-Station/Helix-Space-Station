@@ -20,6 +20,7 @@ public sealed partial class GunComponent : Component
     /// The base sound to use when the gun is fired.
     /// </summary>
     [DataField]
+    [Access(typeof(SharedGunSystem), Other = AccessPermissions.ReadWrite)] // ADT-Tweak
     public SoundSpecifier? SoundGunshot = new SoundPathSpecifier("/Audio/Weapons/Guns/Gunshots/smg.ogg");
 
     /// <summary>
@@ -195,6 +196,7 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     [AutoNetworkedField]
+    [Access(typeof(SharedGunSystem), Other = AccessPermissions.ReadWrite)] // ADT-Tweak
     public float FireRate = 8f;
 
     /// <summary>
