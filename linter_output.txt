@@ -1,6 +1,0 @@
-Unhandled exception. System.Exception: DisposeAsync: Unexpected state. Pair: 1. State: CleanDisposed.
-   at Robust.UnitTesting.Pool.TestPair`2.DisposeAsync() in C:\Projects\servers\Helix-Space-Station\RobustToolbox\Robust.UnitTesting\Pool\TestPair.Recycle.cs:line 113
-   at Content.YAMLLinter.Program.ValidateServer() in C:\Projects\servers\Helix-Space-Station\Content.YAMLLinter\Program.cs:line 72
-   at Content.YAMLLinter.Program.RunValidation() in C:\Projects\servers\Helix-Space-Station\Content.YAMLLinter\Program.cs:line 119
-   at Content.YAMLLinter.Program.Main(String[] _) in C:\Projects\servers\Helix-Space-Station\Content.YAMLLinter\Program.cs:line 24
-   at Content.YAMLLinter.Program.<Main>(String[] _)
