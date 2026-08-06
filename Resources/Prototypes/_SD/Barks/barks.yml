@@ -1,8 +1,6 @@
 - type: speechBark
   id: AceAttorney
   name: bark-name-ace-attorney
-  frequency: 0.5
-  stop: true
   sound:
     collection: AceAttorney
   category: AceAttorney
@@ -149,7 +147,6 @@
 - type: speechBark
   id: Hisses
   name: bark-name-hisses
-  frequency: 0.4
   sound: /Audio/_SD/Voice/Barks/Reptilian/reptilian_hiss.ogg
   category: standard
 
