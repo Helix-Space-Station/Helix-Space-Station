@@ -1,5 +1,6 @@
 using Content.Shared.ADT.Crushers.Components;
 using Content.Shared.ADT.Crawling;
+using Content.Shared.ADT.Fauna;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Effects;
