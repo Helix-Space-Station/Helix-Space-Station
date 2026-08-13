@@ -26,13 +26,13 @@ public sealed partial class CCVars
     ///     Link to website to show in the launcher.
     /// </summary>
     public static readonly CVarDef<string> InfoLinksWebsite =
-        CVarDef.Create("infolinks.website", "https://boosty.to/prichinatryaski/donate", CVar.SERVER | CVar.REPLICATED); // ADT-Tweak
+        CVarDef.Create("infolinks.website", "https://boosty.to/spacedreamss14", CVar.SERVER | CVar.REPLICATED); // SD-Tweak
 
     /// <summary>
     ///     Link to wiki to show in the launcher.
     /// </summary>
     public static readonly CVarDef<string> InfoLinksWiki =
-        CVarDef.Create("infolinks.wiki", "https://wiki.sd.qeqk.ru", CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("infolinks.wiki", "https://wiki.axyetb.ru", CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     Link to Patreon. Not shown in the launcher currently.
