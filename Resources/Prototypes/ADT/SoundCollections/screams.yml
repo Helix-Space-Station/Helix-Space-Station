@@ -21,6 +21,7 @@
 - type: soundCollection
   id: TajaranScreams
   files:
+  - /Audio/ADT/Felinid/cat_scream1.ogg
   - /Audio/ADT/Felinid/cat_scream2.ogg
   - /Audio/ADT/Felinid/cat_scream3.ogg
   - /Audio/Corvax/Effects/Tajaran/scream.ogg
