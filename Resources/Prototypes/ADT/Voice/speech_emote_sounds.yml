@@ -176,7 +176,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: TajaranMaleScreams
+      collection: TajaranScreams # SD tweak
     Laugh:
       collection: MaleLaugh
     Hiss:
@@ -229,7 +229,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: TajaranFemaleScreams
+      collection: TajaranScreams # SD tweak
     Laugh:
       collection: FemaleLaugh
     Sneeze:
