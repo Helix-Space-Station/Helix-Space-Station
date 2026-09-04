@@ -3,13 +3,15 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.ADT.Droppods.Components;
 
 /// <summary>
-/// When a <c>TimedDespawnComponent"</c> despawns, another one will be spawned in its place.
+/// When a <c>TimedDespawnComponent</c> despawns, cargo is dumped and listed prototypes are spawned.
 /// </summary>
-[RegisterComponent] //ADT Tweak no access
+[RegisterComponent]
 public sealed partial class DroppodComponent : Component
 {
+    public const string CargoContainerId = "droppod-cargo";
+
     /// <summary>
-    /// protos to spawn
+    /// Prototypes spawned at the landing site when the falling pod despawns (ghost-role spawners, mobs, crates).
     /// </summary>
     [DataField]
     public List<EntProtoId> Prototypes { get; set; } = new();
