@@ -1,0 +1,117 @@
+# Консоль загрузки и отправки грузового дроппода.
+# Пассажиры/предметы с площадки (или из радиуса консоли) улетают на маяк станции.
+# extraSpawnOptions — гостроли и мобы, которые появляются после посадки.
+
+- type: entity
+  parent: BaseMachinePowered
+  id: ComputerDroppodDispatch
+  name: drop pod dispatch console
+  description: Loads nearby personnel and cargo into a drop pod and launches it at a station beacon.
+  suffix: Droppod
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: ADT/Structures/Machines/droppod_dispatch_console.rsi
+    snapCardinals: true
+    layers:
+    - state: consoleold
+    - state: consoleold
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      shader: unshaded
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: LitOnPowered
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#4a8c4a"
+    enabled: false
+  - type: ApcPowerReceiver
+    powerLoad: 50
+  - type: ActivatableUI
+    key: enum.DroppodDispatchUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.DroppodDispatchUiKey.Key:
+        type: DroppodDispatchConsoleBui
+  - type: InteractionOutline
+  - type: DroppodDispatchConsole
+    droppodPrototype: ADTDroppodDropping
+    consoleScanRange: 8
+    padLoadRange: 1.5
+    maxCargo: 8
+    extraSpawnOptions:
+    - ADTRandomHumanoidSpawnerERTLeaderEVA
+    - ADTRandomHumanoidSpawnerERTSecurityEVA
+    - ADTRandomHumanoidSpawnerERTMedicalEVA
+    - ADTSyndieSurpricePerson
+    beaconBlacklist:
+    - DefaultStationBeaconBridge
+    - DefaultStationBeaconVault
+    - DefaultStationBeaconCaptainsQuarters
+    - DefaultStationBeaconAI
+    - DefaultStationBeaconAICore
+    - DefaultStationBeaconNukeOps
+    - DefaultStationBeaconNuclear
+    - DefaultStationBeaconCentComm
+    - NuclearBomb
+  - type: StationAiWhitelist
+
+- type: entity
+  parent: BaseMachine
+  id: DroppodLoadPad
+  name: drop pod load pad
+  description: Stand here with cargo. The dispatch console will load whatever is on this pad into the next pod.
+  suffix: Droppod
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 50
+        mask:
+        - MachineMask
+        layer:
+        - LowImpassable
+  - type: Sprite
+    sprite: Structures/cargo_telepad.rsi
+    drawdepth: HighFloorObjects
+    layers:
+    - state: idle
+      shader: unshaded
+  - type: InteractionOutline
+  - type: DroppodLoadPad
+  - type: PlaceableSurface
+    placeCentered: true
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
